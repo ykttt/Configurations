@@ -1,3 +1,4 @@
 *.o
 *.old
+.directory
 firefox/userjs/userjs_backups/

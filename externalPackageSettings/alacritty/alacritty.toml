@@ -3,12 +3,12 @@
 # alacritty.toml
 
 import = [
-        "~/.config/alacritty/themes/nordic.toml"
+        "~/.config/alacritty/themes/nord.toml"
 ]
 
 [window]
 blur = true
-opacity = 0.8
+opacity = 0.6
 padding = { x = 0, y = 0 }
 dimensions = { columns = 120, lines = 25 }
 

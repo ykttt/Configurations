@@ -92,7 +92,7 @@
 	systemd.services.razer-blade-sndfix = {
 		description = "Fix sound card problem of Razer Blade 15 (2023).";
 		wantedBy = [ "multi-user.target" ];
-		serviceConfig.ExecStart = "/home/km/.scripts/systemd/razer-sndfix/razer-sndfix.sh";
+		serviceConfig.ExecStart = "/home/km/configurations/generalScripts/systemd/razer-sndfix/razer-sndfix.sh";
 		path = with pkgs; [ alsa-tools bash ];
 
 	};
@@ -342,6 +342,7 @@
 			zoom-us
 			zathura
 			discord
+                        onedrive
 			thunderbird
 			texliveFull
 			polychromatic

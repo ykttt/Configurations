@@ -1,6 +1,6 @@
-# Dotfiles
+# Configurations
 
-Just dotfiles.
+Mainly configuration files and scripts.
 
 ## TODOs
 

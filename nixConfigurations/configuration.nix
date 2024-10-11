@@ -344,6 +344,7 @@
 			discord
                         latexrun
                         onedrive
+                        tree-sitter
 			thunderbird
 			texliveFull
 			polychromatic

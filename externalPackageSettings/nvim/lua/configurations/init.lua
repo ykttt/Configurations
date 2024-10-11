@@ -9,6 +9,7 @@ require('configurations/neovide')
 require('configurations/rose-pine')
 require('configurations/lualine')
 require('configurations/bufferline')
+require('configurations/nvim-treesitter')
 
 require('configurations/alpha')
 require('configurations/notify')

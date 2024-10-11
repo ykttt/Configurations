@@ -255,7 +255,7 @@
 				cl = "sudo nix-collect-garbage";
 				rbs = "sudo nixos-rebuild switch";
 				cld = "sudo nix-collect-garbage -d";
-				vic = "sudo vi /etc/nixos/configuration.nix";
+				vic = "vi /etc/nixos/configuration.nix";
  	 		};
 			interactiveShellInit = ''
 				source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -342,6 +342,7 @@
 			zoom-us
 			zathura
 			discord
+                        latexrun
                         onedrive
 			thunderbird
 			texliveFull

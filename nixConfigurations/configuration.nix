@@ -16,18 +16,36 @@
 			dates = "daily";
 			options = "--delete-older-than 5d -d";
 		};
+                settings = {
+                        builders-use-substitutes = true;        # Use binary cache
+                        substituters = [
+                                "https://cache.nixos.org"
+                        ];
+                        trusted-public-keys = [
+                                "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+                        ];
+                };
 	};
 
-  	console.keyMap = "jp106";
+  	console = {
+                # keyMap = "jp106";             # Conflict with console.useXkbConfig
+                useXkbConfig = true;            # Use xkb config in console
+        };
+
   	time.timeZone = "Asia/Tokyo";
 
   	nixpkgs.config.allowUnfree = true;	# Allow all unfree softwares
 
   	boot = {
   		plymouth.enable = true;
+                tmp = {
+                        cleanOnBoot = true;
+                        useTmpfs = true;
+                };
   		loader = {
 			systemd-boot.enable = true;
   			efi.canTouchEfiVariables = true;
+                        timeout = 0;    # Spam space to get into boot menu
 		};
 	};
 
@@ -89,13 +107,15 @@
   		rtkit.enable = true;
 	};
 
-	systemd.services.razer-blade-sndfix = {
-		description = "Fix sound card problem of Razer Blade 15 (2023).";
-		wantedBy = [ "multi-user.target" ];
-		serviceConfig.ExecStart = "/home/km/configurations/generalScripts/systemd/razer-sndfix/razer-sndfix.sh";
-		path = with pkgs; [ alsa-tools bash ];
-
-	};
+        systemd.services = {
+                NetworkManager-wait-online.enable = false;      # Shorten boot time
+	        razer-blade-sndfix = {
+		        description = "Fix sound card problem of Razer Blade 15 (2023).";
+		        wantedBy = [ "multi-user.target" ];
+		        serviceConfig.ExecStart = "/home/km/configurations/generalScripts/systemd/razer-sndfix/razer-sndfix.sh";
+		        path = with pkgs; [ alsa-tools bash ];
+	        };
+        };
 
   	services = {
 		chrony = {
@@ -117,6 +137,7 @@
 			xkb = {
     				layout = "jp";
     				variant = "";
+                                options = "ctrl:swapcaps";   # Swap control and capslock
   			};
 		};
    		pipewire = {
@@ -125,7 +146,7 @@
 				enable = true;
     				support32Bit = true;
 			};
-    			pulse.enable = true;		# Enable pulseaudio
+    			pulse.enable = true;		# Enable support for pulseaudio applications
     			# jack.enable = true;
 
     			# media-session.enable = true;	# No other packages are packed yet so enabled by default
@@ -138,17 +159,16 @@
       				http = [ { address = "127.0.0.1:3000";} ];
 				users = [ {
 					name = "km";
-					password = "$2a$10$sR0Mlbca2YQV1IZoC8XFZ.GJ9HNpBjjy4eYRzCkatABXWDZjGcZuu";
+					password = "$2a$10$sR0Mlbca2YQV1IZoC8XFZ.GJ9HNpBjjy4eYRzCkatABXWDZjGcZuu";      # BCrypt processed (10 times)
 				} ];
       			};
 		};
   		printing.enable = true;	# Enable CUPS to print documents.
   		joycond.enable = true;
-
 	};
 
   	i18n = {
-		defaultLocale = "ja_JP.UTF-8";
+		defaultLocale = "C.UTF-8";
   		extraLocaleSettings = {
     			LC_NAME = "ja_JP.UTF-8";
     			LC_TIME = "ja_JP.UTF-8";
@@ -231,7 +251,7 @@
 			elisa
 			konsole
 		];
-	};	
+	};
 
 	programs = {
 		zsh = {
@@ -270,9 +290,9 @@
 		git = {
 			enable = true;
 			lfs.enable = true;
-			config = [ 
+			config = [
 				{
-					user = {		
+					user = {
 						name = "J. Peng";
 						email = "ykttt@tuta.io";
 					};
@@ -288,7 +308,7 @@
 						co = "checkout";
 					};
 				}
-				{ init.defaultBranch = "main"; } 
+				{ init.defaultBranch = "main"; }
 				{ url."https://github.com/" = { insteadOf = ["gh:" "github:"]; }; }
 				{ url."https://gitlab.com/" = { insteadOf = ["gl:" "gitlab:"]; }; }
 			];
@@ -307,11 +327,12 @@
 
 		firefox = {
 			enable = true;
-			preferences = { 
+			preferences = {
 				"widget.use-xdg-desktop-portal.file-picker" = 1;
-			};	
+			};
 			wrapperConfig.pipewireSupport = true;	# Fix screen sharing in wayland
 		};
+
      		steam = {
 			enable = true;
 			remotePlay.openFirewall = true;

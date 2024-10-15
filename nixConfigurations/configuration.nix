@@ -12,7 +12,7 @@
 
   	nix = {
 		gc = {
-			automatic = true;
+			automatic = false;      # Farmful to SSD
 			dates = "daily";
 			options = "--delete-older-than 5d -d";
 		};
@@ -137,7 +137,7 @@
 			xkb = {
     				layout = "jp";
     				variant = "";
-                                options = "ctrl:swapcaps";   # Swap control and capslock
+                                options = "ctrl:swapcaps";   # Swap control and capslock in X11
   			};
 		};
    		pipewire = {
@@ -147,7 +147,7 @@
     				support32Bit = true;
 			};
     			pulse.enable = true;		# Enable support for pulseaudio applications
-    			# jack.enable = true;
+    			jack.enable = true;
 
     			# media-session.enable = true;	# No other packages are packed yet so enabled by default
 
@@ -234,15 +234,12 @@
 			cmake
 			pfetch
 			zellij
-			httpie			# Replacement of curl
 			python3
 			gnumake
 			pciutils
-			alacritty
 			alsa-tools		# Required to fix sound issue of [Razer-Blade-15-2023]
 			pure-prompt
 			zsh-vi-mode
-			wl-clipboard		# Clipboard-sync in wayland
 			openrazer-daemon	# For razer devices
 			where-is-my-sddm-theme
   		];
@@ -286,32 +283,6 @@
 				echo "\n"
 				pfetch
 			'';
-		};
-		git = {
-			enable = true;
-			lfs.enable = true;
-			config = [
-				{
-					user = {
-						name = "J. Peng";
-						email = "ykttt@tuta.io";
-					};
-				}
-				{	alias = {
-						a = "add";
-						p = "push";
-						s = "status";
-						c = "commit";
-						aa = "add *";
-						cl = "clone";
-						cf = "config";
-						co = "checkout";
-					};
-				}
-				{ init.defaultBranch = "main"; }
-				{ url."https://github.com/" = { insteadOf = ["gh:" "github:"]; }; }
-				{ url."https://gitlab.com/" = { insteadOf = ["gl:" "gitlab:"]; }; }
-			];
 		};
 		neovim = {
 			enable = true;
@@ -359,15 +330,18 @@
 			krita
 			mupdf
 			ranger
+			httpie			# Replacement of curl
 			neovide
 			zoom-us
 			zathura
 			discord
                         latexrun
                         onedrive
+			alacritty
                         tree-sitter
 			thunderbird
 			texliveFull
+			wl-clipboard		# Clipboard-sync in wayland
 			polychromatic
 			onlyoffice-desktopeditors
 		];
@@ -379,6 +353,29 @@
 					"/home/km/.ssh/id_ed25519"
 				];
 			};
+		        git = {
+			        enable = true;
+			        lfs.enable = true;
+				userName = "J. Peng";
+				userEmail = "ykttt@tuta.io";
+				alias = {
+					a = "add";
+					p = "push";
+					s = "status";
+					c = "commit";
+					aa = "add *";
+					cl = "clone";
+                                        cf = "config";
+					co = "checkout";
+				};
+                                extraConfig = {
+				        init.defaultBranch = "main";
+				        url = {
+                                                "https://github.com/".insteadOf = ["gh:" "github:"];
+				                "https://gitlab.com/".insteadOf = ["gl:" "gitlab:"];
+                                        };
+                                };
+		        };
 		};
 		home.stateVersion = "24.05";	# The same
 	};

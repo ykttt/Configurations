@@ -92,9 +92,9 @@
 		dhcpcd.enable = false;	# Unnecessary when managing DNS manually
 		nameservers = [ "127.0.0.1" ];
 		firewall.allowedTCPPorts = [
-			22
-			443
+			# 22
 			# 80
+			443
 			# 8080
 		];
 	};
@@ -137,7 +137,7 @@
 			xkb = {
     				layout = "jp";
     				variant = "";
-                                options = "ctrl:swapcaps";   # Swap control and capslock in X11
+                                options = "ctrl:swapcaps";   # Swap control and capslock in X11 (seems not to be usable in wayland?)
   			};
 		};
    		pipewire = {
@@ -246,25 +246,23 @@
 		plasma6.excludePackages = with pkgs.kdePackages; [
 			kate
 			elisa
-			konsole
+			# konsole
 		];
 	};
 
 	programs = {
 		zsh = {
 			enable = true;
+			enableCompletion = true;
 			autosuggestions.enable = true;
 			syntaxHighlighting.enable = true;
-			enableCompletion = true;
 			histSize = 10000;
 			histFile = "\${HOME}/.zsh_history";
 			shellAliases = {
 				s = "sudo";
 				q = "exit";
 				rr = "ranger";
-				svi = "sudo vi";
 				j = "journalctl";
-				sgi = "sudo git";
 				srr = "sudo ranger";
 				ll = "ls -l --color";
 				rb = "sudo nixos-rebuild";
@@ -272,7 +270,6 @@
 				cl = "sudo nix-collect-garbage";
 				rbs = "sudo nixos-rebuild switch";
 				cld = "sudo nix-collect-garbage -d";
-				vic = "vi /etc/nixos/configuration.nix";
  	 		};
 			interactiveShellInit = ''
 				source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -280,8 +277,7 @@
 			promptInit = ''
 				autoload -U promptinit; promptinit
 				prompt pure
-				echo "\n"
-				pfetch
+				echo "\n" && pfetch
 			'';
 		};
 		neovim = {
@@ -358,9 +354,10 @@
 			        lfs.enable = true;
 				userName = "J. Peng";
 				userEmail = "ykttt@tuta.io";
-				alias = {
+				aliases = {
 					a = "add";
 					p = "push";
+                                        r = "reset";
 					s = "status";
 					c = "commit";
 					aa = "add *";

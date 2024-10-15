@@ -5,6 +5,7 @@ Mainly configuration files and scripts.
 ## TODOs
 
 - [x] Make vimtex work with platex
+- [ ] Migrate to hyperland
 - [ ] Import flakes
-- [ ] Try to intergrate Plasma tweaks
-    - or migrate to hyperland
+- [ ] Modularise nix configurations
+- [ ] Intergrate external user app dotfiles

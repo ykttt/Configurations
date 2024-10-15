@@ -1,5 +1,5 @@
 *.o
 *.old
 *.uncompleted
- .directory
+.directory
 firefox/userjs/userjs_backups/

@@ -23,11 +23,22 @@ vim.g.configpath = "~/.config/nvim"
 
 return require('lazy').setup({
 
-	'rcarriga/nvim-notify',
+        "williamboman/mason-lspconfig.nvim",
 	'terrortylor/nvim-comment',
+        'saadparwaiz1/cmp_luasnip',
+        "williamboman/mason.nvim",
+        "neovim/nvim-lspconfig",
 	'windwp/nvim-autopairs',
 	'folke/which-key.nvim',
+        'hrsh7th/cmp-nvim-lsp',
+	'rcarriga/nvim-notify',
+        'hrsh7th/cmp-cmdline',
+        "petertriho/cmp-git",
 	'goolord/alpha-nvim',
+        'hrsh7th/cmp-buffer',
+        "micangl/cmp-vimtex",
+        'hrsh7th/cmp-path',
+        'hrsh7th/nvim-cmp',
         'lervag/vimtex',
         {
                 'nvim-telescope/telescope.nvim',
@@ -63,56 +74,3 @@ return require('lazy').setup({
 
 
 })
-
--- return require('packer').startup(function(use)
---
--- 	use 'wbthomason/packer.nvim'
--- 	use 'rcarriga/nvim-notify'
--- 	use 'terrortylor/nvim-comment'
--- 	use 'windwp/nvim-autopairs'
--- 	use 'folke/which-key.nvim'
---         use 'lervag/vimtex'
--- 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
--- 	use { 
--- 	        'nvim-telescope/telescope-fzf-native.nvim', 
--- 	        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
--- 	}
--- 	use {
--- 		'nvim-telescope/telescope.nvim',
--- 		requires = {
--- 			'nvim-lua/plenary.nvim',
--- 			'nvim-tree/nvim-web-devicons',
--- 		},
--- 	}
--- 	use {
--- 		'goolord/alpha-nvim',
--- 		requires = 'nvim-tree/nvim-web-devicons',
--- 	}
--- 	use {
--- 		'nvim-tree/nvim-tree.lua',
--- 		requires = 'nvim-tree/nvim-web-devicons',      -- optional, for file icons
--- 		-- tag = 'nightly'
--- 	}
---         use {
---                 "L3MON4D3/LuaSnip",
---                 tag = "v2.*",   -- Replace <CurrentMajor> by the latest released major (first number of latest release)
---                 run = "make install_jsregexp",  -- optional
---                 requires = "rafamadriz/friendly-snippets",
---         }
---         use {
---                 'nvim-lualine/lualine.nvim',
---                 requires = 'nvim-tree/nvim-web-devicons',
---         }
---         use {
---                 'akinsho/bufferline.nvim', 
---                 tag = "*", 
---                 requires = 'nvim-tree/nvim-web-devicons'
---         }
---         use { 'ellisonleao/gruvbox.nvim', as = 'gruvbox' }
---         use { 'arcticicestudio/nord-vim', as = 'nord' }
---         use { 'rose-pine/neovim', as = 'rose-pine' }
---
--- 	if packer_bootstrap then
--- 		require('packer').sync()
--- 	end
--- end)

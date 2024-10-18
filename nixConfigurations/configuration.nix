@@ -231,9 +231,13 @@
 
   		systemPackages = with pkgs; [
 			gcc
+                        zulu
+                        cargo
 			cmake
+                        unzip
 			pfetch
 			zellij
+                        nodejs
 			python3
 			gnumake
 			pciutils
@@ -246,7 +250,7 @@
 		plasma6.excludePackages = with pkgs.kdePackages; [
 			kate
 			elisa
-			# konsole
+			konsole
 		];
 	};
 

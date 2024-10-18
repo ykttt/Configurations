@@ -231,14 +231,14 @@
 
   		systemPackages = with pkgs; [
 			gcc
-                        zulu
-                        cargo
+                        # zulu
+                        # cargo
 			cmake
                         unzip
 			pfetch
 			zellij
-                        nodejs
-			python3
+                        # nodejs
+			# python3
 			gnumake
 			pciutils
 			alsa-tools		# Required to fix sound issue of [Razer-Blade-15-2023]
@@ -325,24 +325,32 @@
   		nixpkgs.config.allowUnfree = true;	# Again in home-manager
    		home.packages = with pkgs; [
 			gh
+                        nil
 			w3m
 			mpv
 			krita
 			mupdf
+                        lsp-ai
 			ranger
 			httpie			# Replacement of curl
+                        texlab
+                        ollama
 			neovide
 			zoom-us
+                        pyright
 			zathura
 			discord
                         latexrun
                         onedrive
 			alacritty
+                        clang-tools
                         tree-sitter
 			thunderbird
 			texliveFull
 			wl-clipboard		# Clipboard-sync in wayland
 			polychromatic
+                        lua-language-server
+                        bash-language-server
 			onlyoffice-desktopeditors
 		];
 		programs = {
@@ -353,6 +361,12 @@
 					"/home/km/.ssh/id_ed25519"
 				];
 			};
+                        neovim = {
+                                enable = true;
+                                withPython3 = true;
+                                withNodeJs = true;
+                                withRuby = true;
+                        };
 		        git = {
 			        enable = true;
 			        lfs.enable = true;

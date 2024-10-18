@@ -5,16 +5,6 @@
 
 local cmp = require'cmp'
 
-require("mason-lspconfig").setup{
-        ensure_installed = {
-                "grammarly",
-                "omnisharp",
-                "ast_grep",
-                "bashls",
-                "rnix",
-        },
-}
-
 cmp.setup({
         snippet = {
                 expand = function(args)
@@ -70,16 +60,63 @@ cmp.setup.cmdline(':', {
         matching = { disallow_symbol_nonprefix_matching = false }
 })
 
-require("cmp_git").setup() 
+require'cmp_git'.setup()
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 
-require("lspconfig").grammarly.setup { capabilities = capabilities }
-require("lspconfig").ast_grep.setup { capabilities = capabilities }
-require("lspconfig").bashls.setup { capabilities = capabilities }
-require("lspconfig").rnix.setup { capabilities = capabilities }
-require("lspconfig").hls.setup { capabilities = capabilities }
-
-
-
+require'lspconfig'.pyright.setup { capabilities = capabilities }
+require'lspconfig'.clangd.setup { capabilities = capabilities }
+require'lspconfig'.texlab.setup { capabilities = capabilities }
+require'lspconfig'.bashls.setup { capabilities = capabilities }
+require'lspconfig'.nil_ls.setup { capabilities = capabilities }
+require'lspconfig'.lsp_ai.setup {
+        capabilities = capabilities,
+        models = {
+                model1 = {
+                        type = "ollama",
+                        model = "deepseek-coder"
+                },
+        },
+        chat = {
+                trigger = "!C",
+                action_display_name = "Chat",
+                model = "model1",
+                parameters = {
+                        max_context = 4096,
+                        max_tokens = 1024,
+                        system = "Assist the user."
+                }
+        }
+}
+require'lspconfig'.lua_ls.setup {
+        capabilities = capabilities,
+        on_init = function(client)
+                if client.workspace_folders then
+                        local path = client.workspace_folders[1].name
+                        if vim.uv.fs_stat(path..'/.luarc.json') or vim.uv.fs_stat(path..'/.luarc.jsonc') then
+                                return
+                        end
+                end
+                client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+                        runtime = {
+                        -- Tell the language server which version of Lua you're using
+                        -- (most likely LuaJIT in the case of Neovim)
+                                version = 'LuaJIT'
+                        },
+                        -- Make the server aware of Neovim runtime files
+                        workspace = {
+                                checkThirdParty = false,
+                                library = {
+                                        vim.env.VIMRUNTIME
+                                -- Depending on the usage, you might want to add additional paths here.
+                                -- "${3rd}/luv/library"
+                                -- "${3rd}/busted/library",
+                                }
+                        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+                        -- library = vim.api.nvim_get_runtime_file("", true)
+                        }
+                })
+        end,
+        settings = { Lua = {} }
+}

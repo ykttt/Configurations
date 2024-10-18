@@ -10,7 +10,6 @@ require('configurations/rose-pine')
 require('configurations/lualine')
 require('configurations/bufferline')
 
-require('configurations/mason')
 require('configurations/lspconfig')
 require('configurations/nvim-treesitter')
 

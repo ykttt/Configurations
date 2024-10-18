@@ -23,20 +23,18 @@ vim.g.configpath = "~/.config/nvim"
 
 return require('lazy').setup({
 
-        "williamboman/mason-lspconfig.nvim",
 	'terrortylor/nvim-comment',
         'saadparwaiz1/cmp_luasnip',
-        "williamboman/mason.nvim",
-        "neovim/nvim-lspconfig",
+        'neovim/nvim-lspconfig',
 	'windwp/nvim-autopairs',
 	'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
 	'rcarriga/nvim-notify',
         'hrsh7th/cmp-cmdline',
-        "petertriho/cmp-git",
+        'petertriho/cmp-git',
 	'goolord/alpha-nvim',
         'hrsh7th/cmp-buffer',
-        "micangl/cmp-vimtex",
+        'micangl/cmp-vimtex',
         'hrsh7th/cmp-path',
         'hrsh7th/nvim-cmp',
         'lervag/vimtex',
@@ -55,22 +53,21 @@ return require('lazy').setup({
         }, {
                 "akinsho/bufferline.nvim",
                 dependencies = "nvim-tree/nvim-web-devicons",
-        }, { 
+        }, {
 	        'nvim-treesitter/nvim-treesitter',
                 tag = 'v0.9.1',
-	        build = ':TSUpdate', 
-	}, { 
-	        'nvim-telescope/telescope-fzf-native.nvim', 
+	        build = ':TSUpdate',
+	}, {
+	        'nvim-telescope/telescope-fzf-native.nvim',
 	        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
 	}, {
                 "L3MON4D3/LuaSnip",
                 -- tag = "v2.*",   -- Replace <CurrentMajor> by the latest released major (first number of latest release)
                 build = "make install_jsregexp",  -- optional
                 dependencies = 'rafamadriz/friendly-snippets',
-        }, { 
-                'rose-pine/neovim', 
+        }, {
+                'rose-pine/neovim',
                 name = 'rose-pine',
         },
-
 
 })

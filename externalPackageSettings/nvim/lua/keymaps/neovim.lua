@@ -30,6 +30,8 @@ vim.keymap.set('n', '<leader>.', '<cmd>vert res -1<cr>', { silent = true })
 vim.keymap.set('n', '<leader>m', function() vim.o.bg = 'light' end, { silent = true })
 vim.keymap.set('n', '<leader>n', function() vim.o.bg = 'dark' end, { silent = true })
 
+vim.keymap.set('n', '<leader>p', '<cmd>Lazy<cr>', { silent = true })
+
 -- vim.keymap.set('!', '<c-j>', '<down>')
 -- vim.keymap.set('!', '<c-k>', '<up>')
 vim.keymap.set('!', '<c-h>', '<left>')

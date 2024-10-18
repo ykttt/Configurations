@@ -13,7 +13,7 @@ require('configurations/bufferline')
 require('configurations/lspconfig')
 require('configurations/nvim-treesitter')
 
-require('configurations/alpha')
+-- require('configurations/alpha')
 require('configurations/notify')
 require('configurations/nvim-tree')
 require('configurations/telescope')

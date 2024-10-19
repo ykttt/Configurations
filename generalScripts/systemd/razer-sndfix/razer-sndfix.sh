@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 hda-verb /dev/snd/hwC1D0 0x20 0x500 0x7
 hda-verb /dev/snd/hwC1D0 0x20 0x500 0x7
 hda-verb /dev/snd/hwC1D0 0x20 0x500 0x10

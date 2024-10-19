@@ -104,9 +104,10 @@ return require('lazy').setup({
                         dashboard.section.header.val = logo
                         dashboard.section.header.opts.hl = pick_colour()
                         dashboard.section.buttons.val = {
-                                dashboard.button("SPACE f f", "  Find File"),
-                                dashboard.button("SPACE f h", "  Find History"),
-                                dashboard.button("SPACE   p", "  I'm Lazy..."),
+                                dashboard.button("SPACE f f", "  Find It"),
+                                dashboard.button("SPACE f h", "  I Remember You"),
+                                dashboard.button("SPACE   a", "  One More Thing"),
+                                dashboard.button("SPACE   p", "  I'm a Bit Lazy..."),
                         }
                         -- dashboard.section.footer.val = "Surprisingly I'm still alive..."
                         -- dashboard.section.footer.opts.hl = "Constant"

@@ -42,6 +42,7 @@
                 tmp = {
                         cleanOnBoot = true;
                         useTmpfs = true;
+                        tmpfsSize = "60%";
                 };
   		loader = {
 			systemd-boot.enable = true;
@@ -114,7 +115,7 @@
 		        description = "Fix sound card problem of Razer Blade 15 (2023).";
 		        wantedBy = [ "multi-user.target" ];
 		        serviceConfig.ExecStart = "/home/km/configurations/generalScripts/systemd/razer-sndfix/razer-sndfix.sh";
-		        path = with pkgs; [ alsa-tools ];
+		        path = with pkgs; [ alsa-tools bash ];
 	        };
         };
 
@@ -234,7 +235,6 @@
 			gcc
 			cmake
 			pfetch
-			zellij
 			gnumake
 			pciutils
 			pure-prompt
@@ -320,8 +320,10 @@
   		nixpkgs.config.allowUnfree = true;	# Again in home-manager
    		home.packages = with pkgs; [
 			gh
+                        w3m
                         nil
 			mpv
+                        kitty
 			krita
 			mupdf
 			ranger
@@ -334,7 +336,6 @@
 			discord
                         latexrun
                         onedrive
-			alacritty
                         clang-tools
                         tree-sitter
 			thunderbird
@@ -352,6 +353,42 @@
 					"/home/km/.ssh/id_ed25519"
 				];
 			};
+                        kitty = {
+                                enable = true;
+                                themeFile = "Nord";
+                                keybindings = {
+                                        "ctrl+shift+i" = "launch --location=hsplit";
+                                        "ctrl+shift+o" = "launch --location=vsplit";
+                                        "ctrl+shift+h" = "neighboring_window left";
+                                        "ctrl+shift+j" = "neighboring_window down";
+                                        "ctrl+shift+k" = "neighboring_window up";
+                                        "ctrl+shift+l" = "neighboring_window right";
+                                        "ctrl+alt+h" = "move_window left";
+                                        "ctrl+alt+j" = "move_window down";
+                                        "ctrl+alt+k" = "move_window up";
+                                        "ctrl+alt+l" = "move_window right";
+                                };
+                                settings = {
+                                        font_family = "Sarasa Term J";
+                                        font_size = "13.0";
+                                        scrollback_lines = 10000;
+                                        paste_actions = "quote-urls-at-prompt";
+                                        strip_trailing_spaces = "never";
+                                        remote_kitty = "if-needed";
+                                        select_by_word_characters = "@-./_~?&=%+#";
+                                        show_hyperlink_targets = true;
+                                        remember_window_size  = true;
+                                        initial_window_width = 2000;
+                                        initial_window_height = 1226;
+                                        tab_bar_style = "powerline";
+                                        tab_powerline_style = "round";
+                                        enabled_layouts = "splits";
+                                        tab_bar_align = "left";
+                                        tab_bar_edge = "bottom";
+                                        background_opacity = "0.6";
+                                        background_blur = 1;
+                                };
+                        };
                         neovim = {
                                 enable = true;
                                 withPython3 = true;
@@ -381,6 +418,10 @@
                                         };
                                 };
 		        };
+                        ranger = {
+                                enable = true;
+                                settings = { preview_images_method = "kitty"; };
+                        };
 		};
 		home.stateVersion = "24.05";	# The same
 	};

@@ -12,11 +12,12 @@
 
   	nix = {
 		gc = {
-			automatic = false;      # Farmful to SSD
+			automatic = true;      # Farmful to SSD but nix easily get fulled with trash
 			dates = "daily";
 			options = "--delete-older-than 5d -d";
 		};
                 settings = {
+                        auto-optimise-store = true;
                         builders-use-substitutes = true;        # Use binary cache
                         substituters = [
                                 "https://cache.nixos.org"
@@ -113,7 +114,7 @@
 		        description = "Fix sound card problem of Razer Blade 15 (2023).";
 		        wantedBy = [ "multi-user.target" ];
 		        serviceConfig.ExecStart = "/home/km/configurations/generalScripts/systemd/razer-sndfix/razer-sndfix.sh";
-		        path = with pkgs; [ alsa-tools bash ];
+		        path = with pkgs; [ alsa-tools ];
 	        };
         };
 
@@ -231,17 +232,11 @@
 
   		systemPackages = with pkgs; [
 			gcc
-                        # zulu
-                        # cargo
 			cmake
-                        unzip
 			pfetch
 			zellij
-                        # nodejs
-			# python3
 			gnumake
 			pciutils
-			alsa-tools		# Required to fix sound issue of [Razer-Blade-15-2023]
 			pure-prompt
 			zsh-vi-mode
 			openrazer-daemon	# For razer devices
@@ -326,15 +321,11 @@
    		home.packages = with pkgs; [
 			gh
                         nil
-			w3m
 			mpv
 			krita
 			mupdf
-                        lsp-ai
 			ranger
-			httpie			# Replacement of curl
                         texlab
-                        ollama
                         ltex-ls
 			neovide
 			zoom-us
@@ -351,8 +342,6 @@
 			wl-clipboard		# Clipboard-sync in wayland
 			polychromatic
                         lua-language-server
-                        bash-language-server
-                        haskell-language-server
 			onlyoffice-desktopeditors
 		];
 		programs = {
@@ -367,7 +356,6 @@
                                 enable = true;
                                 withPython3 = true;
                                 withNodeJs = true;
-                                withRuby = true;
                         };
 		        git = {
 			        enable = true;

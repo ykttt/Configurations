@@ -26,15 +26,15 @@ Mainly configuration files and scripts.
     - [x] Make vimtex work with platex
     - [ ] Set up snippets for LaTeX, etc.
     - [ ] Set up inverse search in both nvim and zathura
-- [ ] Set up LSP servers without mason.nvim (for it's just not working on NixOS)
+- [x] Set up LSP servers without mason.nvim (for it's just not working on NixOS)
     - [x] clangd
     - [x] texlab
-    - [ ] lsp_ai
+    - [ ] ~~lsp_ai~~
     - [x] ltex-ls
     - [x] pyright
     - [x] nil (nix)
-    - [x] hls (haskell)
+    - [x] ~~hls (haskell)~~
     - [x] lua-language-server
-    - [x] bash-language-server
+    - [x] ~~bash-language-server~~
 - [ ] Light/dark colourcheme autoswitch
 - [ ] Further configuration of nvim-tree

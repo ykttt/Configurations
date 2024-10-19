@@ -68,9 +68,7 @@ local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 require'lspconfig'.pyright.setup { capabilities = capabilities }
 require'lspconfig'.clangd.setup { capabilities = capabilities }
 require'lspconfig'.texlab.setup { capabilities = capabilities }
-require'lspconfig'.bashls.setup { capabilities = capabilities }
 require'lspconfig'.nil_ls.setup { capabilities = capabilities }
-require'lspconfig'.hls.setup { capabilities = capabilities }
 require'lspconfig'.ltex.setup {
         capabilities = capabilities,
         settings = {
@@ -79,25 +77,7 @@ require'lspconfig'.ltex.setup {
 		},
 	},
 }
-require'lspconfig'.lsp_ai.setup {
-        capabilities = capabilities,
-        models = {
-                model1 = {
-                        type = "ollama",
-                        model = "deepseek-coder"
-                },
-        },
-        chat = {
-                trigger = "!C",
-                action_display_name = "Chat",
-                model = "model1",
-                parameters = {
-                        max_context = 4096,
-                        max_tokens = 1024,
-                        system = "Assist the user."
-                }
-        }
-}
+
 require'lspconfig'.lua_ls.setup {
         capabilities = capabilities,
         on_init = function(client)

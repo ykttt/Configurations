@@ -32,58 +32,6 @@ return require('lazy').setup({
 	'rcarriga/nvim-notify',
         'hrsh7th/cmp-cmdline',
         'petertriho/cmp-git',
-        {'goolord/alpha-nvim',
-        config = function()
-                local alpha = require("alpha")
-                local dashboard = require("alpha.themes.dashboard")
-                math.randomseed(os.time())
-                -- local function pick_color()
-                -- local colors = {"String", "Identifier", "Keyword", "Number"}
-                -- return colors[math.random(#colors)]
-                -- end
-                local logo = {
-                        "",
-                        "",
-                        "",
-                        "",
-                        " ⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ",
-                        " ⠀⠀⠀⠀⣠⡶⠖⠛⠿⠷⠶⠶⠾⠶⠶⢷⣤⣶⡶⣦⣤⣤⣄⣀⣀⣀⡀⠀⠀⠀⠀⠀ ",
-                        " ⠀⠀⠀⡼⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠉⠉⠉⠉⠉⠉⠙⠿⣶⡄⠀⠀ ",
-                        " ⠀⠀⣼⠏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠘⢿⣦⠀ ",
-                        " ⠀⢰⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣶⡄⠀⠀⢴⣦⣼⣧⠀⠀⠀⠀⠀⠀⠀⢸⣿⡄ ",
-                        " ⠀⢺⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠰⣦⠄⠀⠀⠀⠀⠀⠈⠙⢿⣲⣤⣄⠀⠀⠀⠀⢿⡇ ",
-                        " ⠀⣼⡷⠃⠀⠀⠀⠀⠀⠀⠀⣀⣄⠂⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣆⠈⠀⠀⠀⠀⠘⣿ ",
-                        " ⠀⣧⡋⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠃⠀⠀⠀⠀⠀⣿⠄",
-                        " ⠀⣷⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣄⠀⠀⠀⠀⠀⣿⡇",
-                        " ⠀⢿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣄⠈⠋⠀⠀⠀⠀⠀⢸⡇",
-                        " ⠀⠈⢻⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⠀⠙⠻⠀⠀⠀⠀⠀⠀⠀⢸⡇",
-                        " ⠀⠀⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣧",
-                        " ⠀⣠⣾⠿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⣿",
-                        " ⠀⠀⠛⣯⡀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿",
-                        " ⠀⢀⡾⠋⢀⣠⣤⣄⣀⣾⠛⠙⠷⣶⡤⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡴⠟",
-                        " ⢠⡟⢡⡾⠛⠁⠈⠉⠛⠃⠀⠀⠀⠈⠉⠉⠉⠉⠓⠻⠿⠿⣷⣶⣶⣶⣾⣿⣿⠿⠋⠋⠀",
-                        "⢀⣿⣰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀",
-                        "⢸⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                        "⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
-                }
-
-                dashboard.section.header.val = logo
-                dashboard.section.header.opts.hl = "Constant"
-
-                dashboard.section.buttons.val = {
-                        dashboard.button("SPACE f f", "  Find File"),
-                        dashboard.button("SPACE f h", "  Find History"),
-                        dashboard.button("SPACE   p", "  I'm Lazy..."),
-                }
-
-                -- dashboard.section.footer.val = "Surprisingly I'm still alive..."
-                -- dashboard.section.footer.opts.hl = "Constant"
-
-                alpha.setup(dashboard.opts)
-
-                vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
-                end
-        },
         'hrsh7th/cmp-buffer',
         'micangl/cmp-vimtex',
         'hrsh7th/cmp-path',
@@ -119,6 +67,52 @@ return require('lazy').setup({
         }, {
                 'rose-pine/neovim',
                 name = 'rose-pine',
+        }, {
+                -- 'shaunsingh/nord.nvim',
+                -- name = 'nord',
+                -- config = function()
+                --         vim.g.nord_contrast = true
+                --         vim.g.nord_borders = true
+                --         vim.g.nord_disable_background = false
+                --         vim.g.nord_italic = true
+                --         vim.g.nord_uniform_diff_background = true
+                --         vim.g.nord_bold = true
+                --         require('nord').set()
+                -- end
+        -- }, {
+                'goolord/alpha-nvim',
+                config = function()
+                        local alpha = require("alpha")
+                        local dashboard = require("alpha.themes.dashboard")
+                        math.randomseed(os.time())
+                        local function pick_colour()
+                        local colours = {"String", "Identifier", "Keyword", "Number"}
+                        return colours[math.random(#colours)]
+                        end
+                        local logo = {
+                                "",
+                                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                                "⠀⠀⠀⠀⠀⠀⢀⡠⠖⠋⠁⠀⠀⠘⠲⠤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+                                "⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠲⢤⡀⠀⢀⣠⡄⠀",
+                                "⠀⠀⣠⠴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠉⠀⡇⠀",
+                                "⢀⡴⠋⠀⠀⠀⠀⣀⣿⠂⣆⣠⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠀",
+                                "⣾⠀⠀⠀⠀⠀⡀⠀⠁⠀⠀⠈⠙⠁⠀⠀⣴⠄⠀⠀⠀⠀⠀⠀⣾⠀⠀",
+                                "⠻⠦⠤⠴⠖⠋⠉⠓⠒⠶⠤⣄⣀⡀⠀⠐⠺⡂⠀⠀⠀⠀⠀⠀⠘⣆⠀",
+                                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠓⡾⠁⠀⠀⠀⠀⢀⠀⠀⠹⡆",
+                                "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⢤⣤⠤⠴⠚⠛⠒⠦⢤⣷",
+                        }
+                        dashboard.section.header.val = logo
+                        dashboard.section.header.opts.hl = pick_colour()
+                        dashboard.section.buttons.val = {
+                                dashboard.button("SPACE f f", "  Find File"),
+                                dashboard.button("SPACE f h", "  Find History"),
+                                dashboard.button("SPACE   p", "  I'm Lazy..."),
+                        }
+                        -- dashboard.section.footer.val = "Surprisingly I'm still alive..."
+                        -- dashboard.section.footer.opts.hl = "Constant"
+                        alpha.setup(dashboard.opts)
+                        vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
+                end
         },
-
 })

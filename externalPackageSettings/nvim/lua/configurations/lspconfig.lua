@@ -70,6 +70,15 @@ require'lspconfig'.clangd.setup { capabilities = capabilities }
 require'lspconfig'.texlab.setup { capabilities = capabilities }
 require'lspconfig'.bashls.setup { capabilities = capabilities }
 require'lspconfig'.nil_ls.setup { capabilities = capabilities }
+require'lspconfig'.hls.setup { capabilities = capabilities }
+require'lspconfig'.ltex.setup {
+        capabilities = capabilities,
+        settings = {
+                ltex = {
+			language = "en-GB",
+		},
+	},
+}
 require'lspconfig'.lsp_ai.setup {
         capabilities = capabilities,
         models = {

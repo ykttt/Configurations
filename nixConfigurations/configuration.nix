@@ -335,6 +335,7 @@
 			httpie			# Replacement of curl
                         texlab
                         ollama
+                        ltex-ls
 			neovide
 			zoom-us
                         pyright
@@ -351,6 +352,7 @@
 			polychromatic
                         lua-language-server
                         bash-language-server
+                        haskell-language-server
 			onlyoffice-desktopeditors
 		];
 		programs = {

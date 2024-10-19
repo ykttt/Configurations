@@ -90,7 +90,6 @@ return require('lazy').setup({
                         return colours[math.random(#colours)]
                         end
                         local logo = {
-                                "",
                                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
                                 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
                                 "⠀⠀⠀⠀⠀⠀⢀⡠⠖⠋⠁⠀⠀⠘⠲⠤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀",

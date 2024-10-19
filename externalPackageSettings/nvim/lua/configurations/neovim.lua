@@ -22,6 +22,7 @@ vim.cmd.helptags('ALL')
 vim.g.configpath = '~/.config/nvim'
 
 vim.o.ls = 2
+vim.o.ch = 0
 vim.o.ts = 8
 vim.o.sts = 8
 vim.o.tm = 800
@@ -44,8 +45,8 @@ vim.o.spr = true
 vim.o.bk = false
 vim.o.bomb = false
 
--- vim.o.ambw = double
+-- vim.o.ambw = 'double'
 vim.o.ww = vim.o.ww .. ',<,>,[,]'
-vim.o.backspace = 'indent,eol,start'
-vim.o.clipboard = 'unnamedplus'
-vim.o.foldmethod = 'marker'
+vim.o.bs = 'indent,eol,start'
+vim.o.cb = 'unnamedplus'
+vim.o.fdm = 'marker'

@@ -4,8 +4,8 @@
 
 
 if vim.g.neovide then
-        vim.o.guifont = 'Sarasa Term J:h13'
-        vim.o.linespace = 10
+        vim.o.gfn = 'Sarasa Term J:h13'
+        vim.o.lsp = 10
         -- vim.g.neovide_transparency = 0.97
         vim.g.neovide_floating_blur_amount_x = 2.0
         vim.g.neovide_floating_blur_amount_y = 2.0

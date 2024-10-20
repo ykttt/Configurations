@@ -1,9 +1,10 @@
 *.o
 *.old
+*.tmp
 *.tmp.*
 *.backup
-*.hash
+*.backup.*
 .directory
-*.sqlite3
-refresh_token
-externalPackageSettings/firefox/userjs/userjs_backups/
+externalPackageSettings/onedrive/*/*.hash
+externalPackageSettings/onedrive/*/*.sqlite3
+externalPackageSettings/onedrive/*/refresh_token

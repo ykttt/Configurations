@@ -1,5 +1,9 @@
 *.o
 *.old
 *.tmp.*
+*.backup
+*.hash
 .directory
-firefox/userjs/userjs_backups/
+*.sqlite3
+refresh_token
+externalPackageSettings/firefox/userjs/userjs_backups/

@@ -93,12 +93,7 @@
 		useDHCP = false;	# Unnecessary when managing DNS manually
 		dhcpcd.enable = false;	# Unnecessary when managing DNS manually
 		nameservers = [ "127.0.0.1" ];
-		firewall.allowedTCPPorts = [
-			# 22
-			# 80
-			443
-			# 8080
-		];
+		firewall.allowedTCPPorts = [ 443 ];
 	};
 
 	security = {
@@ -232,10 +227,7 @@
   		};
 
   		systemPackages = with pkgs; [
-			gcc
-			cmake
 			pfetch
-			gnumake
 			pciutils
 			pure-prompt
 			zsh-vi-mode
@@ -269,6 +261,8 @@
 				cl = "sudo nix-collect-garbage";
 				rbs = "sudo nixos-rebuild switch";
 				cld = "sudo nix-collect-garbage -d";
+				opm = "onedrive -s --confdir ~/.config/onedrive/main";
+				opr = "onedrive -s --confdir ~/.config/onedrive/rits";
  	 		};
 			interactiveShellInit = ''
 				source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
@@ -284,12 +278,12 @@
 			viAlias = true;
 			vimAlias = true;
 		};
+
+                _1password = { enable = true; };
 		_1password-gui = {
 			enable = true;
 			polkitPolicyOwners = [ "km" ];
 		};
-
-		_1password.enable = true;
 
 		firefox = {
 			enable = true;
@@ -320,6 +314,7 @@
   		nixpkgs.config.allowUnfree = true;	# Again in home-manager
    		home.packages = with pkgs; [
 			gh
+			gcc
                         w3m
                         nil
 			mpv
@@ -330,6 +325,7 @@
                         texlab
                         ltex-ls
 			neovide
+			gnumake
 			zoom-us
                         pyright
 			zathura
@@ -357,12 +353,15 @@
                                 enable = true;
                                 themeFile = "Nord";
                                 keybindings = {
-                                        "ctrl+shift+i" = "launch --location=hsplit";
-                                        "ctrl+shift+o" = "launch --location=vsplit";
-                                        "ctrl+shift+h" = "neighboring_window left";
-                                        "ctrl+shift+j" = "neighboring_window down";
-                                        "ctrl+shift+k" = "neighboring_window up";
-                                        "ctrl+shift+l" = "neighboring_window right";
+                                        "alt+t" = "new_tab";
+                                        "alt+tab" = "next_tab";
+                                        "alt+shift+tab" = "previous_tab";
+                                        "alt+i" = "launch --location=hsplit";
+                                        "alt+o" = "launch --location=vsplit";
+                                        "alt+h" = "neighboring_window left";
+                                        "alt+j" = "neighboring_window down";
+                                        "alt+k" = "neighboring_window up";
+                                        "alt+l" = "neighboring_window right";
                                         "ctrl+alt+h" = "move_window left";
                                         "ctrl+alt+j" = "move_window down";
                                         "ctrl+alt+k" = "move_window up";
@@ -377,9 +376,9 @@
                                         remote_kitty = "if-needed";
                                         select_by_word_characters = "@-./_~?&=%+#";
                                         show_hyperlink_targets = true;
-                                        remember_window_size  = true;
-                                        initial_window_width = 2000;
-                                        initial_window_height = 1226;
+                                        remember_window_size  = false;
+                                        initial_window_width = 1000;
+                                        initial_window_height = 618;
                                         tab_bar_style = "powerline";
                                         tab_powerline_style = "round";
                                         enabled_layouts = "splits";

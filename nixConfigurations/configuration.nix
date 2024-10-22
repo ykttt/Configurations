@@ -3,7 +3,7 @@
 #	configuration.nix
 #
 
-{ config, pkgs, lib, options, systemd, ... }:
+{ config, pkgs, lib, options, ... }:
 {
 	imports = [
       		./hardware-configuration.nix	# Include the results of the hardware scan
@@ -103,16 +103,6 @@
 		};
   		rtkit.enable = true;
 	};
-
-        systemd.services = {
-                NetworkManager-wait-online.enable = false;      # Shorten boot time
-	        razer-blade-sndfix = {
-		        description = "Fix sound card problem of Razer Blade 15 (2023).";
-		        wantedBy = [ "multi-user.target" ];
-		        serviceConfig.ExecStart = "/home/km/configurations/generalScripts/systemd/razer-sndfix/razer-sndfix.sh";
-		        path = with pkgs; [ alsa-tools bash ];
-	        };
-        };
 
   	services = {
 		chrony = {
@@ -229,6 +219,7 @@
   		systemPackages = with pkgs; [
 			pfetch
 			pciutils
+                        alsa-tools              # In order to fix audio issues on Razer Blade 15 (2023)
 			pure-prompt
 			zsh-vi-mode
 			openrazer-daemon	# For razer devices

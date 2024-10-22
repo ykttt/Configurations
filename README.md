@@ -5,9 +5,9 @@ Mainly configuration files and scripts.
 ## TO-DOs
 ### Models
 #### Razer Blade 15 (2023)
-- [ ] Fix speaker issues
+- [x] Fix speaker issues
     - [x] Apply patch automatically when booting up
-    - [ ] Get rid of automatically muting issue
+    - [x] Get rid of automatically muting issue
 - [ ] Support secure boot
 - [ ] Make custom keyboard effect scripts running on NixOS
 - [ ] Adjust kernel options for gaming performance with nix configuration

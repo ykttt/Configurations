@@ -19,6 +19,7 @@
                 settings = {
                         auto-optimise-store = true;
                         builders-use-substitutes = true;        # Use binary cache
+                        experimental-features = [ "nix-command" "flakes" ];
                         substituters = [
                                 "https://cache.nixos.org"
                         ];
@@ -112,15 +113,15 @@
   		};
   		displayManager.sddm = {
     			enable = true;
+                        package = pkgs.kdePackages.sddm;
     			wayland.enable = true;
     			theme = "where_is_my_sddm_theme";
+                        extraPackages = [ pkgs.kdePackages.qt5compat];
   		};
-  		desktopManager.plasma6.enable = true;
   		xserver = {
 			#enable = true;		# False(by default) to use wayland
   			videoDrivers = ["nvidia"];	# Enable nvidia video card support BOTH for x11 and wayland
   			# videoDrivers = ["modesetting"];	# Intel version
-  			# libinput.enable = true;	# Touchpad support, enabled default in most desktopManagers
 			xkb = {
     				layout = "jp";
     				variant = "";
@@ -150,6 +151,7 @@
 				} ];
       			};
 		};
+  		libinput.enable = true;	# Touchpad support, enabled default in most desktopManagers
   		printing.enable = true;	# Enable CUPS to print documents.
   		joycond.enable = true;
 	};
@@ -170,10 +172,13 @@
   		inputMethod = {
     			enable = true;
     			type = "fcitx5";
-    			fcitx5.addons = with pkgs; [
-      				fcitx5-gtk
-      				fcitx5-mozc
-    			];
+                        fcitx5 = {
+                                waylandFrontend = true;
+    			        addons = with pkgs; [
+      				        fcitx5-gtk
+      				        fcitx5-mozc
+    			        ];
+                        };
   		};
 	};
 
@@ -181,8 +186,9 @@
   		portal = {
     			enable = true;
     			extraPortals = with pkgs; [
-      				xdg-desktop-portal-wlr
       				xdg-desktop-portal-gtk
+      				xdg-desktop-portal-wlr
+                                xdg-desktop-portal-hyprland
     			];
   		};
 	};
@@ -205,7 +211,7 @@
 		variables.EDITOR = "nvim";
 		sessionVariables = {
     			QT_IM_MODULE = "fcitx";
-    			GTK_IM_MODULE = "fcitx";
+    			# GTK_IM_MODULE = "fcitx";
     			XMODIFIERS = "@im=fcitx";
     			XDG_CACHE_HOME  = "\${HOME}/.cache";
     			XDG_CONFIG_HOME = "\${HOME}/.config";
@@ -225,11 +231,6 @@
 			openrazer-daemon	# For razer devices
 			where-is-my-sddm-theme
   		];
-		plasma6.excludePackages = with pkgs.kdePackages; [
-			kate
-			elisa
-			konsole
-		];
 	};
 
 	programs = {
@@ -275,7 +276,10 @@
 			enable = true;
 			polkitPolicyOwners = [ "km" ];
 		};
-
+                hyprland = {
+                        enable = true;
+                        xwayland.enable = true;
+                };
 		firefox = {
 			enable = true;
 			preferences = {
@@ -309,9 +313,11 @@
                         w3m
                         nil
 			mpv
+                        wofi    # TODO: To be replaced
                         kitty
 			krita
 			mupdf
+                        swaybg
 			ranger
                         texlab
                         ltex-ls
@@ -323,11 +329,15 @@
 			discord
                         latexrun
                         onedrive
+                        wlsunset
+                        playerctl
                         clang-tools
                         tree-sitter
 			thunderbird
 			texliveFull
-			wl-clipboard		# Clipboard-sync in wayland
+                        adwsteamgtk
+                        wl-clipboard
+                        brightnessctl
 			polychromatic
                         lua-language-server
 			onlyoffice-desktopeditors
@@ -375,7 +385,7 @@
                                         enabled_layouts = "splits";
                                         tab_bar_align = "left";
                                         tab_bar_edge = "bottom";
-                                        background_opacity = "0.6";
+                                        background_opacity = "0.8";
                                         background_blur = 1;
                                 };
                         };
@@ -413,6 +423,32 @@
                                 settings = { preview_images_method = "kitty"; };
                         };
 		};
+                services.dunst = {
+                        enable = true;
+                        settings.global = {
+                                origin = "top-left";
+                                offset = "60x12";
+                                separator_height = 2;
+                                padding = 12;
+                                horizontal_padding = 12;
+                                text_icon_padding = 12;
+                                frame_width = 4;
+                                separator_color = "frame";
+                                idle_threshold = 120;
+                                font = "Sarasa Term J 12";
+                                line_height = 0;
+                                format = "<b>%s</b>\n%b";
+                                alignment = "center";
+                                icon_position = "off";
+                                startup_notification = "false";
+                                corner_radius = 12;
+                                frame_color = "#44465c";
+                                background = "#303241";
+                                foreground = "#d9e0ee";
+                                timeout = 2;
+                        };
+                };
+
 		home.stateVersion = "24.05";	# The same
 	};
 }

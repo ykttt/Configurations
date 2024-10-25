@@ -13,13 +13,19 @@ Mainly configuration files and scripts.
 - [ ] Adjust kernel options for gaming performance with nix configuration
 - [ ] Boost booting time
 ### Nix
-- [ ] Import flakes
+- [x] Import flakes
 - [ ] Modularise nix configurations
 - [ ] Manage (or intergrate) external application dotfiles using nix
 ### Graphical Environment
 #### Hyprland
-- [ ] Migrate to hyprland
-- [ ] Add IPC support
+- [x] Migrate to hyprland
+- [ ] Further keybinding configurations & wallpaper setting
+- [ ] Replace wofi with anyrun
+- [ ] Import AGS widgets
+- [ ] Introduce power management
+- [ ] Add graphical control interface
+- [ ] Add IPC support for hyprland
+- [ ] Add automatic theme switch
 ### Applications
 #### Neovim 
 - [ ] Smoothen LaTeX workflow
@@ -36,5 +42,5 @@ Mainly configuration files and scripts.
     - [x] ~~hls (haskell)~~
     - [x] lua-language-server
     - [x] ~~bash-language-server~~
-- [ ] Light/dark colourcheme autoswitch
+- [ ] Light/dark colour scheme auto-switch
 - [ ] Further configuration of nvim-tree

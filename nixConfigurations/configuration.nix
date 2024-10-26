@@ -309,7 +309,6 @@
                         nil
 			mpv
                         wofi    # TODO: To be replaced
-                        kitty
 			krita
 			mupdf
                         swaybg

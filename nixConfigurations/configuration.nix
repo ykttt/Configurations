@@ -3,7 +3,7 @@
 #	configuration.nix
 #
 
-{ config, pkgs, lib, options, ... }:
+{ inputs, config, pkgs, lib, options, ... }:
 {
 	imports = [
       		./hardware-configuration.nix	# Include the results of the hardware scan
@@ -28,16 +28,12 @@
                         ];
                 };
 	};
-
   	console = {
                 # keyMap = "jp106";             # Conflict with console.useXkbConfig
                 useXkbConfig = true;            # Use xkb config in console
         };
-
   	time.timeZone = "Asia/Tokyo";
-
   	nixpkgs.config.allowUnfree = true;	# Allow all unfree softwares
-
   	boot = {
   		plymouth.enable = true;
                 tmp = {
@@ -51,7 +47,6 @@
                         timeout = 0;    # Spam space to get into boot menu
 		};
 	};
-
    	hardware = {
  		pulseaudio.enable = false;	# Enable sound with pipewire
     		openrazer.enable = true;	# For razer devices
@@ -78,7 +73,6 @@
     			};
   		};
   	};
-
   	networking = {
 		hostName = "nixRazer-15";
   		networkmanager = {
@@ -87,16 +81,13 @@
 			wifi.powersave = true;
 		};
   		# wireless.enable = true;	# Enable wireless support by wpa_supplicant
-
   		# proxy.default = "http://user:password@proxy:port/";
   		# proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
 		useDHCP = false;	# Unnecessary when managing DNS manually
 		dhcpcd.enable = false;	# Unnecessary when managing DNS manually
 		nameservers = [ "127.0.0.1" ];
 		firewall.allowedTCPPorts = [ 443 ];
 	};
-
 	security = {
 		sudo = {
 			enable = true;
@@ -104,7 +95,6 @@
 		};
   		rtkit.enable = true;
 	};
-
   	services = {
 		chrony = {
     			enable = true;
@@ -155,7 +145,6 @@
   		printing.enable = true;	# Enable CUPS to print documents.
   		joycond.enable = true;
 	};
-
   	i18n = {
 		defaultLocale = "C.UTF-8";
   		extraLocaleSettings = {
@@ -181,7 +170,6 @@
                         };
   		};
 	};
-
 	xdg = {
   		portal = {
     			enable = true;
@@ -192,21 +180,19 @@
     			];
   		};
 	};
-
   	fonts = {
 		packages = with pkgs; [
      			nerdfonts
      			wqy_zenhei		# Required by pkgs.steam to display CJK characters
      			noto-fonts
      			sarasa-gothic
-     			noto-fonts-cjk
      			noto-fonts-emoji
      			noto-fonts-extra
+     			noto-fonts-cjk-sans
   		];
   		fontDir.enable = true;
   		fontconfig.enable = true;
 	};
-
   	environment = {
 		variables.EDITOR = "nvim";
 		sessionVariables = {
@@ -221,7 +207,6 @@
     			MOZ_ENABLE_WAYLAND = "1";	# Force firefox to work in wayland
 
   		};
-
   		systemPackages = with pkgs; [
 			pfetch
 			pciutils
@@ -232,7 +217,6 @@
 			where-is-my-sddm-theme
   		];
 	};
-
 	programs = {
 		zsh = {
 			enable = true;
@@ -295,7 +279,6 @@
 			localNetworkGameTransfers.openFirewall = true;
 		};
 	};
-
 	users = {
 		defaultUserShell = pkgs.zsh;
   		users.km = {
@@ -305,8 +288,20 @@
 		};
 	};
   	system.stateVersion = "24.05";	# Do not change/delete it for most situations
-	home-manager.users.km = { pkgs, ... }: {
-  		nixpkgs.config.allowUnfree = true;	# Again in home-manager
+	home-manager.users.km = { inputs, pkgs, ... }: {
+                imports = with inputs; [
+                        ags.homeManagerModules.default
+                        anyrun.packages.${pkgs.system}.anyrun
+                ];
+                nix.settings = {
+                        builders-use-substitutes = true;
+                        extra-substituters = [
+                                "https://anyrun.cachix.org"
+                        ];
+                        extra-trusted-public-keys = [
+                                "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+                        ];
+                }; nixpkgs.config.allowUnfree = true;	# Again in home-manager
    		home.packages = with pkgs; [
 			gh
 			gcc
@@ -418,6 +413,35 @@
                                         };
                                 };
 		        };
+                        ags = {
+                                enable = true;
+                                configDir = ../ags;
+                                extraPackages = with pkgs; [
+                                        gtksourceview
+                                        webkitgtk
+                                        accountsservice
+                                ];
+                        };
+                        anyrun = {
+                                enable = true;
+                                config = {
+                                        x = { fraction = 0.5; };
+                                        y = { fraction = 0.3; };
+                                        width = { fraction = 0.3; };
+                                        hideIcons = false;
+                                        ignoreExclusiveZones = false;
+                                        layer = "overlay";
+                                        hidePluginInfo = false;
+                                        closeOnClick = false;
+                                        showResultsImmediately = false;
+                                        maxEntries = null;
+                                        plugins = [
+                                                inputs.anyrun.packages.${pkgs.system}.applications
+                                                inputs.anyrun.packages.${pkgs.system}.shell
+                                                inputs.anyrun.packages.${pkgs.system}.kidex
+                                        ];
+                                };
+                        };
                         ranger = {
                                 enable = true;
                                 settings = { preview_images_method = "kitty"; };
@@ -448,12 +472,6 @@
                                 timeout = 2;
                         };
                 };
-
 		home.stateVersion = "24.05";	# The same
 	};
 }
-
-
-
-
-

@@ -135,10 +135,10 @@
 	        };
                 ags = {
                         enable = true;
-                        configDir = ../ags;
+                        configDir = ./externalPackageSettings/ags;
                         extraPackages = with pkgs; [
-                                gtksourceview
                                 webkitgtk
+                                gtksourceview
                                 accountsservice
                         ];
                 };

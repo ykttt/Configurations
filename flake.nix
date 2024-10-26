@@ -2,6 +2,7 @@
         description = "Peng's NixOS Configuration";
         inputs = {
                 nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+                nur.url = "github:nix-community/NUR";
                 home-manager = {
                         url = "github:nix-community/home-manager";
                         inputs.nixpkgs.follows = "nixpkgs";
@@ -10,8 +11,10 @@
                         url = "github:anyrun-org/anyrun";
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
-                nur.url = "github:nix-community/NUR";
-                ags.url = "github:Aylur/ags";
+                ags = {
+                        url = "github:Aylur/ags";
+                        inputs.nixpkgs.follows = "nixpkgs";
+                };
         };
         outputs = inputs@{ self, nixpkgs, nur, home-manager, ... }:
         let system = "x86_64-linux";

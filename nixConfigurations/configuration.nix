@@ -7,7 +7,7 @@
 {
 	imports = [
       		./hardware-configuration.nix	# Include the results of the hardware scan
-      		<home-manager/nixos>	# Use home-manager as a module
+      		# <home-manager/nixos>	# Use home-manager as a module
     	];
 
   	nix = {

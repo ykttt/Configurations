@@ -19,9 +19,10 @@ Mainly configuration files and scripts.
 ### Graphical Environment
 #### Hyprland
 - [x] Migrate to hyprland
-- [ ] Further keybinding configurations & wallpaper setting
-- [ ] Replace wofi with anyrun
+- [x] Replace wofi with anyrun
 - [ ] Import AGS widgets
+- [ ] Keybinding configurations
+- [ ] Improve appearance
 - [ ] Introduce power management
 - [ ] Add graphical control interface
 - [ ] Add IPC support for hyprland

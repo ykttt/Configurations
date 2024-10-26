@@ -227,9 +227,9 @@
 			shellAliases = {
 				s = "sudo";
 				q = "exit";
-				rr = "ranger";
+				a = "yazi";
 				j = "journalctl";
-				srr = "sudo ranger";
+				sa = "sudo yazi";
 				ll = "ls -l --color";
 				rb = "sudo nixos-rebuild";
 				gp = "git push -u origin main";

@@ -29,11 +29,9 @@
                 w3m
                 nil
 		mpv
-                wofi    # TODO: To be replaced
 		krita
 		mupdf
                 swaybg
-		ranger
                 texlab
                 ltex-ls
 		neovide
@@ -109,6 +107,10 @@
                         withPython3 = true;
                         withNodeJs = true;
                 };
+                yazi = {
+                        enable = true;
+                        enableZshIntegration = true;
+                };
 	        git = {
 		        enable = true;
 		        lfs.enable = true;
@@ -155,12 +157,59 @@
                                 closeOnClick = false;
                                 showResultsImmediately = false;
                                 maxEntries = null;
-                                plugins = [
-                                        inputs.anyrun.packages.${pkgs.system}.applications
-                                        inputs.anyrun.packages.${pkgs.system}.shell
-                                        inputs.anyrun.packages.${pkgs.system}.kidex
+                                plugins = with inputs.anyrun.packages.${pkgs.system}; [
+                                        applications
+                                        rink
+                                        shell
+                                        translate
+                                        kidex
+                                        dictionary
+                                        websearch
                                 ];
                         };
+                        extraCss = ''
+                                * {
+                                        all: unset;
+                                        font-size: 1.3rem;
+                                } #window, #match, #entry, #plugin, #main {
+                                        background: transparent;
+                                } #match.activatable {
+                                        border-radius: 16px;
+                                        padding: 0.3rem 0.9rem;
+                                        margin-top: 0.01rem;
+                                } #match.activatable:first-child {
+                                        margin-top: 0.7rem;
+                                } #match.activatable:last-child {
+                                        margin-bottom: 0.6rem;
+                                } #plugin:hover #match.activatable {
+                                        border-radius: 10px;
+                                        padding: 0.3rem;
+                                        margin-top: 0.01rem;
+                                        margin-bottom: 0;
+                                } #match:selected, #match:hover, #plugin:hover {
+                                        background: #2e3131;
+                                } #entry {
+                                        background: #0b0f10;
+                                        border: 1px solid #0b0f10;
+                                        border-radius: 16px;
+                                        margin: 0.5rem;
+                                        padding: 0.3rem 1rem;
+                                } list > #plugin {
+                                        border-radius: 16px;
+                                        margin: 0 0.3rem;
+                                } list > #plugin:first-child {
+                                        margin-top: 0.3rem;
+                                } list > #plugin:last-child {
+                                        margin-bottom: 0.3rem;
+                                } list > #plugin:hover {
+                                        padding: 0.6rem;
+                                } box#main {
+                                        background: #0b0f10;
+                                        box-shadow: inset 0 0 0 1px #0b0f10, 0 0 0 1px #0b0f10;
+                                        border-radius: 24px;
+                                        padding: 0.3rem;
+                                }
+                        '';
                 };
                 ranger = {
                         enable = true;

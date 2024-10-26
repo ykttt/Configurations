@@ -33,7 +33,6 @@
                 useXkbConfig = true;            # Use xkb config in console
         };
   	time.timeZone = "Asia/Tokyo";
-  	nixpkgs.config.allowUnfree = true;	# Allow all unfree softwares
   	boot = {
   		plymouth.enable = true;
                 tmp = {

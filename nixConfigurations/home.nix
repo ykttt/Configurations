@@ -6,10 +6,10 @@
 { inputs, pkgs, ... }:
 {
         imports = with inputs; [
-                ags.homeManagerModules.default
-                anyrun.packages.${pkgs.system}.anyrun
+                ags.homeManagerModules.default 
+                anyrun.homeManagerModules.default
         ];
-        home = {
+                home = {
                 username = "km";
                 homeDirectory = "/home/km";
         };
@@ -21,7 +21,8 @@
                 extra-trusted-public-keys = [
                         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
                 ];
-        }; nixpkgs.config.allowUnfree = true;
+        };
+        nixpkgs.config.allowUnfree = true;
 	home.packages = with pkgs; [
 		gh
 		gcc

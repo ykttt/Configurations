@@ -25,10 +25,10 @@
                                 };
                                 specialArgs = { inherit inputs; };
                                 modules = [
-                                        ./configuration.nix
-                                        home-manager.nixosModules.home-manager {
+                                        (import ./configuration.nix)
+                                        inputs.home-manager.nixosModules.home-manager {
                                                 home-manager.users.km = import ./home.nix;
-                                                home-manager.extraSpecialArgs = inputs;
+                                                home-manager.extraSpecialArgs = { inherit inputs; };
                                         }
                                 ];
                         };

@@ -33,7 +33,6 @@
 		krita
 		mupdf
                 texlab
-                ddcutil
                 ltex-ls
 		neovide
 		gnumake
@@ -41,6 +40,7 @@
                 pyright
 		zathura
 		discord
+                nautilus
                 latexrun
                 onedrive
                 wlsunset

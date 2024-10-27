@@ -34,6 +34,7 @@
         };
   	time.timeZone = "Asia/Tokyo";
   	boot = {
+                kernelParams = [ "acpi=force" ];
   		plymouth.enable = true;
                 tmp = {
                         cleanOnBoot = true;
@@ -100,6 +101,10 @@
     			enableNTS = true;	# Use NTS instead of NTP
     			servers = [ "nts.netnod.se" ];
   		};
+                upower = {
+                        enable = true;
+                        criticalPowerAction = "HybridSleep";    # one of "PowerOff", "Hibernate", "HybridSleep"
+                };
   		displayManager.sddm = {
     			enable = true;
                         package = pkgs.kdePackages.sddm;
@@ -263,14 +268,6 @@
                         enable = true;
                         xwayland.enable = true;
                 };
-		firefox = {
-			enable = true;
-			preferences = {
-				"widget.use-xdg-desktop-portal.file-picker" = 1;
-			};
-			wrapperConfig.pipewireSupport = true;	# Fix screen sharing in wayland
-		};
-
      		steam = {
 			enable = true;
 			remotePlay.openFirewall = true;

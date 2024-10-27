@@ -20,7 +20,7 @@ Mainly configuration files and scripts.
 #### Hyprland
 - [x] Migrate to hyprland
 - [x] Replace wofi with anyrun
-- [ ] Import AGS widgets
+- [x] Import AGS widgets
 - [ ] Keybinding configurations
 - [ ] Improve appearance
 - [ ] Introduce power management

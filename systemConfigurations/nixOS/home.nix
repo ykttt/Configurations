@@ -8,8 +8,9 @@
         imports = with inputs; [
                 ags.homeManagerModules.default 
                 anyrun.homeManagerModules.default
+                catppuccin.homeManagerModules.catppuccin
         ];
-                home = {
+        home = {
                 username = "km";
                 homeDirectory = "/home/km";
         };
@@ -31,8 +32,8 @@
 		mpv
 		krita
 		mupdf
-                swaybg
                 texlab
+                ddcutil
                 ltex-ls
 		neovide
 		gnumake
@@ -43,6 +44,7 @@
                 latexrun
                 onedrive
                 wlsunset
+                hyprpaper
                 playerctl
                 clang-tools
                 tree-sitter
@@ -54,7 +56,23 @@
 		polychromatic
                 lua-language-server
 		onlyoffice-desktopeditors
-	];
+	] ++ ( with inputs; [
+                zen-browser.packages."${pkgs.system}".specific
+        ]);
+        catppuccin = {
+                flavor = "mocha";
+                # enable = true;
+                pointerCursor.enable = true;
+        };
+        gtk = {
+                enable = true;
+                catppuccin = {
+                        enable = true;
+                        icon.enable = true;
+                        gnomeShellTheme = true;
+                        size = "compact";
+                };
+        };
 	programs = {
 		ssh.matchBlocks.km = {
 			port = 443;
@@ -65,7 +83,8 @@
 		};
                 kitty = {
                         enable = true;
-                        themeFile = "Nord";
+                        catppuccin.enable = true;
+                        # themeFile = "Nord";
                         keybindings = {
                                 "alt+t" = "new_tab";
                                 "alt+tab" = "next_tab";
@@ -109,6 +128,7 @@
                 };
                 yazi = {
                         enable = true;
+                        catppuccin.enable = true;
                         enableZshIntegration = true;
                 };
 	        git = {
@@ -137,7 +157,7 @@
 	        };
                 ags = {
                         enable = true;
-                        configDir = ../../externalPackageSettings/ags;
+                        # configDir = ../../externalPackageSettings/ags;
                         extraPackages = with pkgs; [
                                 webkitgtk
                                 gtksourceview
@@ -159,12 +179,11 @@
                                 maxEntries = null;
                                 plugins = with inputs.anyrun.packages.${pkgs.system}; [
                                         applications
-                                        rink
-                                        shell
-                                        translate
-                                        kidex
                                         dictionary
                                         websearch
+                                        rink
+                                        shell
+                                        kidex
                                 ];
                         };
                         extraCss = ''
@@ -210,36 +229,42 @@
                                         padding: 0.3rem;
                                 }
                         '';
-                };
-                ranger = {
-                        enable = true;
-                        settings = { preview_images_method = "kitty"; };
+                        extraConfigFiles = {
+                                "applications.ron".text = ''
+                                        Config(
+                                                desktop_actions: false,
+                                                max_entries: 5, 
+                                                terminal: Some("kitty"),
+                                        ) '';
+                                "shell.ron".text = ''
+                                        Config(
+                                                prefix: ";",
+                                                shell: None,
+                                        )
+                                '';
+                                "kidex.ron".text = ''
+                                        Config(
+                                                max_entries: 3,
+                                        )
+                                '';
+                                "dictionary.ron".text = ''
+                                        Config(
+                                                prefix: ":",
+                                                max_entries: 5,
+                                        )
+                                '';
+                                "websearch.ron".text = ''
+                                        Config(
+                                                prefix: "/",
+                                                        // Custom(
+                                                        //   name: "Searx",
+                                                        //   url: "searx.be/?q={}",
+                                                        // )
+                                                engines: [DuckDuckGo]
+                                        )
+                                '';
+                        };
                 };
 	};
-        services.dunst = {
-                enable = true;
-                settings.global = {
-                        origin = "top-left";
-                        offset = "60x12";
-                        separator_height = 2;
-                        padding = 12;
-                        horizontal_padding = 12;
-                        text_icon_padding = 12;
-                        frame_width = 4;
-                        separator_color = "frame";
-                        idle_threshold = 120;
-                        font = "Sarasa Term J 12";
-                        line_height = 0;
-                        format = "<b>%s</b>\n%b";
-                        alignment = "center";
-                        icon_position = "off";
-                        startup_notification = "false";
-                        corner_radius = 12;
-                        frame_color = "#44465c";
-                        background = "#303241";
-                        foreground = "#d9e0ee";
-                        timeout = 2;
-                };
-        };
 	home.stateVersion = "24.05";	# The same
 }

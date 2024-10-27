@@ -15,6 +15,8 @@
                         url = "github:Aylur/ags";
                         inputs.nixpkgs.follows = "nixpkgs";
                 };
+                catppuccin.url = "github:catppuccin/nix";
+                zen-browser.url = "github:MarceColl/zen-browser-flake";
         };
         outputs = inputs@{ self, nixpkgs, nur, home-manager, ... }:
         let system = "x86_64-linux";

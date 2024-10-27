@@ -5,6 +5,7 @@
 *.backup
 *.backup.*
 .directory
+externalPackageSettings/ags/types
 externalPackageSettings/onedrive/*/*.hash
 externalPackageSettings/onedrive/*/*.sqlite3
 externalPackageSettings/onedrive/*/refresh_token

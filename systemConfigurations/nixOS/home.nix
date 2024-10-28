@@ -46,6 +46,8 @@
                 wlsunset
                 hyprpaper
                 playerctl
+                dart-sass
+                pwvucontrol
                 clang-tools
                 tree-sitter
 		thunderbird
@@ -55,10 +57,17 @@
                 brightnessctl
 		polychromatic
                 lua-language-server
+                networkmanagerapplet
 		onlyoffice-desktopeditors
 	] ++ ( with inputs; [
                 zen-browser.packages."${pkgs.system}".specific
         ]);
+        services = {
+                network-manager-applet = {
+                        enable = true;
+                };
+
+        };
         catppuccin = {
                 flavor = "mocha";
                 # enable = true;

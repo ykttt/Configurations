@@ -9,14 +9,14 @@
                 gtk = {
                         iconTheme = {
                                 name = "papirusNord";
-                                package = "pkgs.papirus-nord";
+                                package = pkgs.papirus-icon-theme;
                         };
                         cursorTheme = {
                                 name = "nordzyCursor";
-                                package = "pkgs.nordzy-cursor-theme";
+                                package = pkgs.nordzy-cursor-theme;
                         };
                 };
-	        programs.kitty.themeFile = "Nordfox";
+	        programs.kitty.themeFile = "Nord";
 	        home.stateVersion = "24.05";
         };
 }

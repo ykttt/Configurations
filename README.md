@@ -14,7 +14,7 @@ Mainly configuration files and scripts.
 - [ ] Boost booting time
 ### Nix
 - [x] Import flakes
-- [ ] Modularize nix configurations
+- [x] Modularize nix configurations
 - [ ] Manage (or integrate) external application dotfiles using nix
 ### Graphical Environment
 #### Hyprland

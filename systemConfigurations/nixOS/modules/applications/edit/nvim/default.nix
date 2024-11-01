@@ -6,7 +6,7 @@
 { inputs, config, pkgs, lib, options, ... }:
 {
         environment.variables.EDITOR = "nvim";
-	program.neovim = {
+	programs.neovim = {
 		enable = true;
 		viAlias = true;
 		vimAlias = true;

@@ -6,25 +6,25 @@
 { inputs, config, pkgs, lib, options, ... }:
 {
 	imports = [
-                "../../modules/hosts/x86Laptop;"
+                "../../modules/hosts/x86Laptop"
 
-                "../../modules/drivers/razer;"
-                "../../modules/drivers/nvidia;"
+                "../../modules/drivers/razer"
+                "../../modules/drivers/nvidia"
 
-                "../../modules/gui/general;"
-                "../../modules/gui/hyprland;"
+                "../../modules/gui/general"
+                "../../modules/gui/hyprland"
 
-                "../../modules/applications/basic;"
-                "../../modules/applications/development/git;"
-                "../../modules/applications/security/adGuardHome;"
-                "../../modules/applications/security/1Password;"
-                "../../modules/applications/edit/nvim;"
-                "../../modules/applications/edit/tex;"
-                "../../modules/applications/edit/onlyOffice;"
-                "../../modules/applications/network/zen;"
-                "../../modules/applications/network/zoom;"
-                "../../modules/applications/creativity/krita;"
-                "../../modules/applications/game/steam;"
+                "../../modules/applications/basic"
+                "../../modules/applications/development/git"
+                "../../modules/applications/security/adGuardHome"
+                "../../modules/applications/security/1Password"
+                "../../modules/applications/edit/nvim"
+                "../../modules/applications/edit/tex"
+                "../../modules/applications/edit/onlyOffice"
+                "../../modules/applications/network/zen"
+                "../../modules/applications/network/zoom"
+                "../../modules/applications/creativity/krita"
+                "../../modules/applications/game/steam"
     	];
   	networking.hostName = "nixRazer-15";
 	users = {

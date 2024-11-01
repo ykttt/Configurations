@@ -6,7 +6,8 @@
 require('configurations/neovim')
 require('configurations/neovide')
 
-require('configurations/rose-pine')
+-- require('configurations/rose-pine')
+require('configurations/catppuccin')
 require('configurations/lualine')
 require('configurations/bufferline')
 

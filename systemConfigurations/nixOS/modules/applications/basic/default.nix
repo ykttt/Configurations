@@ -55,7 +55,6 @@
 	        ];
                 programs.yazi = {
                         enable = true;
-                        catppuccin.enable = true;
                         enableZshIntegration = true;
                 };
 	        home.stateVersion = "24.05";

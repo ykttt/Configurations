@@ -68,6 +68,10 @@ return require('lazy').setup({
                 'rose-pine/neovim',
                 name = 'rose-pine',
         }, {
+                "catppuccin/nvim",
+                name = "catppuccin",
+                priority = 1000
+        }, {
                 -- 'shaunsingh/nord.nvim',
                 -- name = 'nord',
                 -- config = function()

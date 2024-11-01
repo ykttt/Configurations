@@ -6,8 +6,8 @@
 { inputs, config, pkgs, lib, options, ... }:
 {
 	imports = [
+                # ./externalThemes.nix
                 ./catppuccin.nix
-                ./nord.nix
                 ./fcitx.nix
                 ./fonts.nix
                 ./sddm.nix

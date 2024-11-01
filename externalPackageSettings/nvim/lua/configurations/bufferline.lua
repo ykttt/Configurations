@@ -4,6 +4,7 @@
 
 vim.opt.termguicolors = true
 local bufferline = require('bufferline')
+local highlights = require("catppuccin.groups.integrations.bufferline").get()
 -- local highlights = require("nord").bufferline.highlights({
 --         italic = true,
 --         bold = true,
@@ -28,5 +29,5 @@ bufferline.setup {
         truncate_names = true, -- whether or not tab names should be truncated
         tab_size = 18,
     },
-        -- highlights = highlights,
+        highlights = highlights,
 }

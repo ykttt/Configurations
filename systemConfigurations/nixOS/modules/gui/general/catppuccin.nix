@@ -8,17 +8,21 @@
         home-manager.users.km = { inputs, pkgs, ... }: {
                 imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
                 catppuccin = {
+                        enable = true;
                         flavor = "mocha";
-                        # enable = true;
-                        # pointerCursor.enable = true;
+                        accent = "teal";
+                        pointerCursor = {
+                                enable = true;
+                                accent = "dark";
+                        };
                 };
                 gtk.catppuccin = {
                         enable = true;
-                        # icon.enable = true;
+                        icon.enable = true;
                         gnomeShellTheme = true;
                         size = "compact";
                 };
-	        # programs.kitty.catppuccin.enable = true;
+                programs.neovim.catppuccin.enable = false;
 	        home.stateVersion = "24.05";
         };
 }

@@ -16,7 +16,7 @@
                         enable = true;
                         config = {
                                 x = { fraction = 0.5; };
-                                y = { fraction = 0.3; };
+                                y = { fraction = 0.2; };
                                 width = { fraction = 0.3; };
                                 hideIcons = false;
                                 ignoreExclusiveZones = false;

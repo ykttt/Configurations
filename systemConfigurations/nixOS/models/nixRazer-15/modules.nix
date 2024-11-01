@@ -24,7 +24,7 @@
                 ../../modules/applications/network/zen
                 ../../modules/applications/network/zoom
                 ../../modules/applications/creativity/krita
-                ../../modules/applications/game/steam
+                ../../modules/applications/gaming/steam
     	];
   	networking.hostName = "nixRazer-15";
 	users = {

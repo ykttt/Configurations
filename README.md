@@ -14,14 +14,14 @@ Mainly configuration files and scripts.
 - [ ] Boost booting time
 ### Nix
 - [x] Import flakes
-- [ ] Modularise nix configurations
-- [ ] Manage (or intergrate) external application dotfiles using nix
+- [ ] Modularize nix configurations
+- [ ] Manage (or integrate) external application dotfiles using nix
 ### Graphical Environment
 #### Hyprland
 - [x] Migrate to hyprland
 - [x] Replace wofi with anyrun
 - [x] Import AGS widgets
-- [ ] Keybinding configurations
+- [ ] Binding configurations
 - [ ] Improve appearance
 - [ ] Introduce power management
 - [ ] Add graphical control interface
@@ -30,7 +30,7 @@ Mainly configuration files and scripts.
 ### Applications
 #### Neovim 
 - [ ] Smoothen LaTeX workflow
-    - [x] Make vimtex work with platex
+    - [x] Make vimtex work with uplatex
     - [ ] Set up snippets for LaTeX, etc.
     - [ ] Set up inverse search in both nvim and zathura
 - [x] Set up LSP servers without mason.nvim (for it's just not working on NixOS)

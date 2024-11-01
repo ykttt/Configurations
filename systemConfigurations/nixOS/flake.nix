@@ -30,9 +30,8 @@
                                 };
                                 specialArgs = { inherit inputs; };
                                 modules = [
-                                        (import ./configuration.nix)
+                                        (import ./models/nixRazer-15)
                                         inputs.home-manager.nixosModules.home-manager {
-                                                home-manager.users.km = import ./home.nix;
                                                 home-manager.extraSpecialArgs = { inherit inputs; };
                                         }
                                 ];

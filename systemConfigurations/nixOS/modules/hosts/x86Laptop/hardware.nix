@@ -22,7 +22,7 @@
 			};
     			pulse.enable = true;
     			jack.enable = true;
-    			media-session.enable = true;
+                        wireplumber.enable = true;
 		};
   		libinput.enable = true;	# Touchpad support
   		printing.enable = true;	# Enable CUPS to print documents

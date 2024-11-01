@@ -10,15 +10,15 @@
                 catppuccin = {
                         flavor = "mocha";
                         # enable = true;
-                        pointerCursor.enable = true;
+                        # pointerCursor.enable = true;
                 };
                 gtk.catppuccin = {
                         enable = true;
-                        icon.enable = true;
+                        # icon.enable = true;
                         gnomeShellTheme = true;
                         size = "compact";
                 };
-	        programs.kitty.catppuccin.enable = true;
+	        # programs.kitty.catppuccin.enable = true;
 	        home.stateVersion = "24.05";
         };
 }

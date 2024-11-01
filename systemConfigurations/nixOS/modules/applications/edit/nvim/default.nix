@@ -5,7 +5,6 @@
 
 { inputs, config, pkgs, lib, options, ... }:
 {
-	imports = [ <home-manager/nixos> ];
         environment.variables.EDITOR = "nvim";
 	program.neovim = {
 		enable = true;

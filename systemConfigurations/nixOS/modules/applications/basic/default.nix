@@ -5,7 +5,6 @@
 
 { inputs, config, pkgs, lib, options, ... }:
 {
-	imports = [ <home-manager/nixos> ];
         environment.systemPackages = with pkgs; [
                 pfetch
                 pciutils

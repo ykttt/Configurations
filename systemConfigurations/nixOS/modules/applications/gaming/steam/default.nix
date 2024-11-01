@@ -5,7 +5,6 @@
 
 { inputs, config, pkgs, lib, options, ... }:
 {
-	imports = [ <home-manager/nixos> ];
      	programs.steam = {
 		enable = true;
 		remotePlay.openFirewall = true;

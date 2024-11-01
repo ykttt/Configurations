@@ -5,7 +5,6 @@
 
 { inputs, config, pkgs, lib, options, ... }:
 {
-	imports = [ <home-manager/nixos> ];
         home-manager.users.km = { inputs, pkgs, ... }: {
                 imports = [ inputs.anyrun.homeManagerModules.default ];
                 nix.settings = {

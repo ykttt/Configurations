@@ -5,7 +5,6 @@
 
 { inputs, config, pkgs, lib, options, ... }:
 {
-	imports = [ <home-manager/nixos> ];
 	programs.hyprland = {
                 enable = true;
                 xwayland.enable = true;

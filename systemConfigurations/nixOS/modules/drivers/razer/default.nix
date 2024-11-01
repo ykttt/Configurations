@@ -5,7 +5,6 @@
 
 { inputs, config, pkgs, lib, options, ... }:
 {
-        imoprts = [ <home-manager/nixos> ];
    	hardware.openrazer.enable = true;	# For razer devices
   	environment.systemPackages = [ pkgs.openrazer-daemon ];	# For razer devices
         home-manager.users.km = { pkgs, ... }: {

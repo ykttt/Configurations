@@ -19,13 +19,13 @@ Mainly configuration files and scripts.
 ### Graphical Environment
 #### Hyprland
 - [x] Migrate to hyprland
-- [x] Replace wofi with anyrun
+- [x] ~~Replace wofi with anyrun~~
 - [x] Import AGS widgets
 - [ ] Binding configurations
-- [ ] Improve appearance
-- [ ] Introduce power management
-- [ ] Add graphical control interface
-- [ ] Add IPC support for hyprland
+- [x] Improve appearance
+- [x] Introduce power management
+- [x] Add graphical control interface
+- [ ] Fix bar showing on the top layer when being full-screen
 - [ ] Add automatic theme switch
 ### Applications
 #### Neovim 

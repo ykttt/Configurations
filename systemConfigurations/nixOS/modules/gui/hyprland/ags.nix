@@ -1,28 +1,40 @@
-#
-#
-#	hyprland/ags.nix
-#
 
-{ inputs, config, pkgs, lib, options, ... }:
+
+# hyprland/ags.nix
+
 {
-        home-manager.users.km = { inputs, pkgs, ... }: {
-                imports = [ inputs.ags.homeManagerModules.default ];
-	        home.packages = with pkgs; [
-                        playerctl
-                        dart-sass
-                        pwvucontrol
-                        wl-clipboard
-                        brightnessctl
-	        ];
-	        programs.ags = {
-                        enable = true;
-                        # configDir = ../../externalPackageSettings/ags;
-                        extraPackages = with pkgs; [
-                                webkitgtk
-                                gtksourceview
-                                accountsservice
-                        ];
-                };
-	        home.stateVersion = "24.05";
-        };
+  home-manager.users.km = {
+    inputs,
+    pkgs,
+    ...
+  }: {
+    imports = [
+      inputs.ags.homeManagerModules.default
+    ];
+    home.packages = with pkgs; [
+      fd
+      fzf
+      bun
+      swww
+      slurp
+      swappy
+      wayshot
+      matugen
+      playerctl
+      dart-sass
+      hyprpicker
+      wf-recorder
+      pwvucontrol
+      wl-clipboard
+      brightnessctl
+    ];
+    programs.ags = {
+      enable = true;
+      # configDir = ../../externalPackageSettings/ags;
+      extraPackages = with pkgs; [
+        accountsservice
+      ];
+    };
+    home.stateVersion = "24.05";
+  };
 }

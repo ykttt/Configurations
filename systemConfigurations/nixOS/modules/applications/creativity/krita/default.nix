@@ -1,12 +1,13 @@
-#
-#
-#	krita/default.nix
-#
 
-{ inputs, config, pkgs, lib, options, ... }:
+
+# krita/default.nix
+
 {
-        home-manager.users.km = { inputs, pkgs, ... }: {
-	        home.packages = [ pkgs.krita ];
-	        home.stateVersion = "24.05";
-        };
+  home-manager.users.km = {
+    pkgs,
+    ...
+  }: {
+    home.packages = [ pkgs.krita ];
+    home.stateVersion = "24.05";
+  };
 }

@@ -1,9 +1,11 @@
 
-{ inputs, config, pkgs, lib, options, ... }:
+
+# nixRazer-15/default.nix
+
 {
-        imports = [
-                ./hardware.nix
-                ./modules.nix
-        ];
+  imports = [
+    ./hardware.nix
+    ./modules.nix
+  ];
 }
 

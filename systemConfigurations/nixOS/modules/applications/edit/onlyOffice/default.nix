@@ -1,14 +1,13 @@
-#
-#
-#	onlyOffice/default.nix
-#
 
-{ inputs, config, pkgs, lib, options, ... }:
+
+# onlyOffice/default.nix
+
 {
-        home-manager.users.km = { inputs, pkgs, ... }: {
-	        home.packages = with pkgs; [
-		        onlyoffice-desktopeditors
-	        ];
-	        home.stateVersion = "24.05";
-        };
+  home-manager.users.km = {
+    pkgs,
+    ...
+  }: {
+    home.packages = [ pkgs.onlyoffice-desktopeditors ];
+    home.stateVersion = "24.05";
+  };
 }

@@ -1,4 +1,8 @@
+
+
 #!/usr/bin/env bash
+# loginScripts/razer-sndfix.sh
+
 hda-verb /dev/snd/hwC1D0 0x20 0x500 0x7
 hda-verb /dev/snd/hwC1D0 0x20 0x500 0x7
 hda-verb /dev/snd/hwC1D0 0x20 0x500 0x10

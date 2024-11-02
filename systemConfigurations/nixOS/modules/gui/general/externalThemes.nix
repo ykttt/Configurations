@@ -1,13 +1,14 @@
-#
-#
-#	general/externalThemes.nix
-#
 
-{ inputs, config, pkgs, lib, options, ... }:
+
+# general/externalThemes.nix
+
 {
-        home-manager.users.km = { inputs, pkgs, ... }: {
-                home.packages = [ pkgs.nwg-look ];
-	        # programs.kitty.themeFile = "Nord";
-	        home.stateVersion = "24.05";
-        };
+  home-manager.users.km = {
+    pkgs,
+    ...
+  }: {
+    home.packages = [ pkgs.nwg-look ];
+    # programs.kitty.themeFile = "Nord";
+    home.stateVersion = "24.05";
+  };
 }

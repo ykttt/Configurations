@@ -1,6 +1,0 @@
-
-
--- configurations/friendly-snippets.lua
-
-
-

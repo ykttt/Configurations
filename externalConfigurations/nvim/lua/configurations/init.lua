@@ -12,6 +12,7 @@ require('configurations/bufferline')
 
 require('configurations/lspconfig')
 require('configurations/nvim-treesitter')
+require('configurations/ibl')
 
 require('configurations/notify')
 require('configurations/nvim-tree')

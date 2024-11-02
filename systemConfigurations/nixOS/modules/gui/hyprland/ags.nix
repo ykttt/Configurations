@@ -3,6 +3,10 @@
 # hyprland/ags.nix
 
 {
+  security = {
+    polkit.enable = true;
+    pam.services.ags = {};
+  };
   home-manager.users.km = {
     inputs,
     pkgs,

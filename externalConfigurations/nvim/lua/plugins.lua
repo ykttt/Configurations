@@ -69,27 +69,21 @@ return require('lazy').setup({
     name = "catppuccin",
     priority = 1000
   }, {
-    -- 'shaunsingh/nord.nvim',
-    -- name = 'nord',
-    -- config = function()
-    --   vim.g.nord_contrast = true
-    --   vim.g.nord_borders = true
-    --   vim.g.nord_disable_background = false
-    --   vim.g.nord_italic = true
-    --   vim.g.nord_uniform_diff_background = true
-    --   vim.g.nord_bold = true
-    --   require('nord').set()
-    -- end
-  -- }, {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+  }, {
     'goolord/alpha-nvim',
     config = function()
       local alpha = require("alpha")
       local dashboard = require("alpha.themes.dashboard")
-      math.randomseed(os.time())
-      local function pick_colour()
-      local colours = {"String", "Identifier", "Keyword", "Number"}
-      return colours[math.random(#colours)]
-      end
+      -- math.randomseed(os.time())
+      -- local function pick_colour()
+      --   local colours = {"String", "Identifier", "Keyword", "Number"}
+      --   return colours[math.random(#colours)]
+      -- end
       local logo = {
         "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
         "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
@@ -101,9 +95,11 @@ return require('lazy').setup({
         "⠻⠦⠤⠴⠖⠋⠉⠓⠒⠶⠤⣄⣀⡀⠀⠐⠺⡂⠀⠀⠀⠀⠀⠀⠘⣆⠀",
         "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠓⡾⠁⠀⠀⠀⠀⢀⠀⠀⠹⡆",
         "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠷⢤⣤⠤⠴⠚⠛⠒⠦⢤⣷",
+        "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           ",
+        "⠀Have a nice dream today.⠀ ",
       }
       dashboard.section.header.val = logo
-      dashboard.section.header.opts.hl = pick_colour()
+      dashboard.section.header.opts.hl = "Identifier"
       dashboard.section.buttons.val = {
         dashboard.button("SPACE f f", "  Find It"),
         dashboard.button("SPACE f h", "  I Remember You"),

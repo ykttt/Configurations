@@ -2,4 +2,6 @@
 
 -- configurations/ibl.lua
 
-require("ibl").setup()
+require("ibl").setup {
+      indent = { char = "•" },
+    }

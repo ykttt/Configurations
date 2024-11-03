@@ -5,14 +5,18 @@
 require('configurations/neovim')
 require('configurations/neovide')
 
+-- require('configurations/melange')
 -- require('configurations/rose-pine')
+-- require('configurations/kanagawa')
 require('configurations/catppuccin')
+
 require('configurations/lualine')
 require('configurations/bufferline')
 
 require('configurations/lspconfig')
 require('configurations/nvim-treesitter')
 require('configurations/ibl')
+require('configurations/dropbar')
 
 require('configurations/notify')
 require('configurations/nvim-tree')

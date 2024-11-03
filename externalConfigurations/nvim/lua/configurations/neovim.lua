@@ -14,6 +14,22 @@ vim.cmd.filetype({ 'indent', 'plugin', 'on' })
 vim.cmd.helptags('ALL')
 
 vim.g.configpath = '~/.config/nvim'
+vim.g.terminal_color_0  = '#494d64'
+vim.g.terminal_color_1  = '#ed8796'
+vim.g.terminal_color_2  = '#a6da95'
+vim.g.terminal_color_3  = '#eed49f'
+vim.g.terminal_color_4  = '#8aadf4'
+vim.g.terminal_color_5  = '#f5bde6'
+vim.g.terminal_color_6  = '#8bd5ca'
+vim.g.terminal_color_7  = '#b8c0e0'
+vim.g.terminal_color_8  = '#5b6078'
+vim.g.terminal_color_9  = '#ed8796'
+vim.g.terminal_color_10 = '#a6da95'
+vim.g.terminal_color_11 = '#eed49f'
+vim.g.terminal_color_12 = '#8aadf4'
+vim.g.terminal_color_13 = '#f5bde6'
+vim.g.terminal_color_14 = '#8bd5ca'
+vim.g.terminal_color_15 = '#a5adcb'
 
 vim.o.ls = 2
 vim.o.ch = 0

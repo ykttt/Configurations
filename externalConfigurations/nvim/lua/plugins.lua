@@ -41,6 +41,11 @@ return require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
     },
   }, {
+    'Bekaboo/dropbar.nvim',
+    dependencies = {
+      'nvim-telescope/telescope-fzf-native.nvim'
+    },
+  }; {
     'nvim-tree/nvim-tree.lua',
     dependencies = 'nvim-tree/nvim-web-devicons',
   }, {
@@ -62,8 +67,14 @@ return require('lazy').setup({
     build = "make install_jsregexp",  -- optional
     dependencies = 'rafamadriz/friendly-snippets',
   }, {
+    'savq/melange-nvim',
+    name = 'melange',
+  }, {
     'rose-pine/neovim',
     name = 'rose-pine',
+  }, {
+    "rebelot/kanagawa.nvim",
+    name = 'kanagawa',
   }, {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -100,14 +111,16 @@ return require('lazy').setup({
       }
       dashboard.section.header.val = logo
       dashboard.section.header.opts.hl = "Identifier"
+      -- dashboard.section.header.opts.hl = "Function"
       dashboard.section.buttons.val = {
         dashboard.button("SPACE f f", "  Find It"),
         dashboard.button("SPACE f h", "  I Remember You"),
         dashboard.button("SPACE   a", "  One More Thing"),
         dashboard.button("SPACE   p", "  I'm a Bit Lazy..."),
       }
-      -- dashboard.section.footer.val = "Surprisingly I'm still alive..."
-      -- dashboard.section.footer.opts.hl = "Constant"
+
+      -- dashboard.section.footer.val = "⠀Have a nice dream today.⠀ "
+      -- dashboard.section.footer.opts.hl = "Comment"
       alpha.setup(dashboard.opts)
       vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
     end

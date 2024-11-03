@@ -19,7 +19,6 @@
       fd
       fzf
       bun
-      gtk3
       swww
       slurp
       swappy

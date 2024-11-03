@@ -101,7 +101,7 @@ const options = mkOptions(OPTIONS, {
             action: opt(() => App.toggleWindow("launcher")),
         },
         date: {
-            format: opt("%H:%M - %A %e."),
+            format: opt("%Y年%b%d日 %A  %Z・%H:%M:%S"),
             action: opt(() => App.toggleWindow("datemenu")),
         },
         battery: {
@@ -189,7 +189,7 @@ const options = mkOptions(OPTIONS, {
         },
         width: opt(380),
         position: opt<"left" | "center" | "right">("right"),
-        networkSettings: opt("gtk-launch gnome-control-center"),
+        networkSettings: opt("env XDG_CURRENT_DESKTOP=gnome gnome-control-center"),
         media: {
             monochromeIcon: opt(true),
             coverSize: opt(100),

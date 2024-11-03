@@ -3,7 +3,6 @@
 -- keymaps/editing.lua
 
 vim.keymap.set('', ';', ':')
-vim.keymap.set({ '!', 's' }, 'jj', '<esc>')
 
 vim.keymap.set('n', '<leader>o', 'o<esc>')
 vim.keymap.set('n', '<leader>O', 'O<esc>')

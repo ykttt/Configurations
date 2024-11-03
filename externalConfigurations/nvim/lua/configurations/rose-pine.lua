@@ -12,7 +12,7 @@ end
 
 require('rose-pine').setup({
   variant = 'auto',     --- @usage 'auto'|'main'|'moon'|'dawn'
-  dark_variant = 'moon',  --- @usage 'main'|'moon'|'dawn'
+  dark_variant = 'main',  --- @usage 'main'|'moon'|'dawn'
   bold_vert_split = false,
   dim_nc_background = false,
   disable_background = false,

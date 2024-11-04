@@ -20,6 +20,7 @@
     histSize = 10000;
     histFile = "\${HOME}/.zsh_history";
     shellAliases = {
+      g = "git";
       s = "sudo";
       q = "exit";
       a = "yazi";
@@ -27,7 +28,6 @@
       sa = "sudo yazi";
       ll = "ls -l --color";
       rb = "sudo nixos-rebuild";
-      gp = "git push -u origin main";
       cl = "sudo nix-collect-garbage";
       rbs = "sudo nixos-rebuild switch";
       cld = "sudo nix-collect-garbage -d";

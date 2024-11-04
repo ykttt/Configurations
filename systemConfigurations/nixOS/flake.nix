@@ -45,6 +45,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:ykttt/zen-browser-flake";
   };
 }

@@ -52,9 +52,9 @@
       gcc
       w3m
       mpv
+      nemo
       discord
       onedrive
-      nautilus
       thunderbird
     ];
     programs.yazi = {

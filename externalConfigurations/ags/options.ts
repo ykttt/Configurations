@@ -160,7 +160,7 @@ const options = mkOptions(OPTIONS, {
           "zen",
           "neovide",
           "nemo",
-          "krita",
+          "thunderbird",
           "steam",
         ],
       ]),

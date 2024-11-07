@@ -28,6 +28,26 @@
       withPython3 = true;
       withNodeJs = true;
     };
+    xdg.mimeApps = {
+      associations.added = {
+        "application/json" = "neovide.desktop";
+        "application/x-docbook+xml" = "neovide.desktop";
+        "application/x-yaml" = "neovide.desktop";
+        "application/x-zerosize" = "neovide.desktop";
+        "text/markdown" = "neovide.desktop";
+        "text/plain" = "neovide.desktop";
+        "text/x-cmake" = "neovide.desktop";
+      };
+      defaultApplications = {
+        "application/json" = "neovide.desktop";
+        "application/x-docbook+xml" = "neovide.desktop";
+        "application/x-yaml" = "neovide.desktop";
+        "application/x-zerosize" = "neovide.desktop";
+        "text/markdown" = "neovide.desktop";
+        "text/plain" = "neovide.desktop";
+        "text/x-cmake" = "neovide.desktop";
+      };
+    };
     home.stateVersion = "24.05";
   };
 }

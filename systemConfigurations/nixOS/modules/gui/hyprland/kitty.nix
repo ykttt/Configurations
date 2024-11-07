@@ -13,14 +13,14 @@
         "alt+shift+tab" = "previous_tab";
         "alt+i" = "launch --location=hsplit";
         "alt+o" = "launch --location=vsplit";
-        "alt+h" = "neighboring_window left";
-        "alt+j" = "neighboring_window down";
-        "alt+k" = "neighboring_window up";
-        "alt+l" = "neighboring_window right";
-        "ctrl+alt+h" = "move_window left";
-        "ctrl+alt+j" = "move_window down";
-        "ctrl+alt+k" = "move_window up";
-        "ctrl+alt+l" = "move_window right";
+        "ctrl+alt+h" = "neighboring_window left";
+        "ctrl+alt+j" = "neighboring_window down";
+        "ctrl+alt+k" = "neighboring_window up";
+        "ctrl+alt+l" = "neighboring_window right";
+        "ctrl+alt+a" = "move_window left";
+        "ctrl+alt+s" = "move_window down";
+        "ctrl+alt+w" = "move_window up";
+        "ctrl+alt+d" = "move_window right";
       };
       settings = {
         font_family = "Sarasa Term J";

@@ -13,7 +13,6 @@
       mpv
       discord
       onedrive
-      pciutils
       thunderbird
     ];
     home.stateVersion = "24.05";

@@ -13,7 +13,7 @@
     pkgs,
     ...
   }: {
-    home.packages = [ pkgs.adwsteamgtk ];
+    # home.packages = [ pkgs.adwsteamgtk ];
     home.stateVersion = "24.05";
   };
 }

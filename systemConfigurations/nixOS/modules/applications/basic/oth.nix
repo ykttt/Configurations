@@ -10,7 +10,6 @@
     home.packages = with pkgs; [
       gcc
       w3m
-      mpv
       discord
       onedrive
       thunderbird

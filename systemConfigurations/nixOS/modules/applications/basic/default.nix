@@ -6,6 +6,7 @@
   imports = [
     ./oth.nix
     ./zsh.nix
+    ./mpv.nix
     ./fileManager.nix
   ];
 }

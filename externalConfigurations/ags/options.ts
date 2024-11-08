@@ -158,9 +158,9 @@ const options = mkOptions(OPTIONS, {
       favorites: opt([
         [
           "zen",
+          "thunderbird",
           "neovide",
           "nemo",
-          "thunderbird",
           "steam",
         ],
       ]),

@@ -20,6 +20,7 @@
     ../../modules/applications/edit/nvim
     ../../modules/applications/edit/tex
     ../../modules/applications/gaming/steam
+    ../../modules/applications/gaming/aagl
     ../../modules/applications/network/zoom
     ../../modules/applications/network/zen
     ../../modules/applications/security/adGuardHome

@@ -13,16 +13,17 @@
     ../../modules/gui/hyprland
 
     ../../modules/applications/basic
+    ../../modules/applications/creativity/krita
     ../../modules/applications/development/git
-    ../../modules/applications/security/adGuardHome
-    ../../modules/applications/security/1Password
+    ../../modules/applications/edit/onlyOffice
+    ../../modules/applications/edit/emacs
     ../../modules/applications/edit/nvim
     ../../modules/applications/edit/tex
-    ../../modules/applications/edit/onlyOffice
-    ../../modules/applications/network/zen
-    ../../modules/applications/network/zoom
-    ../../modules/applications/creativity/krita
     ../../modules/applications/gaming/steam
+    ../../modules/applications/network/zoom
+    ../../modules/applications/network/zen
+    ../../modules/applications/security/adGuardHome
+    ../../modules/applications/security/1Password
   ];
   networking.hostName = "nixRazer-15";
   users = {

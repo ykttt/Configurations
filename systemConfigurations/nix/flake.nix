@@ -48,6 +48,11 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    matugen = {
+      url = "github:/InioX/Matugen";
+      # If you need a specific version:
+      # ref = "refs/tags/matugen-v0.10.0";
+    };
     catppuccin.url = "github:catppuccin/nix";
     zen-browser.url = "github:ykttt/zen-browser-flake";
   };

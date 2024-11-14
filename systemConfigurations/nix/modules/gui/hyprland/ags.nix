@@ -23,7 +23,7 @@
       slurp
       swappy
       wayshot
-      matugen
+      # matugen
       playerctl
       dart-sass
       hyprpicker
@@ -31,7 +31,9 @@
       pwvucontrol
       wl-clipboard
       brightnessctl
-    ];
+    ] ++ (with inputs; [
+      matugen.packages.${system}.default
+    ]);
     programs.ags = {
       enable = true;
       # configDir = ../../externalPackageSettings/ags;

@@ -23,7 +23,6 @@
       slurp
       swappy
       wayshot
-      # matugen
       playerctl
       dart-sass
       hyprpicker

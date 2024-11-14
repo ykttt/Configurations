@@ -41,7 +41,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
-      url = "github:Aylur/ags";
+      url = "github:ykttt/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aagl = {

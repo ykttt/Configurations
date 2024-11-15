@@ -43,15 +43,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-matlab = {
-      url = "gitlab:doronbehar/nix-matlab";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
+      url = "github:ykttt/nix-matlab";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
       url = "github:ykttt/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     aagl = {

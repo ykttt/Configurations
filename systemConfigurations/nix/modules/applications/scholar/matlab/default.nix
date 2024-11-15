@@ -2,4 +2,9 @@
 
 # matlab/default.nix
 
-{ pkgs, ... }: { environment.systemPackages = [ pkgs.matlab ]; }
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    matlab
+    mesa
+  ];
+}

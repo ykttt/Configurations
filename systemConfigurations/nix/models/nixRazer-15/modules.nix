@@ -16,11 +16,11 @@
     ../../modules/applications/creativity/krita
     ../../modules/applications/development/git
     ../../modules/applications/edit/onlyOffice
-    ../../modules/applications/edit/emacs
+    # ../../modules/applications/edit/emacs
     ../../modules/applications/edit/nvim
     ../../modules/applications/edit/tex
     ../../modules/applications/gaming/steam
-    ../../modules/applications/gaming/aagl
+    # ../../modules/applications/gaming/aagl
     ../../modules/applications/network/zoom
     ../../modules/applications/network/zen
     # ../../modules/applications/scholar/matlab

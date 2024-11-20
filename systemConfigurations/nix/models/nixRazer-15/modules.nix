@@ -15,7 +15,7 @@
     ../../modules/applications/basic
     ../../modules/applications/creativity/krita
     ../../modules/applications/development/git
-    ../../modules/applications/edit/onlyOffice
+    ../../modules/applications/edit/officeWork
     # ../../modules/applications/edit/emacs
     ../../modules/applications/edit/nvim
     ../../modules/applications/edit/tex

@@ -59,3 +59,6 @@ vim.o.ww = vim.o.ww .. ',<,>,[,]'
 vim.o.bs = 'indent,eol,start'
 vim.o.cb = 'unnamedplus'
 vim.o.fdm = 'marker'
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"

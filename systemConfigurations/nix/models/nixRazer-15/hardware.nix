@@ -35,13 +35,17 @@
       device = "/dev/disk/by-uuid/02c95f2e-e995-4ce4-80eb-0fcae8141d93";
       fsType = "xfs";
     };
-    "/boot" ={
+    "/boot" = {
       device = "/dev/disk/by-uuid/E918-E98D";
       fsType = "vfat";
       options = [
         "fmask=0077"
         "dmask=0077"
       ];
+    };
+    "/home" = {
+      device = "/dev/disk/by-uuid/b42fb740-c5ca-48e1-9c12-5014fd6df11e";
+      fsType = "xfs";
     };
   };
 

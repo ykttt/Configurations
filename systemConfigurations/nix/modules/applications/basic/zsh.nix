@@ -17,7 +17,7 @@
     ...
   }: {
     home.packages = with pkgs; [
-      pfetch
+      macchina
       pure-prompt
     ];
     programs.zsh = {
@@ -49,7 +49,7 @@
       initExtra = ''
         autoload -U promptinit; promptinit
         prompt pure
-        echo "\n" && pfetch
+        echo "\n" && macchina -t greet -o uptime -o host -o distribution -o packages -o kernel -o shell -o processor-load -o memory
       '';
     };
     home.stateVersion = "24.05";

@@ -2,9 +2,15 @@
 
 # x86Laptop/boot.nix
 
+
 {
+  pkgs,
+  ...
+}: {
   boot = {
     kernelParams = [ "acpi=force" ];
+    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     plymouth.enable = true;
     tmp = {
       cleanOnBoot = true;

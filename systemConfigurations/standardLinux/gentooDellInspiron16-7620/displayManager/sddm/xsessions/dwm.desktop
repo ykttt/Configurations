@@ -1,0 +1,5 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dynamic Window Mmanager
+Exec=dwm
+Type=Application

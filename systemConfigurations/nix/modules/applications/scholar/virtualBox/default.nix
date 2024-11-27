@@ -3,6 +3,9 @@
 # virtualBox/default.nix
 
 {
-   virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "km" ];
+  virtualisation.virtualbox = {
+    host.enable = true;
+    guest.enable = true;
+  };
+  users.extraGroups.vboxusers.members = [ "km" ];
 }

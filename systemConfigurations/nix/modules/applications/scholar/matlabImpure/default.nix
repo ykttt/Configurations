@@ -1,6 +1,6 @@
 
 
-# matlab/default.nix
+# matlabImpure/default.nix
 
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [

@@ -24,6 +24,7 @@
     ../../modules/applications/network/zoom
     ../../modules/applications/network/zen
     ../../modules/applications/scholar/matlab
+    ../../modules/applications/scholar/virtualBox
     ../../modules/applications/security/adGuardHome
     ../../modules/applications/security/1Password
   ];

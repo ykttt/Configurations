@@ -207,22 +207,6 @@
         "type": "github"
       }
     },
-    "nixpkgsStable": {
-      "locked": {
-        "lastModified": 1732981179,
-        "narHash": "sha256-F7thesZPvAMSwjRu0K8uFshTk3ZZSNAsXTIFvXBT+34=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "62c435d93bf046a5396f3016472e8f7c8e2aed65",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1733015953,
@@ -280,7 +264,6 @@
         "matugen": "matugen",
         "nix-matlab": "nix-matlab",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgsStable": "nixpkgsStable",
         "nur": "nur",
         "zen-browser": "zen-browser"
       }

@@ -8,7 +8,8 @@
 }: {
   fonts = {
     packages = with pkgs; [
-      nerdfonts
+      nerd-fonts.noto
+      nerd-fonts.jetbrains-mono
       wqy_zenhei      # Required by pkgs.steam to display CJK characters
       noto-fonts
       sarasa-gothic

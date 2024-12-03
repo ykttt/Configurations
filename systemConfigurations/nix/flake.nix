@@ -44,7 +44,7 @@
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgsStable.url = "github:NixOS/nixos-24.11";
+    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nur.url = "github:nix-community/NUR";
     catppuccin.url = "github:catppuccin/nix";
     zen-browser.url = "github:ykttt/zen-browser-flake";

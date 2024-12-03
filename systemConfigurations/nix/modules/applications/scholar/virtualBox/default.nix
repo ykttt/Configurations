@@ -3,9 +3,11 @@
 # virtualBox/default.nix
 
 {
-  virtualisation.virtualbox = {
-    host.enable = true;
-    guest.enable = true;
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableKvm = true;
+    addNetworkInterface = false;
+    enableExtensionPack = true;
   };
   users.extraGroups.vboxusers.members = [ "km" ];
 }

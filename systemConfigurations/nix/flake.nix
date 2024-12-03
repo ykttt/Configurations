@@ -7,6 +7,7 @@
   outputs = inputs@{
     self,
     nixpkgs,
+    nixpkgsStable,
     nur,
     home-manager,
     nix-matlab,
@@ -16,6 +17,14 @@
     nixosConfigurations = {
       nixRazer-15 = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
+          inherit system;
+            config.allowUnfree = true;
+            overlays = [
+              nur.overlay
+              nix-matlab.overlay
+            ];
+        };
+        pkgsStable = import nixpkgsStable {
           inherit system;
           config.allowUnfree = true;
           overlays = [
@@ -35,6 +44,7 @@
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgsStable.url = "github:NixOS/nixpkgs-24.11";
     nur.url = "github:nix-community/NUR";
     catppuccin.url = "github:catppuccin/nix";
     zen-browser.url = "github:ykttt/zen-browser-flake";

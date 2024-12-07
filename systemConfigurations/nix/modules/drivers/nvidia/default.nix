@@ -10,7 +10,7 @@
   hardware.nvidia = {
     open = false;   # Disable open-source drivers
     modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     nvidiaSettings = true;
     powerManagement = {
       enable = false;   # Experimental, may cause problems

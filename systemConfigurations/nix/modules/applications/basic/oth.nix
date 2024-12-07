@@ -5,14 +5,14 @@
 {
   home-manager.users.km = {
     pkgs,
+    inputs,
     ...
   }: {
     home.packages = with pkgs; [
       gcc
       w3m
-      discord
       ver24-11.onedrive
-      onedrive
+      discord
       thunderbird
     ];
     home.stateVersion = "24.05";

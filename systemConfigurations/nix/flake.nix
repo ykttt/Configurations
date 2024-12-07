@@ -12,20 +12,22 @@
     home-manager,
     nix-matlab,
     ...
-  }: let system = "x86_64-linux";
+  }: let
+    system = "x86_64-linux";
+    pkgStable = final: prev: {
+        ver24-11 = import nixpkgs24-11 { inherit system; };
+    };
   in {
     nixosConfigurations = {
       nixRazer-15 = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           inherit system;
-            config.allowUnfree = true;
-            overlays = [
-              nur.overlay
-              nix-matlab.overlay
-              (final: prev: {
-                ver24-11 = import nixpkgs24-11 { inherit system; };
-              })
-            ];
+          overlays = [
+            pkgStable
+            nur.overlays.default
+            nix-matlab.overlay
+          ];
+          config.allowUnfree = true;
         };
         specialArgs = { inherit inputs; };
         modules = [
@@ -33,6 +35,9 @@
           inputs.home-manager.nixosModules.home-manager {
             home-manager = {
               extraSpecialArgs = { inherit inputs; };
+              users.km = {
+                nixpkgs.overlays = [ pkgStable ];
+              };
             };
           }
         ];
@@ -67,7 +72,6 @@
     };
     matugen = {
       url = "github:/InioX/Matugen";
-      # If you need a specific version:
       # ref = "refs/tags/matugen-v0.10.0";
     };
   };

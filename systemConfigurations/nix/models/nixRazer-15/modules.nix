@@ -11,6 +11,7 @@
 
     ../../modules/gui/general
     ../../modules/gui/hyprland
+
     ../../modules/applications/basic
 
     ../../modules/applications/development/git

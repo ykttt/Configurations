@@ -7,6 +7,7 @@
   outputs = inputs@{
     self,
     nixpkgs,
+    nixpkgs24-11,
     nur,
     home-manager,
     nix-matlab,
@@ -21,13 +22,18 @@
             overlays = [
               nur.overlay
               nix-matlab.overlay
+              (final: prev: {
+                ver24-11 = import nixpkgs24-11 { inherit system; };
+              })
             ];
         };
         specialArgs = { inherit inputs; };
         modules = [
           (import ./models/nixRazer-15)
           inputs.home-manager.nixosModules.home-manager {
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager = {
+              extraSpecialArgs = { inherit inputs; };
+            };
           }
         ];
       };
@@ -35,6 +41,7 @@
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs24-11.url = "github:NixOS/nixpkgs/nixos-24.11";
     nur.url = "github:nix-community/NUR";
     catppuccin.url = "github:catppuccin/nix";
     zen-browser.url = "github:ykttt/zen-browser-flake";

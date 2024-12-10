@@ -1,7 +1,5 @@
-
-
 # virtualBox/default.nix
-
+#
 {
   virtualisation.virtualbox.host = {
     enable = true;
@@ -9,5 +7,5 @@
     addNetworkInterface = false;
     enableExtensionPack = true;
   };
-  users.extraGroups.vboxusers.members = [ "km" ];
+  users.extraGroups.vboxusers.members = ["km"];
 }

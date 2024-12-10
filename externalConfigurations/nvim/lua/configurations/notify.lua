@@ -1,5 +1,3 @@
-
-
 -- configurations/notify.lua
-
-require('notify').setup()
+--
+require("notify").setup()

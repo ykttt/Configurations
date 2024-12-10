@@ -1,42 +1,42 @@
-
-
 # nixOS/flake.nix
-
+#
 {
   description = "A Nix Configuration";
-  outputs = inputs@{
+  outputs = inputs @ {
+    nur,
     self,
     nixpkgs,
     nixpkgs24-11,
-    nur,
     home-manager,
     nix-matlab,
     ...
   }: let
     system = "x86_64-linux";
-    pkgStable = final: prev: {
-        ver24-11 = import nixpkgs24-11 { inherit system; };
-    };
+    overlayLinux = [
+      nur.overlays.default
+      nix-matlab.overlay
+      (final: prev: {
+        ver24-11 = import nixpkgs24-11 {inherit system;};
+      })
+    ];
   in {
     nixosConfigurations = {
       nixRazer-15 = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [
-            pkgStable
-            nur.overlays.default
-            nix-matlab.overlay
-          ];
           config.allowUnfree = true;
+          overlays = overlayLinux;
         };
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           (import ./models/nixRazer-15)
-          inputs.home-manager.nixosModules.home-manager {
+          inputs.home-manager.nixosModules.home-manager
+          {
             home-manager = {
-              extraSpecialArgs = { inherit inputs; };
-              users.km = {
-                nixpkgs.overlays = [ pkgStable ];
+              extraSpecialArgs = {inherit inputs;};
+              users.km.nixpkgs = {
+                config.allowUnfree = true;
+                overlays = overlayLinux;
               };
             };
           }

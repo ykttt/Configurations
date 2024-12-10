@@ -1,13 +1,8 @@
-
-
 # basic/mpv.nix
-
+#
 {
-  home-manager.users.km = {
-    pkgs,
-    ...
-  }: {
-    home.packages = [ pkgs.mpv ];
+  home-manager.users.km = {pkgs, ...}: {
+    home.packages = [pkgs.mpv];
     xdg = {
       desktopEntries.mpv-img = {
         name = "mpv-img";

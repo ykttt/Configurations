@@ -1,16 +1,11 @@
-
-
 # general/default.nix
-
-{
-  pkgs,
-  ...
-}: {
+#
+{pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
       nerd-fonts.noto
       nerd-fonts.jetbrains-mono
-      wqy_zenhei      # Required by pkgs.steam to display CJK characters
+      wqy_zenhei # Required by pkgs.steam to display CJK characters
       noto-fonts
       sarasa-gothic
       noto-fonts-emoji

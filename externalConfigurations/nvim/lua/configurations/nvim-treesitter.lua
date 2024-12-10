@@ -1,8 +1,6 @@
-
-
 -- configurations/nvim-treesitter.lua
-
-require'nvim-treesitter.configs'.setup {
+--
+require("nvim-treesitter.configs").setup({
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
   ensure_installed = {
     "c",
@@ -22,7 +20,7 @@ require'nvim-treesitter.configs'.setup {
     "luadoc",
     "vimdoc",
     "markdown",
-    "markdown_inline"
+    "markdown_inline",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -61,4 +59,16 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-}
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn", -- set to `false` to disable one of the mappings
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true,
+  },
+})

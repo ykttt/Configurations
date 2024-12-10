@@ -1,7 +1,5 @@
-
-
 # hyprland/default.nix
-
+#
 {
   imports = [
     ./ags.nix

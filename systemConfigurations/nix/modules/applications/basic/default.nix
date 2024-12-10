@@ -1,7 +1,5 @@
-
-
 # basic/default.nix
-
+#
 {
   imports = [
     ./oth.nix

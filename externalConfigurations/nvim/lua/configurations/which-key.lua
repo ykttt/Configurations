@@ -1,5 +1,3 @@
-
-
 -- configurations/which-key.lua
-
-require('which-key').setup{}
+--
+require("which-key").setup({})

@@ -1,7 +1,5 @@
-
-
 # x86Laptop/default.nix
-
+#
 {
   imports = [
     ./boot.nix

@@ -1,12 +1,7 @@
-
-
 # basic/oth.nix
-
+#
 {
-  home-manager.users.km = {
-    pkgs,
-    ...
-  }: {
+  home-manager.users.km = {pkgs, ...}: {
     home.packages = with pkgs; [
       gcc
       w3m

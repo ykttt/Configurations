@@ -1,17 +1,12 @@
-
-
 # git/default.nix
-
+#
 {
-  home-manager.users.km = {
-    pkgs,
-    ...
-  }: {
-    home.packages = [ pkgs.gh ];
+  home-manager.users.km = {pkgs, ...}: {
+    home.packages = [pkgs.gh];
     programs.ssh.matchBlocks.km = {
       port = 443;
       host = "ssh.github.com";
-      identityFile = [ "/home/km/.ssh/id_ed25519" ];
+      identityFile = ["/home/km/.ssh/id_ed25519"];
     };
     programs.git = {
       enable = true;

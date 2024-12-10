@@ -1,11 +1,6 @@
-
-
-#hyprland/hyprland.nix
-
-{
-  pkgs,
-  ...
-}: {
+# hyprland/hyprland.nix
+#
+{pkgs, ...}: {
   services = {
     power-profiles-daemon.enable = true;
     logind.powerKey = "ignore";
@@ -16,12 +11,9 @@
   };
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   };
-  home-manager.users.km = {
-    pkgs,
-    ...
-  }: {
+  home-manager.users.km = {pkgs, ...}: {
     home.packages = with pkgs; [
       wlsunset
       hyprlock

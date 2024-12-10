@@ -1,7 +1,7 @@
 
 
 # x86Laptop/nixconfig.nix
-
+#
 {
   nix = {
     gc = {

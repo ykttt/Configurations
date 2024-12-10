@@ -1,7 +1,5 @@
-
-
 # x86Laptop/security.nix
-
+#
 {
   security = {
     sudo = {

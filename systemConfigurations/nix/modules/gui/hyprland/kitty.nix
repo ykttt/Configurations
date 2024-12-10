@@ -1,7 +1,5 @@
-
-
 # hyprland/kitty.nix
-
+#
 {
   home-manager.users.km = {
     programs.kitty = {
@@ -31,7 +29,7 @@
         remote_kitty = "if-needed";
         select_by_word_characters = "@-./_~?&=%+#";
         show_hyperlink_targets = true;
-        remember_window_size  = false;
+        remember_window_size = false;
         initial_window_width = 1000;
         initial_window_height = 618;
         tab_bar_style = "powerline";

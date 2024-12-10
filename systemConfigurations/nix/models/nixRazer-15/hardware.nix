@@ -1,14 +1,11 @@
-
-
 # nixRazer-15/hardware.nix
-
+#
 {
   modulesPath,
   config,
   lib,
   ...
 }: {
-
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -16,7 +13,7 @@
   boot = {
     initrd = {
       availableKernelModules = [
-        "xhci_pci"      
+        "xhci_pci"
         "thunderbolt"
         "nvme"
         "usbhid"
@@ -24,10 +21,10 @@
         "sd_mod"
         "rtsx_pci_sdmmc"
       ];
-      kernelModules = [ ];
+      kernelModules = [];
     };
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
   };
 
   fileSystems = {
@@ -49,15 +46,15 @@
     };
   };
 
-  swapDevices =[
-    { device = "/dev/disk/by-uuid/77b0229e-735f-4162-ad54-86713228f3c9"; }
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/77b0229e-735f-4162-ad54-86713228f3c9";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  
+
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 

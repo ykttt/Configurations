@@ -1,21 +1,13 @@
-
-
 # basic/zsh.nix
-
-{
-  pkgs,
-  ...
-}: {
+#
+{pkgs, ...}: {
   users.defaultUserShell = pkgs.zsh;
   programs.zsh = {
     enable = true;
     histSize = 10000;
     histFile = "\${HOME}/.zsh_history";
-   };
-  home-manager.users.km = {
-    pkgs,
-    ...
-  }: {
+  };
+  home-manager.users.km = {pkgs, ...}: {
     home.packages = with pkgs; [
       macchina
       pure-prompt
@@ -41,11 +33,13 @@
         osm = "onedrive -s --confdir ~/.config/onedrive/main";
         osr = "onedrive -s --confdir ~/.config/onedrive/rits";
       };
-      plugins = [ {
-        name = "zsh-vi-mode";
-        src = pkgs.zsh-vi-mode;
-        file = "zsh-vi-mode.plugin.zsh";
-      } ];
+      plugins = [
+        {
+          name = "zsh-vi-mode";
+          src = pkgs.zsh-vi-mode;
+          file = "zsh-vi-mode.plugin.zsh";
+        }
+      ];
       initExtra = ''
         autoload -U promptinit; promptinit
         prompt pure

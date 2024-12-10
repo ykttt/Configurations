@@ -1,7 +1,5 @@
-
-
 # nvim/default.nix
-
+#
 {
   environment.variables.EDITOR = "nvim";
   programs.neovim = {
@@ -9,16 +7,18 @@
     viAlias = true;
     vimAlias = true;
   };
-  home-manager.users.km = {
-    pkgs,
-    ...
-  }: {
+  home-manager.users.km = {pkgs, ...}: {
     home.packages = with pkgs; [
       nil
+      black
+      astyle
+      stylua
       ltex-ls
       neovide
       gnumake
       pyright
+      alejandra
+      codespell
       clang-tools
       tree-sitter
       lua-language-server

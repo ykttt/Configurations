@@ -1,11 +1,6 @@
-
-
 # general/fcitx.nix
-
-{
-  pkgs,
-  ...
-}: {
+#
+{pkgs, ...}: {
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";

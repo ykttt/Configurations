@@ -1,7 +1,5 @@
-
-
 # nixRazer-15/modules.nix
-
+#
 {
   imports = [
     ../../modules/hosts/x86Laptop
@@ -34,7 +32,6 @@
 
     ../../modules/applications/security/adGuardHome
     ../../modules/applications/security/1Password
-
   ];
   networking.hostName = "nixRazer-15";
   users = {

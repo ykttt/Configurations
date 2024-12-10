@@ -1,7 +1,5 @@
-
-
 # general/default.nix
-
+#
 {
   imports = [
     # ./externalThemes.nix

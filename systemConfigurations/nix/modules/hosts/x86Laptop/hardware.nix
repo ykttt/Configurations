@@ -1,16 +1,14 @@
-
-
 # x86Laptop/hardware.nix
-
+#
 {
   hardware = {
-    pulseaudio.enable = false;    # Enable sound with pipewire
+    pulseaudio.enable = false; # Enable sound with pipewire
     graphics.enable = true;
   };
   services = {
     upower = {
       enable = true;
-      criticalPowerAction = "HybridSleep";  # one of "PowerOff", "Hibernate", "HybridSleep"
+      criticalPowerAction = "HybridSleep"; # one of "PowerOff", "Hibernate", "HybridSleep"
     };
     pipewire = {
       enable = true;

@@ -1,19 +1,14 @@
-
-
 # nvidia/default.nix
-
-{
-  config,
-  ...
-}: {
+#
+{config, ...}: {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
-    open = false;   # Disable open-source drivers
+    open = false; # Disable open-source drivers
     modesetting.enable = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
     nvidiaSettings = true;
     powerManagement = {
-      enable = false;   # Experimental, may cause problems
+      enable = false; # Experimental, may cause problems
       finegrained = false;
     };
     prime = {

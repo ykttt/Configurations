@@ -1,12 +1,7 @@
-
-
 # general/catppuccin.nix
-
+#
 {
-  home-manager.users.km = {
-    inputs,
-    ...
-  }: {
+  home-manager.users.km = {inputs, ...}: {
     imports = [
       inputs.catppuccin.homeManagerModules.catppuccin
     ];

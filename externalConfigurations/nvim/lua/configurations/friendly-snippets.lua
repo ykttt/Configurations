@@ -1,4 +1,2 @@
-
-
 -- configurations/friendly-snippets.lua
-
+--

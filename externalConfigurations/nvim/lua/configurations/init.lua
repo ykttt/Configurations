@@ -1,31 +1,31 @@
-
-
 -- configurations/init.lua
-
-require('configurations/neovim')
-require('configurations/neovide')
+--
+require("configurations/neovim")
+require("configurations/neovide")
 
 -- require('configurations/melange')
 -- require('configurations/rose-pine')
 -- require('configurations/kanagawa')
-require('configurations/catppuccin')
+require("configurations/catppuccin")
 
-require('configurations/lualine')
-require('configurations/bufferline')
+require("configurations/lualine")
+require("configurations/bufferline")
 
-require('configurations/lspconfig')
-require('configurations/nvim-treesitter')
-require('configurations/ibl')
-require('configurations/dropbar')
+require("configurations/lspconfig")
+require("configurations/nvim-treesitter")
+require("configurations/ibl")
+require("configurations/dropbar")
 
-require('configurations/notify')
-require('configurations/nvim-tree')
-require('configurations/telescope')
+require("configurations/notify")
+require("configurations/nvim-tree")
+require("configurations/telescope")
 
-require('configurations/friendly-snippets')
-require('configurations/luasnip')
-require('configurations/vimtex')
+require("configurations/friendly-snippets")
+require("configurations/luasnip")
+require("configurations/vimtex")
 
-require('configurations/which-key')
-require('configurations/nvim-autopairs')
-require('configurations/nvim_comment')
+require("configurations/which-key")
+require("configurations/nvim-autopairs")
+require("configurations/nvim-comment")
+require("configurations/rainbow-delimiters")
+require("configurations/conform")

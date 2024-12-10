@@ -1,8 +1,6 @@
-
-
 # matlabImpure/default.nix
-
-{ pkgs, ... }: {
+#
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     matlab
     mesa

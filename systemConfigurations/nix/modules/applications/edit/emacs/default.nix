@@ -5,10 +5,10 @@
   home-manager.users.km = {pkgs, ...}: {
     programs.emacs = {
       enable = true;
-      extraPackages = epkgs:
-        with epkgs; [
-          evil
-        ];
+      # extraPackages = epkgs:
+      #   with epkgs; [
+      #     evil
+      #   ];
     };
     xdg.mimeApps = {
       associations.added = {

@@ -2,8 +2,8 @@
 --
 require("conform").setup({
   formatters_by_ft = {
-    c = { "astyle" },
-    cpp = { "astyle" },
+    c = { "clang_format" },
+    cpp = { "clang_format" },
     lua = { "stylua" },
     nix = { "alejandra" },
     python = { "black" },
@@ -22,9 +22,13 @@ require("conform").setup({
   notify_on_error = true,
   notify_no_formatters = true,
   formatters = {
-    astyle = {
-      args = { "suffix=none", "--indent=spaces=2", "--style=attach", "$FILENAME" },
-      stdin = false,
+    clang_format = {
+      command = "clang-format",
+      args = { "-style=llvm" },
+      stdin = true,
+      range_args = function(self, ctx)
+        return { "-lines=" .. ctx.range.start[1] .. ":" .. ctx.range["end"][1] }
+      end,
     },
     stylua = {
       args = { "--indent-type", "Spaces", "--indent-width", "2", "$FILENAME" },

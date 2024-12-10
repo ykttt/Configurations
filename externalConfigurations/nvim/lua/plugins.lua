@@ -34,6 +34,20 @@ return require("lazy").setup({
   "hrsh7th/nvim-cmp",
   "lervag/vimtex",
   {
+    "theHamsta/nvim-dap-virtual-text",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",

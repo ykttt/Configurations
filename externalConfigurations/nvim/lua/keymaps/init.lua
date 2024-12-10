@@ -9,3 +9,5 @@ require("keymaps/alpha")
 require("keymaps/luasnip")
 require("keymaps/nvim-tree")
 require("keymaps/telescope")
+
+require("keymaps/dap")

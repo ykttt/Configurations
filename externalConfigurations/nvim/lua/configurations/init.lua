@@ -29,3 +29,7 @@ require("configurations/nvim-autopairs")
 require("configurations/nvim-comment")
 require("configurations/rainbow-delimiters")
 require("configurations/conform")
+
+require("configurations/dap")
+require("configurations/dapui")
+require("configurations/daptext")

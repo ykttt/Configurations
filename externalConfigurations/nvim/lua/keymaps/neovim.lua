@@ -33,7 +33,8 @@ end, { silent = true })
 
 vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>", { silent = true })
 
-vim.keymap.set("n", "<leader>:", "<cmd>sp term://zsh<cr>", { silent = true })
+vim.keymap.set("n", "<leader>:i", "<cmd>sp term://zsh<cr>", { silent = true })
+vim.keymap.set("n", "<leader>:o", "<cmd>vs term://zsh<cr>", { silent = true })
 
 vim.keymap.set("!", "<c-h>", "<left>")
 vim.keymap.set("!", "<c-l>", "<right>")

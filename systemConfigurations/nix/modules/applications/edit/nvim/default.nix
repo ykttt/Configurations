@@ -10,8 +10,8 @@
   home-manager.users.km = {pkgs, ...}: {
     home.packages = with pkgs; [
       nil
+      lldb
       black
-      astyle
       stylua
       ltex-ls
       neovide

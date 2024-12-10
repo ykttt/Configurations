@@ -16,7 +16,7 @@
 
     ../../modules/applications/edit/krita
     # ../../modules/applications/edit/libreOffice
-    # ../../modules/applications/edit/emacs
+    ../../modules/applications/edit/emacs
     ../../modules/applications/edit/nvim
     ../../modules/applications/edit/tex
 

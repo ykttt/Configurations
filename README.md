@@ -28,7 +28,7 @@ Mainly configuration files and scripts.
 - [ ] Fix bar showing on the top layer when being full-screen
 - [ ] Add automatic theme switch
 ### Applications
-#### Neovim 
+#### Neovim
 - [ ] Smoothen LaTeX workflow
   - [x] Make vimtex work with uplatex
   - [ ] Set up snippets for LaTeX, etc.
@@ -43,6 +43,6 @@ Mainly configuration files and scripts.
   - [ ] hls (haskell)
   - [x] lua-language-server
   - [x] ~~bash-language-server~~
-- [ ] Set up DAP
+- [x] Set up DAP
 - [ ] Light/dark colour scheme auto-switch
 - [ ] Further configuration of nvim-tree

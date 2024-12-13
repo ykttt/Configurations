@@ -178,15 +178,16 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1733831374,
-        "narHash": "sha256-zUhgF2KtoFyPgq4y/5/oS9elgt8g7jd005meitNaTac=",
+        "lastModified": 1731002840,
+        "narHash": "sha256-l623fIVhVCU/ylbBmohAtQNbK0YrWlEny0sC/vBJ+dU=",
         "owner": "InioX",
         "repo": "Matugen",
-        "rev": "05e7ceac5d41c695a7bb1060a7c8c6eb74be3f6f",
+        "rev": "ab0a12f826c194003c69ee2e3d700245fb54f875",
         "type": "github"
       },
       "original": {
         "owner": "InioX",
+        "ref": "refs/tags/v2.4.0",
         "repo": "Matugen",
         "type": "github"
       }
@@ -299,11 +300,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1734072538,
-        "narHash": "sha256-osDqx1W/Nwq7ulD8eF23bqXhdueg2DUKN5cuP2Y6x7M=",
+        "lastModified": 1734075536,
+        "narHash": "sha256-nU5SKM6BBD1BJDzTz/WV1MenvKGPQuRg3kNaykogUns=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "84b5a90b36c1101bcd49384515cb6fcc7b0773d9",
+        "rev": "587c6b88be7ce9cc446f8f95064fce83144e69ae",
         "type": "github"
       },
       "original": {

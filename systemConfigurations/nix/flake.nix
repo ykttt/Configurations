@@ -50,6 +50,7 @@
     nur.url = "github:nix-community/NUR";
     catppuccin.url = "github:catppuccin/nix";
     zen-browser.url = "github:ykttt/zen-browser-flake";
+    matugen.url = "github:/InioX/Matugen?ref=refs/tags/v2.4.0";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,10 +70,6 @@
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    matugen = {
-      url = "github:/InioX/Matugen";
-      # ref = "refs/tags/matugen-v0.10.0";
     };
   };
 }

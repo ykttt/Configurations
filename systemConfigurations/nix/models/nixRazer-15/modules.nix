@@ -13,6 +13,7 @@
     ../../modules/applications/basic
 
     ../../modules/applications/development/git
+    ../../modules/applications/development/haskell
 
     ../../modules/applications/edit/krita
     ../../modules/applications/edit/libreOffice

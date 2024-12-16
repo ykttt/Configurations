@@ -34,6 +34,11 @@ return require("lazy").setup({
   "hrsh7th/nvim-cmp",
   "lervag/vimtex",
   {
+    "mrcjkb/haskell-tools.nvim",
+    version = "^4", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
+  {
     "kevinhwang91/nvim-ufo",
     dependencies = {
       "kevinhwang91/promise-async",

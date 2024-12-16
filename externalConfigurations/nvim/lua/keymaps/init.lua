@@ -11,3 +11,5 @@ require("keymaps/nvim-tree")
 require("keymaps/telescope")
 
 require("keymaps/dap")
+require("keymaps/ufo")
+require("keymaps/trouble")

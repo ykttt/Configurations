@@ -10,4 +10,4 @@ require("telescope").setup({
     },
   },
 })
--- require('telescope').load_extension('fzf')    -- temprarily remained due to fzf extension being not installed
+require("telescope").load_extension("fzf")

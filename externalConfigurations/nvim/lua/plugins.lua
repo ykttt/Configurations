@@ -34,6 +34,12 @@ return require("lazy").setup({
   "hrsh7th/nvim-cmp",
   "lervag/vimtex",
   {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+    },
+  },
+  {
     "theHamsta/nvim-dap-virtual-text",
     dependencies = {
       "mfussenegger/nvim-dap",
@@ -53,6 +59,10 @@ return require("lazy").setup({
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
     },
+  },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
   },
   {
     "Bekaboo/dropbar.nvim",
@@ -78,10 +88,6 @@ return require("lazy").setup({
     build = ":TSUpdate",
   },
   {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-  },
-  {
     "L3MON4D3/LuaSnip",
     -- tag = "v2.*",   -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     build = "make install_jsregexp", -- optional
@@ -94,10 +100,6 @@ return require("lazy").setup({
   {
     "rose-pine/neovim",
     name = "rose-pine",
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
   },
   {
     "catppuccin/nvim",
@@ -150,5 +152,10 @@ return require("lazy").setup({
       alpha.setup(dashboard.opts)
       vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
     end,
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
   },
 })

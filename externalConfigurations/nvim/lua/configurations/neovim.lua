@@ -57,6 +57,3 @@ vim.o.ww = vim.o.ww .. ",<,>,[,]"
 vim.o.bs = "indent,eol,start"
 vim.o.cb = "unnamedplus"
 vim.o.fdm = "marker"
-
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"

@@ -10,9 +10,9 @@
         stylish-haskell
         haskell-language-server
       ]
-      + (with haskellPackages; [
-        dap
+      ++ (with haskellPackages; [
         hoogle
+        fast-tags
         cabal2nix
         haskell-debug-adapter
       ]);

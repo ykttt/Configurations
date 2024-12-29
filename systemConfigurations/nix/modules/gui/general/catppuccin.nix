@@ -9,18 +9,19 @@
       enable = true;
       flavor = "mocha";
       accent = "teal";
-      pointerCursor = {
+      cursors = {
         enable = true;
         accent = "dark";
       };
+      gtk = {
+        enable = true;
+        icon.enable = true;
+        gnomeShellTheme = true;
+        size = "compact";
+      };
+      nvim.enable = true;
     };
-    gtk.catppuccin = {
-      enable = true;
-      icon.enable = true;
-      gnomeShellTheme = true;
-      size = "compact";
-    };
-    programs.neovim.catppuccin.enable = false;
+
     home.stateVersion = "24.05";
   };
 }

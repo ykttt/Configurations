@@ -19,7 +19,7 @@
         gnomeShellTheme = true;
         size = "compact";
       };
-      nvim.enable = true;
+      nvim.enable = false;
     };
 
     home.stateVersion = "24.05";

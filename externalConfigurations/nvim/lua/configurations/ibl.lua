@@ -1,5 +1,16 @@
 -- configurations/ibl.lua
 --
 require("ibl").setup({
-  indent = { char = "•" },
+  indent = {
+    -- char = "|",
+    -- highlight = {
+    --   "RainbowDelimiterRed",
+    --   "RainbowDelimiterYellow",
+    --   "RainbowDelimiterBlue",
+    --   "RainbowDelimiterOrange",
+    --   "RainbowDelimiterGreen",
+    --   "RainbowDelimiterViolet",
+    --   "RainbowDelimiterCyan",
+    -- },
+  },
 })

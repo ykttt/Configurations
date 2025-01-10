@@ -49,7 +49,6 @@
     nixpkgs24-11.url = "github:NixOS/nixpkgs/nixos-24.11";
     nur.url = "github:nix-community/NUR";
     catppuccin.url = "github:catppuccin/nix";
-    zen-browser.url = "github:ykttt/zen-browser-flake";
     matugen.url = "github:/InioX/Matugen?ref=refs/tags/v2.4.0";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -69,6 +68,10 @@
     };
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

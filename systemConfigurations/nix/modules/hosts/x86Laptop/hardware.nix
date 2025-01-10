@@ -2,10 +2,10 @@
 #
 {
   hardware = {
-    pulseaudio.enable = false; # Enable sound with pipewire
     graphics.enable = true;
   };
   services = {
+    pulseaudio.enable = false; # Enable sound with pipewire
     upower = {
       enable = true;
       criticalPowerAction = "HybridSleep"; # one of "PowerOff", "Hibernate", "HybridSleep"

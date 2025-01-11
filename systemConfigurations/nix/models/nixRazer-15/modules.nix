@@ -1,57 +1,46 @@
 # nixRazer-15/modules.nix
 #
 {
-  imports =
-    [../../modules/hosts/x86Laptop]
-    ++ (with ../../modules/drivers; [
-      nvidia
-      razer
-    ])
-    ++ (with ../../modules/environment/shell; [
-      zsh
-    ])
-    ++ (with ../../modules/environment/gui; [
-      general
-      hyprland
-    ])
-    ++ (with ../../modules/applications/tools; [
-      basic
-      kitty
-      nemo
-      yazi
-    ])
-    ++ (with ../../modules/applications/development; [
-      git
-      haskell
-    ])
-    ++ (with ../../modules/applications/editing; [
-      libreOffice
-      nvim
-      tex
-    ])
-    ++ (with ../../modules/applications/media; [
-      mpv
-      you-get
-    ])
-    ++ (with ../../modules/applications/creativity; [
-      krita
-    ])
-    ++ (with ../../modules/applications/internet; [
-      onedrive
-      discord
-      zoom
-      zen
-    ])
-    ++ (with ../../modules/applications/security; [
-      adGuardHome
-      onePassword
-    ])
-    ++ (with ../../modules/applications/gaming; [
-      steam
-    ])
-    ++ (with ../../modules/applications/virtualisation; [
-      virtualBox
-    ]);
+  imports = [
+    ../../modules/hosts/x86Laptop
+
+    ../../modules/drivers/nvidia
+    ../../modules/drivers/razer
+
+    ../../modules/environment/shell/zsh
+
+    ../../modules/environment/gui/general
+    ../../modules/environment/gui/hyprland
+
+    ../../modules/applications/creativity/krita
+
+    ../../modules/applications/development/git
+    ../../modules/applications/development/haskell
+
+    ../../modules/applications/editing/libreOffice
+    ../../modules/applications/editing/nvim
+    ../../modules/applications/editing/tex
+
+    ../../modules/applications/gaming/steam
+
+    ../../modules/applications/internet/discord
+    ../../modules/applications/internet/onedrive
+    ../../modules/applications/internet/zoom
+    ../../modules/applications/internet/zen
+
+    ../../modules/applications/media/mpv
+    ../../modules/applications/media/you-get
+
+    ../../modules/applications/security/1Password
+    ../../modules/applications/security/adGuardHome
+
+    ../../modules/applications/tools/basic
+    ../../modules/applications/tools/kitty
+    ../../modules/applications/tools/nemo
+    ../../modules/applications/tools/yazi
+
+    ../../modules/applications/virtualisation/virtualBox
+  ];
   networking.hostName = "nixRazer-15";
   users = {
     users.km = {

@@ -1,4 +1,4 @@
-# onePassword/default.nix
+# 1Password/default.nix
 #
 {
   programs = {

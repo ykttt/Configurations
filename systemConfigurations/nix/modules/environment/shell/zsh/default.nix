@@ -1,4 +1,4 @@
-# basic/zsh.nix
+# zsh/default.nix
 #
 {pkgs, ...}: {
   users.defaultUserShell = pkgs.zsh;

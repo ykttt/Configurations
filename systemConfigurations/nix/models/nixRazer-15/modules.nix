@@ -1,39 +1,57 @@
 # nixRazer-15/modules.nix
 #
 {
-  imports = [
-    ../../modules/hosts/x86Laptop
-
-    ../../modules/drivers/razer
-    ../../modules/drivers/nvidia
-
-    ../../modules/gui/general
-    ../../modules/gui/hyprland
-
-    ../../modules/applications/basic
-
-    ../../modules/applications/development/git
-    ../../modules/applications/development/haskell
-
-    ../../modules/applications/edit/krita
-    ../../modules/applications/edit/libreOffice
-    # ../../modules/applications/edit/emacs
-    ../../modules/applications/edit/nvim
-    ../../modules/applications/edit/tex
-
-    ../../modules/applications/gaming/steam
-    # ../../modules/applications/gaming/aagl
-
-    ../../modules/applications/network/zoom
-    ../../modules/applications/network/zen
-
-    # ../../modules/applications/scholar/matlabImpure
-
-    ../../modules/applications/virtualisation/virtualBox
-
-    ../../modules/applications/security/adGuardHome
-    ../../modules/applications/security/1Password
-  ];
+  imports =
+    [../../modules/hosts/x86Laptop]
+    ++ (with ../../modules/drivers; [
+      nvidia
+      razer
+    ])
+    ++ (with ../../modules/environment/shell; [
+      zsh
+    ])
+    ++ (with ../../modules/environment/gui; [
+      general
+      hyprland
+    ])
+    ++ (with ../../modules/applications/tools; [
+      basic
+      kitty
+      nemo
+      yazi
+    ])
+    ++ (with ../../modules/applications/development; [
+      git
+      haskell
+    ])
+    ++ (with ../../modules/applications/editing; [
+      libreOffice
+      nvim
+      tex
+    ])
+    ++ (with ../../modules/applications/media; [
+      mpv
+      you-get
+    ])
+    ++ (with ../../modules/applications/creativity; [
+      krita
+    ])
+    ++ (with ../../modules/applications/internet; [
+      onedrive
+      discord
+      zoom
+      zen
+    ])
+    ++ (with ../../modules/applications/security; [
+      adGuardHome
+      onePassword
+    ])
+    ++ (with ../../modules/applications/gaming; [
+      steam
+    ])
+    ++ (with ../../modules/applications/virtualisation; [
+      virtualBox
+    ]);
   networking.hostName = "nixRazer-15";
   users = {
     users.km = {

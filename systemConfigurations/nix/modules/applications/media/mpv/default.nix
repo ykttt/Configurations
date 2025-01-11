@@ -1,4 +1,4 @@
-# basic/mpv.nix
+# mpv/default.nix
 #
 {
   home-manager.users.km = {pkgs, ...}: {

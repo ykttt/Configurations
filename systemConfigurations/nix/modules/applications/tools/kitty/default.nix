@@ -1,4 +1,4 @@
-# hyprland/kitty.nix
+# kitty/default.nix
 #
 {
   home-manager.users.km = {

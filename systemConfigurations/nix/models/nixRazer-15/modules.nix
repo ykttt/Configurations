@@ -8,7 +8,6 @@
     ../../modules/drivers/razer
 
     ../../modules/environment/shell/zsh
-    ../../modules/environment/shell/starship
 
     ../../modules/environment/gui/general
     ../../modules/environment/gui/hyprland
@@ -38,6 +37,7 @@
     ../../modules/applications/tools/basic
     ../../modules/applications/tools/kitty
     ../../modules/applications/tools/nemo
+    ../../modules/applications/tools/starship
     ../../modules/applications/tools/yazi
 
     ../../modules/applications/virtualisation/virtualBox

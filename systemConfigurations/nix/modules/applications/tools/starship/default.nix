@@ -11,16 +11,9 @@
       settings = {
         add_newline = false;
         format = lib.concatStrings [
-          "$line_break"
-          "$package"
-          "$line_break"
-          "$character"
+          "$all"
         ];
         scan_timeout = 10;
-        character = {
-          success_symbol = "➜";
-          error_symbol = "➜";
-        };
       };
     };
     home.stateVersion = "24.05";

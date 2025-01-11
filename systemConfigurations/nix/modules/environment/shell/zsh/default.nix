@@ -8,10 +8,7 @@
     histFile = "\${HOME}/.zsh_history";
   };
   home-manager.users.km = {pkgs, ...}: {
-    home.packages = with pkgs; [
-      macchina
-      pure-prompt
-    ];
+    home.packages = [pkgs.macchina];
     programs.zsh = {
       enable = true;
       enableCompletion = true;
@@ -43,7 +40,6 @@
       ];
       initExtra = ''
         autoload -U promptinit; promptinit
-        prompt pure
         echo "\n" && macchina -t greet -o uptime -o host -o distribution -o packages -o kernel -o shell -o processor-load -o memory
       '';
     };

@@ -158,7 +158,7 @@ const options = mkOptions(OPTIONS, {
       favorites: opt([
         [
           "zen",
-          "thunderbird",
+          "libreoffice",
           "neovide",
           "nemo",
           "steam",

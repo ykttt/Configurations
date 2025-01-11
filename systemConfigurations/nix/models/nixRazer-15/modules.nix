@@ -36,6 +36,7 @@
 
     ../../modules/applications/tools/basic
     ../../modules/applications/tools/kitty
+    ../../modules/applications/tools/wezterm
     ../../modules/applications/tools/nemo
     ../../modules/applications/tools/yazi
 

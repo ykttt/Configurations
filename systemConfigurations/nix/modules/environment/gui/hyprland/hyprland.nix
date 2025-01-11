@@ -18,6 +18,7 @@
       wlsunset
       hyprlock
     ];
+    wayland.windowManager.hyprland.enable = true;
     gtk.enable = true;
     home.stateVersion = "24.05";
   };

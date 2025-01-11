@@ -1,4 +1,4 @@
-# hyprland/nm-applet.nix
+# nm-applet/default.nix
 #
 {
   home-manager.users.km = {

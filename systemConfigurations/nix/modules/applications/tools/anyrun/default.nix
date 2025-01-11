@@ -1,4 +1,4 @@
-# hyprland/anyrun.nix
+# anyrun/default.nix
 #
 {
   home-manager.users.km = {

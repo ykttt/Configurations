@@ -3,12 +3,12 @@
 {
   home-manager.users.km = {
     pkgs,
-    input,
+    inputs,
     ...
   }: {
     programs.wezterm = {
       enable = true;
-      package = input.wezterm.packages.${pkgs.system}.default;
+      package = inputs.wezterm.packages.${pkgs.system}.default;
       enableZshIntegration = true;
     };
     home.stateVersion = "24.05";

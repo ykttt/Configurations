@@ -32,6 +32,7 @@
         mpi = "mpv --config-dir=$HOME/.config/mpv/imgView";
         osm = "onedrive -s --confdir ~/.config/onedrive/main";
         osr = "onedrive -s --confdir ~/.config/onedrive/rits";
+        cdn = "cd repositories/configurations/systemConfigurations/nix";
       };
       plugins = [
         {

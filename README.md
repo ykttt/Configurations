@@ -34,16 +34,21 @@ Mainly configuration files and scripts.
   - [x] Make vimtex work with uplatex
   - [ ] Set up snippets for LaTeX, etc.
   - [ ] Set up inverse search in both nvim and zathura
-- [ ] Set up LSP servers without mason.nvim (for it's just not working on NixOS)
+- [x] Set up LSP servers without mason.nvim (for it's just not working on NixOS)
   - [x] clangd
   - [x] texlab
   - [ ] ~~lsp_ai~~
   - [x] ltex-ls
   - [x] pyright
   - [x] nil (nix)
-  - [ ] hls (haskell)
+  - [x] hls (haskell)
   - [x] lua-language-server
   - [x] ~~bash-language-server~~
 - [x] Set up DAP
 - [ ] ~Light/dark colour scheme auto-switch~
 - [ ] Further configuration of nvim-tree
+#### AGS
+- [ ] Rewrite app launcher
+- [ ] Show window title in status bar
+#### llama-cpp
+- [ ] Employ local chatbot using Vicuna 13B

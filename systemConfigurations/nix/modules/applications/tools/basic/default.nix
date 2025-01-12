@@ -1,4 +1,4 @@
-tools/basic.nix
+#tools/basic.nix
 #
 {
   home-manager.users.km = {pkgs, ...}: {

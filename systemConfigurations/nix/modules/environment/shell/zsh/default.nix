@@ -15,13 +15,13 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
+        e = "eza";
         g = "git";
         s = "sudo";
         q = "exit";
         a = "yazi";
-        j = "journalctl";
+        el = "eza -l";
         sa = "sudo yazi";
-        ll = "ls -l --color";
         rb = "sudo nixos-rebuild";
         cl = "sudo nix-collect-garbage";
         rbs = "sudo nixos-rebuild switch";

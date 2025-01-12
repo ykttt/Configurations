@@ -5,13 +5,26 @@
     home.packages = with pkgs; [
       gcc
       bat
-      tree
+      btop
       unzip
       gnumake
+      trash-cli
     ];
-    programs.zoxide = {
-      enable = true;
-      options = ["--cmd cd"];
+    programs = {
+      zoxide = {
+        enable = true;
+        options = ["--cmd j"];
+      };
+      eza = {
+        enable = true;
+        git = true;
+        colors = "auto";
+        icons = "auto";
+        extraOptions = [
+          "--group-directories-last"
+          "--header"
+        ];
+      };
     };
     home.stateVersion = "24.05";
   };

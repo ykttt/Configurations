@@ -9,6 +9,7 @@ Mainly configuration files and scripts.
   - [x] Apply patch automatically when booting up
   - [x] Get rid of automatically muting issue
 - [ ] Support secure boot
+- [ ] Make Howdy usable on NixOS
 - [ ] Make custom keyboard effect scripts running on NixOS
 - [ ] Adjust kernel options for gaming performance with nix configuration
 - [ ] Boost booting time
@@ -21,12 +22,12 @@ Mainly configuration files and scripts.
 - [x] Migrate to hyprland
 - [x] ~~Replace wofi with anyrun~~
 - [x] Import AGS widgets
-- [ ] Binding configurations
+- [x] Binding configurations
 - [x] Improve appearance
 - [x] Introduce power management
 - [x] Add graphical control interface
-- [ ] Fix bar showing on the top layer when being full-screen
-- [ ] Add automatic theme switch
+- [x] Fix bar showing on the top layer when being full-screen
+- [ ] ~~Add automatic theme switch~~
 ### Applications
 #### Neovim
 - [ ] Smoothen LaTeX workflow
@@ -44,5 +45,5 @@ Mainly configuration files and scripts.
   - [x] lua-language-server
   - [x] ~~bash-language-server~~
 - [x] Set up DAP
-- [ ] Light/dark colour scheme auto-switch
+- [ ] ~Light/dark colour scheme auto-switch~
 - [ ] Further configuration of nvim-tree

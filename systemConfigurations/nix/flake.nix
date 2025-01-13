@@ -24,7 +24,10 @@
       nixRazer-15 = nixpkgs.lib.nixosSystem {
         pkgs = import nixpkgs {
           inherit system;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+            cudaSupport = true;
+          };
           overlays = overlayLinux;
         };
         specialArgs = {inherit inputs;};
@@ -35,7 +38,10 @@
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
               users.km.nixpkgs = {
-                config.allowUnfree = true;
+                config = {
+                  allowUnfree = true;
+                  cudaSupport = true;
+                };
                 overlays = overlayLinux;
               };
             };

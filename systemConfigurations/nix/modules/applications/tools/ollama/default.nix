@@ -6,7 +6,7 @@
     home = "/llm";
     acceleration = "cuda";
     models = "/llm/models";
-    openFriewall = true;
+    openFirewall = true;
     host = "127.0.0.1";
     port = 11434;
   };

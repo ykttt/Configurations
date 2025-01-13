@@ -39,7 +39,7 @@
     ../../modules/applications/tools/nemo
     ../../modules/applications/tools/starship
     ../../modules/applications/tools/yazi
-    ../../modules/applications/tools/ollama
+    ../../modules/applications/tools/llama-cpp
 
     ../../modules/applications/virtualisation/virtualBox
   ];

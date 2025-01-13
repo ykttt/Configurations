@@ -1,7 +1,7 @@
 # ollama/default.nix
 #
 {
-  service.ollama = {
+  services.ollama = {
     enable = true;
     home = "/llm";
     acceleration = "cuda";

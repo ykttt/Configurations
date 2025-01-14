@@ -6,7 +6,7 @@
   ...
 }:
 with lib; let
-  cfg = config.service.llama-cpp;
+  cfg = config.services.llama-cpp;
 in {
   options.services.llama-cpp.autoStart = mkOption {
     type = lib.types.bool;

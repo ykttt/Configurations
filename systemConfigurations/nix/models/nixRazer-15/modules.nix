@@ -8,7 +8,6 @@
     ../../modules/drivers/razer
 
     ../../modules/environment/shell/zsh
-    ../../modules/environment/shell/direnv
 
     ../../modules/environment/gui/general
     ../../modules/environment/gui/hyprland

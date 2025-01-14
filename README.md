@@ -10,7 +10,7 @@ Mainly configuration files and scripts.
   - [x] Get rid of automatically muting issue
 - [ ] Support secure boot
 - [ ] Make Howdy usable on NixOS
-- [ ] Make custom keyboard effect scripts running on NixOS
+- [ ] Custom keyboard effect
 - [ ] Adjust kernel options for gaming performance with nix configuration
 - [ ] Boost booting time
 ### Nix
@@ -51,4 +51,4 @@ Mainly configuration files and scripts.
 - [ ] Rewrite app launcher
 - [ ] Show window title in status bar
 #### llama-cpp
-- [ ] Employ local chatbot using Vicuna 13B
+- [x] Employ local chatbot using Llama-3-ELYZA-JP-8B

@@ -1,13 +1,6 @@
 # nvidia/default.nix
 #
-{
-  config,
-  pkgs,
-  ...
-}: {
-  environment.systemPackages = with pkgs; [
-    cudaPackages.cudnn
-  ];
+{config, ...}: {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     open = false; # Disable open-source drivers

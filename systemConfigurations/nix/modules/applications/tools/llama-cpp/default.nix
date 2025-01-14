@@ -7,6 +7,7 @@
 }: {
   services.llama-cpp = {
     enable = true;
+    autoStart = false;
     openFirewall = true;
     host = "127.0.0.1";
     port = 11434;
@@ -23,6 +24,7 @@
     ];
   };
   systemd.services.llama-cpp = lib.mkIf config.services.llama-cpp.enable {
+    wantedBy = lib.mkIf (!config.services.llama-cpp.autoStart) lib.force [];
     environment = lib.mkIf config.hardware.nvidia.prime.offload.enable {
       __NV_PRIME_RENDER_OFFLOAD = "1";
       __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";

@@ -32,7 +32,7 @@
       withPython3 = true;
       withNodeJs = true;
     };
-    file."${config.home.homeDirectory}/.config/nvim".source =
+    home.file."${config.home.homeDirectory}/.config/nvim".source =
       config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/repositories/configurations/externalConfigurations/nvim";
     xdg.mimeApps = {

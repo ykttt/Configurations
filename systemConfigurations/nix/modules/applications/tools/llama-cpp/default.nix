@@ -1,7 +1,7 @@
 # llama-cpp/default.nix
 #
 {
-  import = [./override.nix];
+  imports = [./overrides.nix];
   services.llama-cpp = {
     enable = true;
     autoStart = false;

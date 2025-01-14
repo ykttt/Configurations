@@ -1,13 +1,6 @@
 -- configurations/rose-pine.lua
 --
 local time = { dawn = 620, night = 1900, now = tonumber(vim.fn.strftime("%H%M")) } -- TODO To automatically change the theme
-
-if time.dawn <= time.now and time.now < time.night then
-  vim.o.bg = "light"
-else
-  vim.o.bg = "dark"
-end
-
 require("rose-pine").setup({
   variant = "auto", --- @usage 'auto'|'main'|'moon'|'dawn'
   dark_variant = "main", --- @usage 'main'|'moon'|'dawn'

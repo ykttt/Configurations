@@ -3,10 +3,10 @@
 require("configurations/neovim")
 require("configurations/neovide")
 
--- require('configurations/melange')
 -- require('configurations/rose-pine')
--- require('configurations/kanagawa')
-require("configurations/catppuccin")
+require("configurations/kanagawa")
+-- require("configurations/catppuccin")
+-- require("configurations/melange")
 
 require("configurations/lualine")
 require("configurations/bufferline")

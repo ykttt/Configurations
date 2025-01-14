@@ -2,7 +2,7 @@
 --
 vim.opt.termguicolors = true
 local bufferline = require("bufferline")
-local highlights = require("catppuccin.groups.integrations.bufferline").get()
+-- local highlights = require("catppuccin.groups.integrations.bufferline").get()
 bufferline.setup({
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead

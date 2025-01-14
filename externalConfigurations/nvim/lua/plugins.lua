@@ -12,7 +12,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     lazypath,
   })
 end
-
 vim.opt.rtp:prepend(lazypath)
 vim.g.configpath = "~/.config/nvim"
 
@@ -21,6 +20,7 @@ return require("lazy").setup({
   "terrortylor/nvim-comment",
   "saadparwaiz1/cmp_luasnip",
   "neovim/nvim-lspconfig",
+  "rebelot/kanagawa.nvim",
   "stevearc/conform.nvim",
   "windwp/nvim-autopairs",
   "folke/which-key.nvim",

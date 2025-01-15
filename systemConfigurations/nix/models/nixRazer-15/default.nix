@@ -39,14 +39,12 @@ in
       (import ./local)
       (import ./adapted)
       {
-        users = {
-          users.${extraArgs.sysinfo.target} = {
-            isNormalUser = true;
-            description = extraArgs.sysinfo.target;
-            extraGroups = ["wheel"];
-          };
-        };
         system.stateVersion = "24.05";
+        users.users.${extraArgs.sysinfo.target} = {
+          description = extraArgs.sysinfo.target;
+          isNormalUser = true;
+          extraGroups = ["wheel"];
+        };
       }
       inputs.home-manager.nixosModules.home-manager
       {

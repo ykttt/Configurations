@@ -1,11 +1,7 @@
 # nm-applet/default.nix
 #
-{
-  pkgs,
-  sysinfo,
-  ...
-}: {
-  home-manager.users.${sysinfo.target} = {
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = [pkgs.networkmanagerapplet];
     services.network-manager-applet.enable = true;
   };

@@ -17,7 +17,7 @@
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   };
-  home-manager.users.${sysinfo.target} = {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = with pkgs; [
       wlsunset
       hyprlock

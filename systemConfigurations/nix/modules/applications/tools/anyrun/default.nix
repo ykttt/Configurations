@@ -1,13 +1,12 @@
 # anyrun/default.nix
 #
-{
-  pkgs,
-  inputs,
-  sysinfo,
-  ...
-}: {
-  imports = [inputs.anyrun.homeManagerModules.default];
+{sysinfo, ...}: {
   home-manager.users.${sysinfo.target} = {
+    pkgs,
+    inputs,
+    ...
+  }: {
+    imports = [inputs.anyrun.homeManagerModules.default];
     nix.settings = {
       builders-use-substitutes = true;
       extra-substituters = ["https://anyrun.cachix.org"];

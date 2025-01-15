@@ -1,9 +1,7 @@
 # you-get/default.nix
 #
-{
-  pkgs,
-  sysinfo,
-  ...
-}: {
-  home-manager.users.${sysinfo.target}.home.packages = [pkgs.you-get];
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
+    home.packages = [pkgs.you-get];
+  };
 }

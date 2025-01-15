@@ -1,9 +1,7 @@
 # general/externalThemes.nix
 #
-{
-  pkgs,
-  sysinfo,
-  ...
-}: {
-  home-manager.users.${sysinfo.target}.home.packages = [pkgs.nwg-look];
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
+    home.packages = [pkgs.nwg-look];
+  };
 }

@@ -1,11 +1,7 @@
 #tools/basic.nix
 #
-{
-  pkgs,
-  sysinfo,
-  ...
-}: {
-  home-manager.users.${sysinfo.target} = {
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = with pkgs; [
       gcc
       bat

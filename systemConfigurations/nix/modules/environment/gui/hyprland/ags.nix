@@ -1,17 +1,16 @@
 # hyprland/ags.nix
 #
-{
-  pkgs,
-  inputs,
-  sysinfo,
-  ...
-}: {
-  imports = [inputs.ags.homeManagerModules.default];
+{sysinfo, ...}: {
   security = {
     polkit.enable = true;
     pam.services.ags = {};
   };
   home-manager.users.${sysinfo.target} = {
+    pkgs,
+    inputs,
+    ...
+  }: {
+    imports = [inputs.ags.homeManagerModules.default];
     home.packages = with pkgs;
       [
         fd

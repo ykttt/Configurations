@@ -1,25 +1,23 @@
 # general/catppuccin.nix
 #
-{
-  inputs,
-  sysinfo,
-  ...
-}: {
-  imports = [inputs.catppuccin.homeManagerModules.catppuccin];
-  home-manager.users.${sysinfo.target}.catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "teal";
-    cursors = {
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {inputs, ...}: {
+    imports = [inputs.catppuccin.homeManagerModules.catppuccin];
+    catppuccin = {
       enable = true;
-      accent = "dark";
+      flavor = "mocha";
+      accent = "teal";
+      cursors = {
+        enable = true;
+        accent = "dark";
+      };
+      gtk = {
+        enable = true;
+        icon.enable = true;
+        gnomeShellTheme = true;
+        size = "compact";
+      };
+      nvim.enable = false;
     };
-    gtk = {
-      enable = true;
-      icon.enable = true;
-      gnomeShellTheme = true;
-      size = "compact";
-    };
-    nvim.enable = false;
   };
 }

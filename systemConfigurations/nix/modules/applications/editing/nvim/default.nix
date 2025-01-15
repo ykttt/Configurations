@@ -1,11 +1,6 @@
 # nvim/default.nix
 #
-{
-  pkgs,
-  config,
-  sysinfo,
-  ...
-}: {
+{sysinfo, ...}: {
   environment.variables.EDITOR = "nvim";
   programs.neovim = {
     enable = true;
@@ -13,6 +8,10 @@
     vimAlias = true;
   };
   home-manager.users.${sysinfo.target} = {
+    pkgs,
+    config,
+    ...
+  }: {
     home.packages = with pkgs; [
       nil
       lldb

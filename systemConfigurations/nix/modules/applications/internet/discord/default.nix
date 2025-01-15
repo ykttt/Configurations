@@ -1,9 +1,7 @@
 # discord/default.nix
 #
-{
-  pkgs,
-  sysinfo,
-  ...
-}: {
-  home-manager.users.${sysinfo.target}.home.packages = [pkgs.discord];
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
+    home.packages = [pkgs.discord];
+  };
 }

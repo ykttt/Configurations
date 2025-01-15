@@ -1,11 +1,7 @@
 # mpv/default.nix
 #
-{
-  pkgs,
-  sysinfo,
-  ...
-}: {
-  home-manager.users.${sysinfo.target} = {
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = [pkgs.mpv];
     xdg = {
       desktopEntries.mpv-img = {

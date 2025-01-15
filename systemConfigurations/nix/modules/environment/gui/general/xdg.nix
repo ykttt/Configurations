@@ -1,6 +1,10 @@
 # general/xdg.nix
 #
-{pkgs, ...}: {
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
   environment.systemPackages = [pkgs.xdg-utils];
   xdg = {
     portal = {
@@ -18,7 +22,7 @@
     XDG_DATA_HOME = "\${HOME}/.local/share";
     # XDG_DATA_DIRS   = ["/var/lib/flatpak/exports/share" "\$HOME/.local/share/flatpak/exports/share"];
   };
-  home-manager.users.km = {
+  home-manager.users.${sysinfo.target} = {
     xdg.mimeApps.enable = true;
     home.stateVersion = "24.05";
   };

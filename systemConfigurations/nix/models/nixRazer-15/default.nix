@@ -36,8 +36,8 @@ in
     };
     modules = [
       (import ../../modules/overrides)
-      (import ./adapted)
       (import ./local)
+      (import ./adapted)
       {
         users = {
           users.${extraArgs.sysinfo.target} = {

@@ -1,27 +1,29 @@
 # overrides/hardware.nix
 #
 {lib, ...}:
-with lib; {
+with lib; let
+  busIDType = types.strMatching "([[:print:]]+[\:\@][0-9]{1,3}\:[0-9]{1,2}\:[0-9])?";
+in {
   options.hardware = {
-    deviceType = mkOption {
-      type = types.string;
-      default = "";
+    laptop = mkOption {
+      type = types.bool;
+      default = false;
       description = "Device type.";
     };
     iBusId = mkOption {
-      type = types.string;
+      type = busIDType;
       default = "";
-      description = "Bus ID for Intel GPU.";
+      description = "Bus ID of the Intel GPU.";
     };
     nBusId = mkOption {
-      type = types.string;
+      type = busIDType;
       default = "";
-      description = "Bus ID for nvidia GPU.";
+      description = "Bus ID of the nvidia GPU.";
     };
     aBusId = mkOption {
-      type = types.string;
+      type = busIDType;
       default = "";
-      description = "Bus ID for AMD GPU.";
+      description = "Bus ID of the AMD GPU.";
     };
   };
 }

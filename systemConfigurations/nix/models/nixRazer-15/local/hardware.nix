@@ -3,7 +3,7 @@
 {sysinfo, ...}: {
   hardware = {
     graphics.enable = true;
-    deviceType = "laptop";
+    laptop = true;
     iBusId = "PCI:0:2:0";
     nBusId = "PCI:1:0:0";
   };

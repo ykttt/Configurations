@@ -4,11 +4,11 @@
   lib,
   config,
   ...
-}:
-with lib;
-with hardware; {
+}: let
+  c = config.hardware;
+in {
   services.xserver.videoDrivers = ["nvidia"];
-  nvidia = {
+  hardware.nvidia = {
     open = false; # Disable open-source drivers
     modesetting.enable = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -17,10 +17,10 @@ with hardware; {
       enable = false; # Experimental, may cause problems
       finegrained = false;
     };
-    prime = mkIf (deviceType == "laptop") {
-      nvidiaBusId = nBusId;
-      intelBusId = mkIf iBusId iBusId;
-      amdgpuBusId = mkIf aBusId aBusId;
+    prime = lib.mkIf c.laptop {
+      nvidiaBusId = c.nBusId;
+      intelBusId = c.iBusId;
+      amdgpuBusId = c.aBusId;
       sync.enable = false; # Conflict with offload
       offload = {
         enable = true;

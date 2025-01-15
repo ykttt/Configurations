@@ -1,4 +1,4 @@
-# x86Laptop/security.nix
+# security/default.nix
 #
 {
   security = {

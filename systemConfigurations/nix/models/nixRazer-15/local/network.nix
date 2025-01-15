@@ -1,4 +1,4 @@
-# x86Laptop/network.nix
+# hardware/network.nix
 #
 {sysinfo, ...}: {
   networking = {

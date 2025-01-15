@@ -1,4 +1,4 @@
-# x86Laptop/boot.nix
+# hardware/boot.nix
 #
 {pkgs, ...}: {
   boot = {

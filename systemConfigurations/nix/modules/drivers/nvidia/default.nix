@@ -1,6 +1,14 @@
 # nvidia/default.nix
 #
-{config, ...}: {
+{
+  lib,
+  config,
+  sysinfo,
+  ...
+}:
+with lib;
+with sysinfo;
+with builtins; {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     open = false; # Disable open-source drivers
@@ -11,11 +19,11 @@
       enable = false; # Experimental, may cause problems
       finegrained = false;
     };
-    prime = {
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-      # amdgpuBusId = "PCI:5:0:0";
-      # sync.enable = true;   # Conflict with offload
+    prime = mkIf {hostType = "laptop";} {
+      nvidiaBusId = nBusId;
+      intelBusId = mkIf hasAttr "iBusId" sysinfo iBusId;
+      amdgpuBusId = mkIf hasAttr "aBusId" sysinfo aBusId;
+      sync.enable = false; # Conflict with offload
       offload = {
         enable = true;
         enableOffloadCmd = true;

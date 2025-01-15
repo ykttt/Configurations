@@ -1,4 +1,4 @@
-# x86Laptop/i18n.nix
+# hardware/i18n.nix
 #
 {
   time.timeZone = "Asia/Tokyo";
@@ -11,7 +11,7 @@
     };
   };
   i18n = {
-    defaultLocale = "C.UTF-8"; # DON'T SET TO ANYTHING other than C or en_XX for the characters probably NOT showing correctly in consle!!!
+    defaultLocale = "C.UTF-8"; # DON'T SET TO ANYTHING other than C or en_XX for the characters probably NOT showing correctly in console!!!
     extraLocaleSettings = {
       LC_NAME = "ja_JP.UTF-8";
       LC_TIME = "ja_JP.UTF-8";

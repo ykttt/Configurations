@@ -1,9 +1,6 @@
-# x86Laptop/hardware.nix
+# hardware/graphics.nix
 #
 {
-  hardware = {
-    graphics.enable = true;
-  };
   services = {
     pulseaudio.enable = false; # Enable sound with pipewire
     upower = {

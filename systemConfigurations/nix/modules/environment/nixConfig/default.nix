@@ -1,4 +1,4 @@
-# x86Laptop/nixconfig.nix
+# nixConfig/default.nix
 #
 {
   nix = {

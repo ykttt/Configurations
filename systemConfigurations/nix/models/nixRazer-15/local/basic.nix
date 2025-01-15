@@ -1,15 +1,12 @@
-# nixRazer-15/hardware.nix
+# hardware/basics.nix
 #
 {
-  modulesPath,
-  config,
   lib,
+  config,
+  modulesPath,
   ...
 }: {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
-
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
   boot = {
     initrd = {
       availableKernelModules = [
@@ -26,7 +23,6 @@
     kernelModules = ["kvm-intel"];
     extraModulePackages = [];
   };
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/02c95f2e-e995-4ce4-80eb-0fcae8141d93";
@@ -45,7 +41,6 @@
       fsType = "xfs";
     };
   };
-
   swapDevices = [
     {device = "/dev/disk/by-uuid/77b0229e-735f-4162-ad54-86713228f3c9";}
   ];
@@ -57,8 +52,6 @@
 
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

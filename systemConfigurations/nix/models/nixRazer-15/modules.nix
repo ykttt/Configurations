@@ -27,6 +27,7 @@
     ../../modules/applications/internet/onedrive
     ../../modules/applications/internet/zoom
     ../../modules/applications/internet/zen
+    ../../modules/applications/internet/localsend
 
     ../../modules/applications/media/mpv
     ../../modules/applications/media/you-get

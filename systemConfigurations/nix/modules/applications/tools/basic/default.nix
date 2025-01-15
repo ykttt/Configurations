@@ -1,7 +1,11 @@
 #tools/basic.nix
 #
 {
-  home-manager.users.km = {pkgs, ...}: {
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  home-manager.users.${sysinfo.target} = {
     home.packages = with pkgs; [
       gcc
       bat
@@ -26,6 +30,5 @@
         ];
       };
     };
-    home.stateVersion = "24.05";
   };
 }

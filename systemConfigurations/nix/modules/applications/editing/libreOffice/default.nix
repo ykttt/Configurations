@@ -1,8 +1,7 @@
 # libreOffice/default.nix
 #
-{
-  home-manager.users.km = {pkgs, ...}: {
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = with pkgs; [libreoffice];
-    home.stateVersion = "24.05";
   };
 }

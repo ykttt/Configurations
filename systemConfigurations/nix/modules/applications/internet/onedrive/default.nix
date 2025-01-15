@@ -1,11 +1,12 @@
 # onedrive/default.nix
 #
 {
-  home-manager.users.km = {pkgs, ...}: {
-    home.packages = with pkgs; [
-      # onedrive
-      ver24-11.onedrive
-    ];
-    home.stateVersion = "24.05";
-  };
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  home-manager.users.${sysinfo.target}.home.packages = with pkgs; [
+    # onedrive
+    ver24-11.onedrive
+  ];
 }

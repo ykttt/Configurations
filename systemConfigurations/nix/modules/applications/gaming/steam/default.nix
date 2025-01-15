@@ -7,8 +7,4 @@
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
   };
-  home-manager.users.km = {pkgs, ...}: {
-    # home.packages = [ pkgs.adwsteamgtk ];
-    home.stateVersion = "24.05";
-  };
 }

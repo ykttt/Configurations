@@ -1,6 +1,10 @@
 # hyprland/hyprland.nix
 #
-{pkgs, ...}: {
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
   services = {
     power-profiles-daemon.enable = true;
     logind.powerKey = "ignore";
@@ -13,7 +17,7 @@
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-hyprland];
   };
-  home-manager.users.km = {pkgs, ...}: {
+  home-manager.users.${sysinfo.target} = {
     home.packages = with pkgs; [
       wlsunset
       hyprlock

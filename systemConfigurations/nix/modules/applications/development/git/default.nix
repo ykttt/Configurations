@@ -1,7 +1,11 @@
 # git/default.nix
 #
 {
-  home-manager.users.km = {pkgs, ...}: {
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  home-manager.users.${sysinfo.target} = {
     home.packages = [pkgs.gh];
     programs.ssh.matchBlocks.km = {
       port = 443;
@@ -32,6 +36,5 @@
         };
       };
     };
-    home.stateVersion = "24.05";
   };
 }

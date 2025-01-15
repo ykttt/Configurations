@@ -1,14 +1,13 @@
 # anyrun/default.nix
 #
 {
-  home-manager.users.km = {
-    inputs,
-    pkgs,
-    ...
-  }: {
-    imports = [
-      inputs.anyrun.homeManagerModules.default
-    ];
+  pkgs,
+  inputs,
+  sysinfo,
+  ...
+}: {
+  imports = [inputs.anyrun.homeManagerModules.default];
+  home-manager.users.${sysinfo.target} = {
     nix.settings = {
       builders-use-substitutes = true;
       extra-substituters = ["https://anyrun.cachix.org"];
@@ -115,6 +114,5 @@
         '';
       };
     };
-    home.stateVersion = "24.05";
   };
 }

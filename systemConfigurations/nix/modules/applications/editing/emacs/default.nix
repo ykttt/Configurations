@@ -1,8 +1,7 @@
 # emacs/default.nix
 #
-{
-  # environment.variables.EDITOR = "emacs";
-  home-manager.users.km = {pkgs, ...}: {
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target} = {
     programs.emacs = {
       enable = true;
       # extraPackages = epkgs:
@@ -30,6 +29,5 @@
       #     "text/x-cmake" = "emacs.desktop";
       #   };
     };
-    home.stateVersion = "24.05";
   };
 }

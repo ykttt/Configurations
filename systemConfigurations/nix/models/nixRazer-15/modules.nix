@@ -44,17 +44,4 @@
 
     ../../modules/applications/virtualisation/virtualBox
   ];
-  networking.hostName = "nixRazer-15";
-  users = {
-    users.km = {
-      isNormalUser = true;
-      description = "km";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-        "openrazer"
-      ];
-    };
-  };
-  system.stateVersion = "24.05";
 }

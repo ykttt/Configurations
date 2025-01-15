@@ -1,13 +1,12 @@
 # nm-applet/default.nix
 #
 {
-  home-manager.users.km = {
-    inputs,
-    pkgs,
-    ...
-  }: {
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  home-manager.users.${sysinfo.target} = {
     home.packages = [pkgs.networkmanagerapplet];
     services.network-manager-applet.enable = true;
-    home.stateVersion = "24.05";
   };
 }

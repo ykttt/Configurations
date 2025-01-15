@@ -1,17 +1,18 @@
 # nvim/default.nix
 #
 {
+  pkgs,
+  config,
+  sysinfo,
+  ...
+}: {
   environment.variables.EDITOR = "nvim";
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
   };
-  home-manager.users.km = {
-    pkgs,
-    config,
-    ...
-  }: {
+  home-manager.users.${sysinfo.target} = {
     home.packages = with pkgs; [
       nil
       lldb
@@ -55,6 +56,5 @@
         "text/x-cmake" = "neovide.desktop";
       };
     };
-    home.stateVersion = "24.05";
   };
 }

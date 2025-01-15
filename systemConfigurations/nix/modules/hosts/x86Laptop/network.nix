@@ -1,7 +1,8 @@
 # x86Laptop/network.nix
 #
-{
+{sysinfo, ...}: {
   networking = {
+    hostName = sysinfo.hostName;
     networkmanager = {
       enable = true;
       wifi.powersave = true;
@@ -13,6 +14,7 @@
     dhcpcd.enable = false; # Unnecessary when managing DNS manually
     firewall.allowedTCPPorts = [443];
   };
+  users.users.${sysinfo.target}.extraGroups = ["networkmanager"];
   services.chrony = {
     enable = true;
     enableNTS = true; # Use NTS instead of NTP

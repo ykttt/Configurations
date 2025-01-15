@@ -1,8 +1,11 @@
 # zen/default.nix
 #
 {
-  home-manager.users.km = {pkgs, ...}: {
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  home-manager.users.${sysinfo.target} = {
     home.packages = [pkgs.zoom-us];
-    home.stateVersion = "24.05";
   };
 }

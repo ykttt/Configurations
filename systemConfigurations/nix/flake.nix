@@ -10,43 +10,14 @@
     home-manager,
     nix-matlab,
     ...
-  }: let
-    system = "x86_64-linux";
-    overlayLinux = [
-      nur.overlays.default
-      nix-matlab.overlay
-      (final: prev: {
-        ver24-11 = import nixpkgs24-11 {inherit system;};
-      })
-    ];
-  in {
+  }: {
     nixosConfigurations = {
-      nixRazer-15 = nixpkgs.lib.nixosSystem {
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-            cudaSupport = true;
-          };
-          overlays = overlayLinux;
-        };
-        specialArgs = {inherit inputs;};
-        modules = [
-          (import ./models/nixRazer-15)
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              extraSpecialArgs = {inherit inputs;};
-              users.km.nixpkgs = {
-                config = {
-                  allowUnfree = true;
-                  cudaSupport = true;
-                };
-                overlays = overlayLinux;
-              };
-            };
-          }
-        ];
+      nixRazer-15 = import ./models/nixRazer-15 {
+        nur = nur;
+        inputs = inputs;
+        nixpkgs = nixpkgs;
+        nixpkgs24-11 = nixpkgs24-11;
+        nix-matlab = nix-matlab;
       };
     };
   };

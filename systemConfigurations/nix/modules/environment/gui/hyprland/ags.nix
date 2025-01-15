@@ -1,18 +1,17 @@
 # hyprland/ags.nix
 #
 {
+  pkgs,
+  inputs,
+  sysinfo,
+  ...
+}: {
+  imports = [inputs.ags.homeManagerModules.default];
   security = {
     polkit.enable = true;
     pam.services.ags = {};
   };
-  home-manager.users.km = {
-    inputs,
-    pkgs,
-    ...
-  }: {
-    imports = [
-      inputs.ags.homeManagerModules.default
-    ];
+  home-manager.users.${sysinfo.target} = {
     home.packages = with pkgs;
       [
         fd
@@ -40,6 +39,5 @@
         accountsservice
       ];
     };
-    home.stateVersion = "24.05";
   };
 }

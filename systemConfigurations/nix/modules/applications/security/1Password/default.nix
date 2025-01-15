@@ -1,11 +1,11 @@
 # 1Password/default.nix
 #
-{
+{sysinfo, ...}: {
   programs = {
-    _1password = {enable = true;};
+    _1password.enable = true;
     _1password-gui = {
       enable = true;
-      polkitPolicyOwners = ["km"];
+      polkitPolicyOwners = [sysinfo.target];
     };
   };
 }

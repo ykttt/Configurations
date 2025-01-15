@@ -3,14 +3,12 @@
 {
   lib,
   config,
-  sysinfo,
   ...
 }:
 with lib;
-with sysinfo;
-with builtins; {
+with hardware; {
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
+  nvidia = {
     open = false; # Disable open-source drivers
     modesetting.enable = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
@@ -19,10 +17,10 @@ with builtins; {
       enable = false; # Experimental, may cause problems
       finegrained = false;
     };
-    prime = mkIf {hostType = "laptop";} {
+    prime = mkIf (deviceType == "laptop") {
       nvidiaBusId = nBusId;
-      intelBusId = mkIf hasAttr "iBusId" sysinfo iBusId;
-      amdgpuBusId = mkIf hasAttr "aBusId" sysinfo aBusId;
+      intelBusId = mkIf iBusId iBusId;
+      amdgpuBusId = mkIf aBusId aBusId;
       sync.enable = false; # Conflict with offload
       offload = {
         enable = true;

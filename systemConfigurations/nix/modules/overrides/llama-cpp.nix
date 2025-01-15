@@ -1,4 +1,4 @@
-# llama-cpp/overrides.nix
+# overrides/llama-cpp.nix
 #
 {
   lib,

@@ -14,9 +14,6 @@
     sysinfo = {
       target = "km";
       hostName = "nixRazer-15";
-      hostType = "laptop";
-      nBusId = "PCI:1:0:0";
-      iBusId = "PCI:0:2:0";
     };
   };
   overlays = [
@@ -38,6 +35,9 @@ in
       };
     };
     modules = [
+      (import ../../modules/overrides)
+      (import ./adapted)
+      (import ./local)
       {
         users = {
           users.${extraArgs.sysinfo.target} = {
@@ -48,8 +48,6 @@ in
         };
         system.stateVersion = "24.05";
       }
-      (import ./local)
-      (import ./adapted)
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {

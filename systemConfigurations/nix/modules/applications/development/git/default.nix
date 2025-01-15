@@ -1,6 +1,7 @@
 # git/default.nix
 #
 {sysinfo, ...}: {
+  imports = [./config.nix];
   home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = [pkgs.gh];
     programs.ssh.matchBlocks.km = {
@@ -11,26 +12,6 @@
     programs.git = {
       enable = true;
       lfs.enable = true;
-      userName = "J. Peng";
-      userEmail = "ykttt@tuta.io";
-      aliases = {
-        a = "add";
-        p = "push";
-        r = "reset";
-        s = "status";
-        c = "commit";
-        aa = "add *";
-        cl = "clone";
-        cf = "config";
-        co = "checkout";
-      };
-      extraConfig = {
-        init.defaultBranch = "main";
-        url = {
-          "https://github.com/".insteadOf = ["gh:" "github:"];
-          "https://gitlab.com/".insteadOf = ["gl:" "gitlab:"];
-        };
-      };
     };
   };
 }

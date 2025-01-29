@@ -7,9 +7,10 @@
 }: {
   services.ollama = {
     enable = true;
+    autoStart = false;
     home = "/llm";
     acceleration = "cuda";
-    models = "/llm/current";
+    models = "/llm/llmRepo";
     openFirewall = true;
     host = "127.0.0.1";
     port = 11434;

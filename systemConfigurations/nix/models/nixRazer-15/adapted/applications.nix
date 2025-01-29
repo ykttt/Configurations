@@ -30,7 +30,7 @@
     ../../../modules/applications/tools/nemo
     ../../../modules/applications/tools/starship
     ../../../modules/applications/tools/yazi
-    ../../../modules/applications/tools/llama-cpp
+    ../../../modules/applications/tools/ollama
 
     ../../../modules/applications/virtualisation/virtualBox
   ];

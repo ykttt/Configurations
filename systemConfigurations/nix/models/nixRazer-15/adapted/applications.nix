@@ -27,11 +27,10 @@
 
     ../../../modules/applications/tools/basic
     ../../../modules/applications/tools/kitty
-    ../../../modules/applications/tools/nemo
     ../../../modules/applications/tools/starship
     ../../../modules/applications/tools/yazi
     ../../../modules/applications/tools/ollama
-    ../../../modules/applications/tools/open-webui
+    ../../../modules/applications/tools/alpaca
 
     ../../../modules/applications/virtualisation/virtualBox
   ];

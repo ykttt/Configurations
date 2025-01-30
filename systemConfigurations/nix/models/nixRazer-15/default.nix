@@ -27,7 +27,7 @@ in
   nixpkgs.lib.nixosSystem {
     specialArgs = extraArgs;
     pkgs = import nixpkgs {
-      overlay = overlays;
+      overlays = overlays;
       inherit system;
       config = {
         allowUnfree = true;

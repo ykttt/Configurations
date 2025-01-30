@@ -2,12 +2,14 @@
 #
 {
   lib,
+  pkgs,
   config,
   ...
 }: {
   services.ollama = {
     enable = true;
     autoStart = true;
+    package = pkgs.ollama-cuda;
     home = "/llm";
     acceleration = "cuda";
     models = "/llm/llmRepo";

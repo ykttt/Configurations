@@ -31,6 +31,7 @@
     ../../../modules/applications/tools/starship
     ../../../modules/applications/tools/yazi
     ../../../modules/applications/tools/ollama
+    ../../../modules/applications/tools/open-webui
 
     ../../../modules/applications/virtualisation/virtualBox
   ];

@@ -7,7 +7,7 @@
 }: {
   services.ollama = {
     enable = true;
-    autoStart = false;
+    autoStart = true;
     home = "/llm";
     acceleration = "cuda";
     models = "/llm/llmRepo";

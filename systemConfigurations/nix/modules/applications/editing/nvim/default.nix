@@ -14,7 +14,7 @@
   }: {
     home.packages = with pkgs; [
       nil
-      lldb
+      # lldb
       black
       stylua
       ltex-ls

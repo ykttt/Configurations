@@ -1,4 +1,4 @@
-# ollama/nginx.nix
+# open-webui/nginx.nix
 #
 {
   services.nginx = {
@@ -7,10 +7,10 @@
       listen = [
         {
           addr = "192.168.0.109";
-          port = 11434;
+          port = 10000;
         }
       ];
-      locations."/".proxyPass = "http://127.0.0.1:11434";
+      locations."/".proxyPass = "http://127.0.0.1:10000";
     };
   };
 }

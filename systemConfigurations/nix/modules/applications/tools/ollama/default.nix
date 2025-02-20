@@ -6,7 +6,6 @@
   config,
   ...
 }: {
-  imports = [./nginx.nix];
   services.ollama = {
     enable = true;
     autoStart = true;

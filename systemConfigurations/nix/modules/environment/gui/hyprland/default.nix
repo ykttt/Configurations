@@ -10,7 +10,7 @@
     ./decoration.nix
     ./animations.nix
     ./keybindings.nix
-    ./windowRules.nix
+    ./rules.nix
     ./preferences.nix
   ];
 }

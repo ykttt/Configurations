@@ -4,7 +4,6 @@
   home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$terminal" = "kitty";
-    "$fileManager" = "ranger";
     "$runmenu" = "ags -t launcher";
     xwayland.force_zero_scaling = true;
     general = {
@@ -15,18 +14,21 @@
       # "col.inactive_border" = "rgba(595959aa)";
       resize_on_border = false;
       allow_tearing = false;
-      layout = "dwindle";
+      layout = "master";
     };
     dwindle = {
-      pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-      preserve_split = true; # You probably want this
+      pseudotile = true;
+      preserve_split = true;
     };
     master = {
+      mfact = "0.618";
       new_status = "master";
+      orientation = "right";
+      inherit_fullscreen = true;
     };
     misc = {
-      force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
-      disable_hyprland_logo = true; # If true disables the random hyprland logo background. :(
+      force_default_wallpaper = -1;
+      disable_hyprland_logo = true;
     };
     input = {
       kb_layout = "jp";

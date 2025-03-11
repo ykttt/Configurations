@@ -1,7 +1,9 @@
 # hyprland/keybindings.nix
 #
 {sysinfo, ...}: {
-  home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland = {
+  home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland = let
+    masterLayout = true;
+  in {
     settings = {
       bind = let
         workspaceActions = builtins.concatLists (builtins.genList (
@@ -18,40 +20,54 @@
           10);
       in
         [
+          "$mainMod, Space, exec, pkill $runmenu || $runmenu"
           "$mainMod, Tab, exec, ags -t overview"
           "$mainMod, Return, exec, $terminal"
           "$mainMod, Q, killactive,"
           "$mainMod Control, Q, exit,"
-          "$mainMod, E, exec, $fileManager"
           "$mainMod, F, togglefloating,"
           "$mainMod Control, F, fullscreen,"
-          "$mainMod, P, pseudo," # dwindle only
-          "$mainMod, T, togglesplit," # dwindle only
-          "$mainMod, H, movefocus, l"
-          "$mainMod, J, movefocus, d"
-          "$mainMod, K, movefocus, u"
-          "$mainMod, L, movefocus, r"
-          "$mainMod, A, movewindow, l"
-          "$mainMod, W, movewindow, u"
-          "$mainMod, S, movewindow, d"
-          "$mainMod, D, movewindow, r"
+          "$mainMod, N, workspace, 11"
           "$mainMod, Colon, togglespecialworkspace, magic"
           "$mainMod Control, Colon, movetoworkspace, special:magic"
-          "$mainMod Control, H, workspace, e-1"
-          "$mainMod Control, L, workspace, e+1"
           "$mainMod, mouse_up, workspace, e-1"
           "$mainMod, mouse_down, workspace, e+1"
-          "$mainMod Control, K, movetoworkspace, -1"
-          "$mainMod Control, J, movetoworkspace, +1"
           "$mainMod, Print, exec, ags -r 'recorder.start()'"
           ", XF86PowerOff,  exec, ags -t powermenu"
           "Control, Print, exec, ags -r 'recorder.screenshot(true)'"
           ", Print, exec, ags -r 'recorder.screenshot()'"
         ]
-        ++ workspaceActions;
-      bindr = [
-        "$mainMod, $mainMod_L, exec, pkill $runmenu || $runmenu"
-      ];
+        ++ workspaceActions
+        ++ (
+          if masterLayout
+          then [
+            "$mainMod, H, workspace, e-1"
+            "$mainMod, L, workspace, e+1"
+            "$mainMod, J, layoutmsg, cyclenext"
+            "$mainMod, K, layoutmsg, cycleprev"
+            "$mainMod Control, H, movetoworkspace, -1"
+            "$mainMod Control, L, movetoworkspace, +1"
+            "$mainMod Control, J, layoutmsg, rollnext"
+            "$mainMod Control, K, layoutmsg, rollprev"
+            "$mainMod Control, Return, layoutmsg, swapwithmaster auto"
+          ]
+          else [
+            "$mainMod, P, pseudo,"
+            "$mainMod, T, togglesplit,"
+            "$mainMod, H, movefocus, l"
+            "$mainMod, J, movefocus, d"
+            "$mainMod, K, movefocus, u"
+            "$mainMod, L, movefocus, r"
+            "$mainMod, A, movewindow, l"
+            "$mainMod, W, movewindow, u"
+            "$mainMod, S, movewindow, d"
+            "$mainMod, D, movewindow, r"
+            "$mainMod Control, H, movetoworkspace, -1"
+            "$mainMod Control, L, movetoworkspace, +1"
+            "$mainMod Control Shift, H, workspace, e-1"
+            "$mainMod Control Shift, L, workspace, e+1"
+          ]
+        );
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"

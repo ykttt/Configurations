@@ -9,18 +9,10 @@ require("nvim-treesitter.configs").setup({
     "vim",
     "css",
     "bash",
-    "yaml",
-    "toml",
     "make",
-    "json",
-    "json5",
-    "cmake",
     "query",
     "python",
-    "luadoc",
     "vimdoc",
-    "markdown",
-    "markdown_inline",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

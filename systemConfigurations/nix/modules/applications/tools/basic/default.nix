@@ -1,6 +1,11 @@
 #tools/basic.nix
 #
-{sysinfo, ...}: {
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  environment.systemPackages = [pkgs.xfs-undelete];
   home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = with pkgs; [
       gcc

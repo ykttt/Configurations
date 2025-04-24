@@ -3,8 +3,9 @@
 {pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
-      nerd-fonts.noto
-      nerd-fonts.jetbrains-mono
+      nerd-fonts.noto # Unstable only
+      nerd-fonts.jetbrains-mono # Unstable only
+      # nerdfonts # 24.11
       wqy_zenhei # Required by pkgs.steam to display CJK characters
       noto-fonts
       sarasa-gothic

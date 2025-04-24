@@ -1,9 +1,14 @@
 # nvim/default.nix
 #
-{sysinfo, ...}: {
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
   environment.variables.EDITOR = "nvim";
   programs.neovim = {
     enable = true;
+    package = pkgs.neovim-unwrapped;
     viAlias = true;
     vimAlias = true;
   };
@@ -29,6 +34,7 @@
     ];
     programs.neovim = {
       enable = true;
+      package = pkgs.neovim-unwrapped;
       withPython3 = true;
       withNodeJs = true;
     };

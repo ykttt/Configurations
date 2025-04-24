@@ -5,6 +5,7 @@
   inputs,
   nixpkgs,
   nixpkgs24-11,
+  nixpkgsUnstable,
   nix-matlab,
   ...
 }: let
@@ -21,6 +22,7 @@
     nix-matlab.overlay
     (final: prev: {
       ver24-11 = import nixpkgs24-11 {inherit system;};
+      verUnstable = import nixpkgsUnstable {inherit system;};
     })
   ];
 in

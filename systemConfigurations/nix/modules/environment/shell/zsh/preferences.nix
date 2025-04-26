@@ -15,7 +15,7 @@
           file = "zsh-vi-mode.plugin.zsh";
         }
       ];
-      initExtra = ''
+      initContent = ''
         autoload -U promptinit; promptinit
         echo "\n" && macchina -t greet -o uptime -o host -o distribution -o packages -o kernel -o shell -o processor-load -o memory
       '';

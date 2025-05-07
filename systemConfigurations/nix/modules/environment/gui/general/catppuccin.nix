@@ -18,6 +18,7 @@
         size = "compact";
       };
       nvim.enable = false;
+      mako.enable = false;
     };
   };
 }

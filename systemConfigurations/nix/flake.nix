@@ -28,8 +28,11 @@
     nixpkgs24-11.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    catppuccin.url = "github:catppuccin/nix";
     matugen.url = "github:/InioX/Matugen?ref=refs/tags/v2.4.0";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       # url = "github:nix-community/home-manager/release-24.11";
       url = "github:nix-community/home-manager";

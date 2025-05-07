@@ -2,6 +2,7 @@
 #
 {
   pkgs,
+  inputs,
   sysinfo,
   ...
 }: {
@@ -22,7 +23,10 @@
       wlsunset
       hyprlock
     ];
-    wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland = {
+      enable = true;
+      # plugins = [];
+    };
     gtk.enable = true;
     home.stateVersion = "24.05";
   };

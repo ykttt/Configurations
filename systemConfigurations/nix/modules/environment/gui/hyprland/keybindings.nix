@@ -41,6 +41,7 @@
         ++ (
           if masterLayout
           then [
+            "$mainMod, P, pin"
             "$mainMod, H, workspace, e-1"
             "$mainMod, L, workspace, e+1"
             "$mainMod, J, layoutmsg, cyclenext"

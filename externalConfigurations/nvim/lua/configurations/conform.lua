@@ -6,7 +6,7 @@ require("conform").setup({
     cpp = { "clang_format" },
     lua = { "stylua" },
     nix = { "alejandra" },
-    python = { "black" },
+    python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
     tex = { "latexindent" },
     ["*"] = { "codespell" },
     ["_"] = { "trim_whitespace" },
@@ -43,6 +43,35 @@ require("conform").setup({
         return { "-n", ctx.range.start[1] .. "-" .. ctx.range["end"][1] }
       end,
       stdin = true,
+    },
+    ruff_format = {
+      args = {
+        "format",
+        "--config",
+        "indent-width = 2",
+        "--stdin-filename",
+        "$FILENAME",
+        "-",
+      },
+      range_args = function(self, ctx)
+        return {
+          "format",
+          "--force-exclude",
+          "--config",
+          "indent-width = 2",
+          "--range",
+          string.format(
+            "%d:%d-%d:%d",
+            ctx.range.start[1],
+            ctx.range.start[2] + 1,
+            ctx.range["end"][1],
+            ctx.range["end"][2] + 1
+          ),
+          "--stdin-filename",
+          "$FILENAME",
+          "-",
+        }
+      end,
     },
   },
 })

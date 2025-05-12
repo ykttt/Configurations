@@ -20,7 +20,7 @@
     home.packages = with pkgs; [
       nil
       # lldb
-      black
+      ruff
       stylua
       ltex-ls
       neovide

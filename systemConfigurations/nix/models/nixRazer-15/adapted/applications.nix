@@ -18,6 +18,7 @@
     ../../../modules/applications/internet/zoom
     ../../../modules/applications/internet/zen
     ../../../modules/applications/internet/localsend
+    ../../../modules/applications/internet/openconnect
 
     ../../../modules/applications/media/mpv
     ../../../modules/applications/media/you-get

@@ -42,6 +42,10 @@
       url = "github:ykttt/nix-matlab";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     ags = {
       url = "github:ykttt/ags";
       inputs.nixpkgs.follows = "nixpkgs";

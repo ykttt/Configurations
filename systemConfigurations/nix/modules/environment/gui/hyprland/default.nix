@@ -2,8 +2,8 @@
 #
 {
   imports = [
-    ./ags.nix
     ./hyprland.nix
+    ./hyprpanel.nix
     ./envs.nix
     ./monitors.nix
     ./autoStart.nix

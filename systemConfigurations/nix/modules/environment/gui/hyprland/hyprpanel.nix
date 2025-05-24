@@ -11,7 +11,8 @@
       enable = true;
       systemd.enable = true;
       hyprland.enable = true;
-      overwrite.enable = true;
+      overlay.enable = true;
+      # overwrite.enable = true;
       # theme = "";
       # Override the final config with an arbitrary set.
       # Useful for overriding colors in the selected theme.

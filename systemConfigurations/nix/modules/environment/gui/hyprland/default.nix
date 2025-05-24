@@ -4,6 +4,7 @@
   imports = [
     ./hyprland.nix
     ./hyprpanel.nix
+    # ./ags.nix
     ./envs.nix
     ./monitors.nix
     ./autoStart.nix

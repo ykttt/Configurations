@@ -21,7 +21,6 @@
       in
         [
           "$mainMod, Space, exec, pkill $runmenu || $runmenu"
-          "$mainMod, Tab, exec, ags -t overview"
           "$mainMod, Return, exec, $terminal"
           "$mainMod, Q, killactive,"
           "$mainMod Control, Q, exit,"
@@ -32,10 +31,6 @@
           "$mainMod Control, Colon, movetoworkspace, special:magic"
           "$mainMod, mouse_up, workspace, e-1"
           "$mainMod, mouse_down, workspace, e+1"
-          "$mainMod, Print, exec, ags -r 'recorder.start()'"
-          ", XF86PowerOff,  exec, ags -t powermenu"
-          "Control, Print, exec, ags -r 'recorder.screenshot(true)'"
-          ", Print, exec, ags -r 'recorder.screenshot()'"
         ]
         ++ workspaceActions
         ++ (

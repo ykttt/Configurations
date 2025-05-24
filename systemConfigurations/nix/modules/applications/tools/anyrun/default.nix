@@ -1,19 +1,27 @@
 # anyrun/default.nix
 #
-{sysinfo, ...}: {
+{
+  lib,
+  config,
+  sysinfo,
+  ...
+}: let
+  hypr = config.programs.hyprland;
+in {
   home-manager.users.${sysinfo.target} = {
     pkgs,
     inputs,
     ...
   }: {
-    imports = [inputs.anyrun.homeManagerModules.default];
     nix.settings = {
       builders-use-substitutes = true;
       extra-substituters = ["https://anyrun.cachix.org"];
       extra-trusted-public-keys = ["anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="];
     };
+    wayland.windowManager.hyprland.settings."$runmenu" = with lib; mkIf hypr.enable (mkForce "anyrun");
     programs.anyrun = {
       enable = true;
+      package = inputs.anyrun.packages.${pkgs.system}.anyrun;
       config = {
         x = {fraction = 0.5;};
         y = {fraction = 0.2;};
@@ -31,7 +39,6 @@
           websearch
           rink
           shell
-          kidex
         ];
       };
       extraCss = ''

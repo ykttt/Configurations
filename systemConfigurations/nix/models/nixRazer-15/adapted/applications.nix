@@ -26,6 +26,7 @@
     ../../../modules/applications/security/1Password
     ../../../modules/applications/security/adGuardHome
 
+    ../../../modules/applications/tools/anyrun
     ../../../modules/applications/tools/basic
     ../../../modules/applications/tools/kitty
     ../../../modules/applications/tools/starship

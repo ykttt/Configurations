@@ -5,7 +5,7 @@
   sysinfo,
   ...
 }: {
-  home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland.settings.animations = {
+  home-manager.users.${sysinfo.target} = {
     imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
     programs.hyprpanel = {
       enable = true;

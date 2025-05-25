@@ -1,8 +1,8 @@
-# kitty/default.nix
+# kitty/settings.nix
 #
 {sysinfo, ...}: {
   home-manager.users.${sysinfo.target}.programs.kitty.settings = {
-    font_family = "Sarasa Term J";
+    # font_family = "Sarasa Term J";
     font_size = "13.0";
     scrollback_lines = 10000;
     paste_actions = "quote-urls-at-prompt";

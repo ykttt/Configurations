@@ -47,7 +47,7 @@ in {
       ];
     };
     wayland.windowManager.hyprland.settings = with lib;
-      mkIf hypr.enable (mkForce {
+      mkIf hypr.enable {
         exec-once = ["ags &"];
         bind = [
           "$mainMod, Tab, exec, ags -t overview"
@@ -56,6 +56,6 @@ in {
           "Control, Print, exec, ags -r 'recorder.screenshot(true)'"
           ", Print, exec, ags -r 'recorder.screenshot()'"
         ];
-      });
+      };
   };
 }

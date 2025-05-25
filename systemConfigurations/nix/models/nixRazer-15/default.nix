@@ -51,6 +51,7 @@ in
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
+          backupFileExtension = "backup";
           extraSpecialArgs = extraArgs;
           users.${extraArgs.sysinfo.target} = {
             home.stateVersion = "24.05";

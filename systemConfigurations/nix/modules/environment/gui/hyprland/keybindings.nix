@@ -31,6 +31,7 @@
           "$mainMod Control, Colon, movetoworkspace, special:magic"
           "$mainMod, mouse_up, workspace, e-1"
           "$mainMod, mouse_down, workspace, e+1"
+          "$mainMod, Tab, exec, ags -t overview"
         ]
         ++ workspaceActions
         ++ (

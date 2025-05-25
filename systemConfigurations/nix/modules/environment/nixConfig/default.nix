@@ -11,6 +11,7 @@
       auto-optimise-store = true;
       builders-use-substitutes = true; # Use binary cache
       experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["@wheel"];
       substituters = [
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"

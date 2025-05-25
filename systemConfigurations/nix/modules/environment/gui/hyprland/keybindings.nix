@@ -2,7 +2,7 @@
 #
 {sysinfo, ...}: {
   home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland = let
-    masterLayout = true;
+    masterLayout = false;
   in {
     settings = {
       bind = let
@@ -49,7 +49,7 @@
             "$mainMod Control, Return, layoutmsg, swapwithmaster auto"
           ]
           else [
-            "$mainMod, P, pseudo,"
+            "$mainMod, P, pin,"
             "$mainMod, T, togglesplit,"
             "$mainMod, H, movefocus, l"
             "$mainMod, J, movefocus, d"

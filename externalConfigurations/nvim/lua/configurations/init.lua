@@ -4,7 +4,8 @@ require("configurations/neovim")
 require("configurations/neovide")
 
 -- require('configurations/rose-pine')
-require("configurations/kanagawa")
+-- require("configurations/kanagawa")
+require("configurations/pywal")
 -- require("configurations/catppuccin")
 -- require("configurations/melange")
 

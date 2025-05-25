@@ -106,6 +106,10 @@ return require("lazy").setup({
     name = "rose-pine",
   },
   {
+    "AlphaTechnolog/pywal.nvim",
+    name = "pywal",
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,

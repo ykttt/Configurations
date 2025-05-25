@@ -48,7 +48,10 @@ in {
     };
     wayland.windowManager.hyprland.settings = with lib;
       mkIf hypr.enable {
-        exec-once = ["ags &"];
+        exec-once = [
+          "swww-daemon &"
+          "ags &"
+        ];
         bind = [
           "$mainMod, Tab, exec, ags -t overview"
           "$mainMod, Print, exec, ags -r 'recorder.start()'"

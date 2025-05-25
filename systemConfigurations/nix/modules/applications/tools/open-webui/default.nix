@@ -4,7 +4,7 @@
   imports = [./nginx.nix];
   services.open-webui = {
     enable = true;
-    package = pkgs.ver24-11.open-webui;
+    package = pkgs.stable.open-webui;
     openFirewall = true;
     host = "127.0.0.1";
     port = 10000;

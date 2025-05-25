@@ -6,7 +6,7 @@
     nur,
     self,
     nixpkgs,
-    nixpkgs24-11,
+    nixpkgsStable,
     nixpkgsUnstable,
     home-manager,
     nix-matlab,
@@ -17,7 +17,7 @@
         nur = nur;
         inputs = inputs;
         nixpkgs = nixpkgs;
-        nixpkgs24-11 = nixpkgs24-11;
+        nixpkgsStable = nixpkgsStable;
         nixpkgsUnstable = nixpkgsUnstable;
         nix-matlab = nix-matlab;
       };
@@ -25,10 +25,11 @@
   };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs24-11.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    matugen.url = "github:/InioX/Matugen?ref=refs/tags/v2.4.0";
+    matugen.url = "github:InioX/Matugen";
+    # matugen.url = "github:InioX/Matugen?ref=refs/tags/v2.4.0";
     anyrun = {
       url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      # url = "github:nix-community/home-manager/release-24.11";
+      # url = "github:nix-community/home-manager/release-25.05";
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };

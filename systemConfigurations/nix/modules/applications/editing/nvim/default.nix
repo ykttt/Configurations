@@ -30,6 +30,7 @@
       codespell
       clang-tools
       tree-sitter
+      wl-clipboard
       lua-language-server
     ];
     programs.neovim = {

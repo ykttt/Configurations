@@ -1,14 +1,7 @@
 # nixRazer-15/default.nix
 #
-{
-  nur,
-  inputs,
-  nixpkgs,
-  nixpkgs24-11,
-  nixpkgsUnstable,
-  nix-matlab,
-  ...
-}: let
+{inputs, ...}:
+with inputs; let
   system = "x86_64-linux";
   extraArgs = {
     inherit inputs;
@@ -20,9 +13,10 @@
   overlays = [
     nur.overlays.default
     nix-matlab.overlay
+    hyprpanel.overlay
     (final: prev: {
-      ver24-11 = import nixpkgs24-11 {inherit system;};
-      verUnstable = import nixpkgsUnstable {inherit system;};
+      stable = import nixpkgsStable {inherit system;};
+      unstable = import nixpkgsUnstable {inherit system;};
     })
   ];
 in

@@ -22,6 +22,11 @@ in
       wayland.windowManager.hyprland.settings = with lib;
         mkIf hypr.enable {
           exec-once = ["hyprpanel &"];
+          bind = [
+            ", XF86PowerOff,  exec, hyprpanel t powerdropdownmenu"
+            "Shift, Print, exec, ~/repositories/configurations/generalScripts/general/screenshot.sh full"
+            ", Print, exec, ~/repositories/configurations/generalScripts/general/screenshot.sh area"
+          ];
         };
     };
   }

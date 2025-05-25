@@ -250,15 +250,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1747531721,
-        "narHash": "sha256-kx7hCuML0sMcjbyjbpplNWsJjLoUfiy23JiS9aG4UWw=",
-        "owner": "Jas-SinghFSU",
+        "lastModified": 1748171579,
+        "narHash": "sha256-rWef+FF/hyiRoVGJkxWzbORXYyW12VuShSsIzaaUwiA=",
+        "owner": "ykttt",
         "repo": "HyprPanel",
-        "rev": "c203ffe80f4e7b68e22ba3fde0598622500f5add",
+        "rev": "59f3cd19f06358e0e5c9a5aa461a949fbad28bac",
         "type": "github"
       },
       "original": {
-        "owner": "Jas-SinghFSU",
+        "owner": "ykttt",
         "repo": "HyprPanel",
         "type": "github"
       }
@@ -390,11 +390,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1748145895,
-        "narHash": "sha256-KDyelU7rB/x6Vp0ZRwRyxf7VR8mAwPGyktezcf0Yv44=",
+        "lastModified": 1748170927,
+        "narHash": "sha256-M48QNs0jab0BG88dniPY9Xl4oOx115goU1uNdMxFIPU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "cd8e3b478445d0a174a47719e0930fdbe19b96af",
+        "rev": "bb29133da4285054b9f48abf67e353e77b53ca34",
         "type": "github"
       },
       "original": {

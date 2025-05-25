@@ -13,7 +13,12 @@ in
     home-manager.users.${sysinfo.target} = {pkgs, ...}: {
       catppuccin.kitty.enable = mkIf pywal (mkForce false);
       programs.kitty.settings.include = mkIf pywal "~/.cache/wal/colors-kitty.conf";
-      home.packages = [pkgs.hyprpanel];
+      home.packages = with pkgs; [
+        slurp
+        wayshot
+        libnotify
+        hyprpanel
+      ];
       wayland.windowManager.hyprland.settings = with lib;
         mkIf hypr.enable {
           exec-once = ["hyprpanel &"];

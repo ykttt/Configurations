@@ -28,13 +28,9 @@ in {
         slurp
         swappy
         wayshot
-        playerctl
         dart-sass
         hyprpicker
         wf-recorder
-        pwvucontrol
-        wl-clipboard
-        brightnessctl
       ]
       ++ (with inputs; [
         matugen.packages.${system}.default

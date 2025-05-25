@@ -2,7 +2,6 @@
 #
 {
   pkgs,
-  inputs,
   sysinfo,
   ...
 }: {
@@ -22,6 +21,10 @@
     home.packages = with pkgs; [
       wlsunset
       hyprlock
+      playerctl
+      pwvucontrol
+      wl-clipboard
+      brightnessctl
     ];
     wayland.windowManager.hyprland = {
       enable = true;

@@ -11,7 +11,10 @@
 in
   with lib; {
     home-manager.users.${sysinfo.target} = {pkgs, ...}: {
-      catppuccin.kitty.enable = mkIf pywal (mkForce false);
+      catppuccin = {
+        kitty.enable = mkIf pywal (mkForce false);
+        yazi.enable = mkIf pywal (mkForce false);
+      };
       programs.kitty.settings.include = mkIf pywal "~/.cache/wal/colors-kitty.conf";
       home.packages = with pkgs; [
         slurp

@@ -49,7 +49,6 @@ in {
           "ags &"
         ];
         bind = [
-          "$mainMod, Tab, exec, ags -t overview"
           "$mainMod, Print, exec, ags -r 'recorder.start()'"
           ", XF86PowerOff,  exec, ags -t powermenu"
           "Control, Print, exec, ags -r 'recorder.screenshot(true)'"

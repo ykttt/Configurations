@@ -2,7 +2,7 @@
 #
 {
   imports = [
-    ../../../modules/applications/creativity/mypaint
+    ../../../modules/applications/creativity/krita
 
     ../../../modules/applications/development/git
     ../../../modules/applications/development/haskell

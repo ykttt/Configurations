@@ -4,16 +4,13 @@
   home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
       "float,title:^(Picture-in-Picture)$"
-      "syncfullscreen on,workspace:11"
-      "workspace 11,class:steam,title:Steam Big Pictureモード"
-      "tile,class:steam,title:Steam Big Pictureモード"
       "opacity 0.9 0.7,title:BongoCat"
       "noblur,title:BongoCat"
       "noborder,title:BongoCat"
       "nodim,title:BongoCat"
     ];
     workspace = [
-      "11,border:false,rounding:false,decorate:false,gapsin:0,gapsout:0,border:false,on-created-empty:steam"
+      # "11,border:false,rounding:false,decorate:false,gapsin:0,gapsout:0,border:false,on-created-empty:steam"
     ];
   };
 }

@@ -33,6 +33,7 @@
     ../../../modules/applications/tools/yazi
     ../../../modules/applications/tools/ollama
     ../../../modules/applications/tools/open-webui
+    ../../../modules/applications/tools/openconnect
 
     ../../../modules/applications/virtualisation/virtualBox
   ];

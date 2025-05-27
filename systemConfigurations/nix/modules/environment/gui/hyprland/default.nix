@@ -13,5 +13,6 @@
     ./keybindings.nix
     ./rules.nix
     ./preferences.nix
+    ./sddm.nix
   ];
 }

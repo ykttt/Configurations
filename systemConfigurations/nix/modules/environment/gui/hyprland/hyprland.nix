@@ -19,6 +19,7 @@
   };
   home-manager.users.${sysinfo.target} = {pkgs, ...}: {
     home.packages = with pkgs; [
+      kitty
       wlsunset
       hyprlock
       playerctl

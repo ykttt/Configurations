@@ -6,7 +6,6 @@
     ./catppuccin.nix
     ./fcitx.nix
     ./fonts.nix
-    ./sddm.nix
     ./xdg.nix
   ];
 }

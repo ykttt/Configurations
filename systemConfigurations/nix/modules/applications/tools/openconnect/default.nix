@@ -1,7 +1,15 @@
 # openconnect/default.nix
 #
-{sysinfo, ...}: {
-  home-manager.users.${sysinfo.target} = {pkgs, ...}: {
-    home.packages = [pkgs.openconnect];
-  };
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  environment.systemPackages = with pkgs; [
+    webkit2gtk
+    openconnect
+    networkmanagerapplet
+    networkmanager-openconnect
+  ];
+  networking.networkmanager.plugins = ["openconnect"];
 }

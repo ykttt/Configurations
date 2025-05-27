@@ -7,7 +7,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     openconnect
-    networkmanagerapplet
+    gnome-control-center
   ];
   networking.networkmanager.plugins = with pkgs; [networkmanager-openconnect];
 }

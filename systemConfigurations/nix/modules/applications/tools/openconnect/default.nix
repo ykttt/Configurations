@@ -9,7 +9,6 @@
     webkit2gtk
     openconnect
     networkmanagerapplet
-    networkmanager-openconnect
   ];
-  networking.networkmanager.plugins = ["openconnect"];
+  networking.networkmanager.plugins = with pkgs; [networkmanager-openconnect];
 }

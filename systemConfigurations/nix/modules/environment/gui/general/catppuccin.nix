@@ -1,8 +1,20 @@
 # general/catppuccin.nix
 #
-{sysinfo, ...}: {
+{
+  lib,
+  config,
+  sysinfo,
+  ...
+}:
+with lib; let
+  isGnome = config.services.xserver.desktopManager.gnome.enable;
+in {
   home-manager.users.${sysinfo.target} = {inputs, ...}: {
     imports = [inputs.catppuccin.homeModules.catppuccin];
+    gtk = {
+      enable = mkIf isGnome true;
+      catppuccin.enable = mkIf isGnome true;
+    };
     catppuccin = {
       enable = true;
       flavor = "mocha";

@@ -6,7 +6,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    webkit2gtk
     openconnect
     networkmanagerapplet
   ];

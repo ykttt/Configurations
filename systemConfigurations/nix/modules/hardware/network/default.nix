@@ -1,4 +1,4 @@
-# hardware/network.nix
+# network/default.nix
 #
 {sysinfo, ...}: {
   networking = {

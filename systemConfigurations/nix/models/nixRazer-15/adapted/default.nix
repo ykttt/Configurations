@@ -3,7 +3,7 @@
 {
   imports = [
     ./applications.nix
-    ./drivers.nix
     ./environment.nix
+    ./hardware.nix
   ];
 }

@@ -4,9 +4,7 @@
   imports = [
     ./basic.nix
     ./boot.nix
-    ./hardware.nix
+    ./hardwareInfo.nix
     ./i18n.nix
-    ./network.nix
-    ./services.nix
   ];
 }

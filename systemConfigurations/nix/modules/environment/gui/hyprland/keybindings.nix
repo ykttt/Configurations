@@ -20,7 +20,7 @@
           10);
       in
         [
-          "$mainMod, Space, exec, pkill $runmenu || $runmenu"
+          "$mainMod, Semicolon, exec, pkill $runmenu || $runmenu"
           "$mainMod, Return, exec, $terminal"
           "$mainMod, Q, killactive,"
           "$mainMod Control, Q, exit,"
@@ -83,15 +83,16 @@
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
       ];
+      bindr = [];
     };
     extraConfig = ''
-      bind = $mainMod, Semicolon, submap, resize
+      bind = $mainMod, Space, submap, resize
       submap = resize
       binde = , L, resizeactive, 10 0
       binde = , H, resizeactive, -10 0
       binde = , K, resizeactive, 0 -10
       binde = , J, resizeactive, 0 10
-      binde = $mainMod, Semicolon, submap, reset
+      binde = $mainMod, Space, submap, reset
       submap = reset
     '';
   };

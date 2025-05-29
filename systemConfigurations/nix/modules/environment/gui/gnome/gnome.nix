@@ -1,6 +1,10 @@
 # gnome/gnome.nix
 #
-{pkgs, ...}: {
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -23,4 +27,6 @@
     tali
     totem
   ];
+  home-manager.users.${sysinfo.target} = {
+  };
 }

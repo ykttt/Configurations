@@ -7,7 +7,7 @@
   ...
 }:
 with lib; let
-  isGnome = config.services.xserver.desktopManager.gnome.enable;
+  isGnome = config.services.desktopManager.gnome.enable;
 in {
   home-manager.users.${sysinfo.target} = {inputs, ...}: {
     imports = [inputs.catppuccin.homeModules.catppuccin];

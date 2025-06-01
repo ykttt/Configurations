@@ -6,6 +6,6 @@
     ../../../modules/environment/security
     ../../../modules/environment/shell/zsh
     ../../../modules/environment/gui/general
-    ../../../modules/environment/gui/gnome
+    ../../../modules/environment/gui/hyprland
   ];
 }

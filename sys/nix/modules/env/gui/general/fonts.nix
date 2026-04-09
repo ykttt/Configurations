@@ -1,0 +1,18 @@
+# general/default.nix
+#
+{pkgs, ...}: {
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.noto # Unstable only
+      nerd-fonts.jetbrains-mono # Unstable only
+      # nerdfonts # 24.11
+      wqy_zenhei # Required by pkgs.steam to display CJK characters
+      noto-fonts
+      sarasa-gothic
+      noto-fonts-color-emoji
+      noto-fonts-cjk-sans
+    ];
+    fontDir.enable = true;
+    fontconfig.enable = true;
+  };
+}

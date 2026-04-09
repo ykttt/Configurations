@@ -1,0 +1,67 @@
+# nvim/default.nix
+#
+{
+  pkgs,
+  sysinfo,
+  ...
+}: {
+  environment.variables.EDITOR = "nvim";
+  programs.neovim = {
+    enable = true;
+    package = pkgs.neovim-unwrapped;
+    viAlias = true;
+    vimAlias = true;
+  };
+  home-manager.users.${sysinfo.target} = {
+    pkgs,
+    config,
+    ...
+  }: {
+    home.packages = with pkgs; [
+      fzf
+      nil
+      # lldb
+      ruff
+      stylua
+      ltex-ls
+      neovide
+      gnumake
+      pyright
+      alejandra
+      codespell
+      clang-tools
+      tree-sitter
+      wl-clipboard
+      lua-language-server
+    ];
+    programs.neovim = {
+      enable = true;
+      package = pkgs.neovim-unwrapped;
+      withPython3 = true;
+      withNodeJs = true;
+    };
+    home.file."${config.home.homeDirectory}/.config/nvim".source =
+      config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/Repositories/Configurations/app/nvim";
+    xdg.mimeApps = {
+      associations.added = {
+        "application/json" = "neovide.desktop";
+        "application/x-docbook+xml" = "neovide.desktop";
+        "application/x-yaml" = "neovide.desktop";
+        "application/x-zerosize" = "neovide.desktop";
+        "text/markdown" = "neovide.desktop";
+        "text/plain" = "neovide.desktop";
+        "text/x-cmake" = "neovide.desktop";
+      };
+      defaultApplications = {
+        "application/json" = "neovide.desktop";
+        "application/x-docbook+xml" = "neovide.desktop";
+        "application/x-yaml" = "neovide.desktop";
+        "application/x-zerosize" = "neovide.desktop";
+        "text/markdown" = "neovide.desktop";
+        "text/plain" = "neovide.desktop";
+        "text/x-cmake" = "neovide.desktop";
+      };
+    };
+  };
+}

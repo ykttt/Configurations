@@ -1,0 +1,58 @@
+hide_ascii      = false
+spacing         = 1
+padding         = 0
+separator       = "・"
+key_color       = "LightCyan"
+separator_color = "Yellow"
+prefer_small_ascii = true
+
+[bar]
+glyph           = " "
+symbol_open     = "("
+symbol_close    = ")"
+hide_delimiters = false
+visible         = false
+
+[box]
+title           = " Hey! "
+border          = "rounded"
+visible         = true
+
+[box.inner_margin]
+x               = 2
+y               = 1
+
+[custom_ascii]
+color           = "#BB90B7"
+path            = "/home/km/.config/macchina/themes/greet.ascii"
+
+[randomize]
+key_color       = false
+separator_color = false
+
+[palette]
+type            = "Dark"
+visible         = true
+glyph           = "   "
+
+[keys]
+host            = "󱄔 "
+kernel          = "󰌽 "
+battery         = "󰁹 "
+os              = " "
+de              = " "
+wm              = " "
+distro          = "󱄅 "
+terminal        = " "
+shell           = " "
+packages        = " "
+uptime          = " "
+memory          = "󰍛 "
+machine         = " "
+local_ip        = "󰱓 "
+backlight       = "󰃞 "
+resolution      = "󰍺 "
+cpu_load        = "󰈐 "
+cpu             = " "
+gpu             = "󰈐 "
+disk_space      = " "

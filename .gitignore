@@ -1,0 +1,12 @@
+*.o
+*.old
+*.tmp
+*.tmp.*
+*.backup
+*.backup.*
+.directory
+app/ags/types
+app/onedrive/*/*.hash
+app/onedrive/*/*.sqlite3
+app/onedrive/*/refresh_token
+sys/nix/result

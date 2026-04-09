@@ -1,0 +1,100 @@
+
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+  combi {
+    display-name: " ";
+  }
+
+  drun {
+    display-name: " ";
+  }
+
+  run {
+    display-name: " ";
+  }
+
+  window {
+    display-name: " ";
+  }
+
+  filebrowser {
+    display-name: " ";
+  }
+
+  recursivebrowser {
+    display-name: " ";
+  }
+
+  ssh {
+    display-name: " ";
+  }
+
+ keys {
+    display-name: " ";
+  }
+
+
+  timeout {
+    delay: 0;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  background-color: transparent;
+  text-color: @on-surface-variant;
+}
+
+window {
+  border-radius: 18px;
+  transparency: "real";
+  width: 1000px;
+  background-color: @surface-dim;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  transparency: "real";
+  background-color: @surface-bright;
+  text-color: @on-surface;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+listview {
+  lines: 12;
+}
+
+element {
+  children: [element-icon, element-text];
+}
+
+element-icon {
+  padding: 10px 10px;
+  size: 20px;
+}
+
+element-text {
+  padding: 10px 0;
+}
+
+element-text selected {
+  text-color: @tertiary;
+}

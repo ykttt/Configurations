@@ -1,0 +1,112 @@
+# hyprland/keybindings.nix
+#
+{sysinfo, ...}: {
+  home-manager.users.${sysinfo.target}.wayland.windowManager.hyprland = let
+    masterLayout = false;
+  in {
+    settings = {
+      gesture = [
+        "3, horizontal, move"
+        "3, vertical, move"
+        "3, pinch, close"
+        "4, horizontal, workspace"
+        "4, vertical, fullscreen"
+        "4, pinch, special, magic"
+        "5, pinch, special, magic"
+      ];
+      bind = let
+        workspaceActions = builtins.concatLists (builtins.genList (
+            x: let
+              ws = let
+                c = (x + 1) / 10;
+              in
+                builtins.toString (x + 1 - (c * 10));
+            in [
+              "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mainMod Control, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          )
+          10);
+      in
+        [
+          "$mainMod, Semicolon, exec, pkill $drunmenu || $drunmenu"
+          "$mainMod Control, Semicolon, exec, pkill $filemenu || $filemenu"
+          "$mainMod, Colon, exec, pkill $runmenu || $runmenu"
+          "$mainMod, Return, exec, $terminal"
+          "$mainMod, Q, killactive,"
+          "$mainMod Control, Q, exit,"
+          "$mainMod, F, togglefloating,"
+          "$mainMod Control, F, fullscreen,"
+          "$mainMod, N, workspace, 11"
+          "$mainMod, M, togglespecialworkspace, magic"
+          "$mainMod Control, M, movetoworkspace, special:magic"
+          "$mainMod, mouse_up, workspace, e-1"
+          "$mainMod, mouse_down, workspace, e+1"
+          "$mainMod, Esc, exec, hyprlock"
+          "$mainMod, Tab, cyclenext"
+          "$mainMod, Tab, alterzorder, top"
+        ]
+        ++ workspaceActions
+        ++ (
+          if masterLayout
+          then [
+            "$mainMod, P, pin"
+            "$mainMod, H, workspace, e-1"
+            "$mainMod, L, workspace, e+1"
+            "$mainMod, J, layoutmsg, cyclenext"
+            "$mainMod, K, layoutmsg, cycleprev"
+            "$mainMod Control, H, movetoworkspace, -1"
+            "$mainMod Control, L, movetoworkspace, +1"
+            "$mainMod Control, J, layoutmsg, rollnext"
+            "$mainMod Control, K, layoutmsg, rollprev"
+            "$mainMod Control, Return, layoutmsg, swapwithmaster auto"
+          ]
+          else [
+            "$mainMod, P, pin,"
+            "$mainMod, T, togglesplit,"
+            "$mainMod, H, movefocus, l"
+            "$mainMod, J, movefocus, d"
+            "$mainMod, K, movefocus, u"
+            "$mainMod, L, movefocus, r"
+            "$mainMod, A, movewindow, l"
+            "$mainMod, W, movewindow, u"
+            "$mainMod, S, movewindow, d"
+            "$mainMod, D, movewindow, r"
+            "$mainMod Control, H, movetoworkspace, -1"
+            "$mainMod Control, L, movetoworkspace, +1"
+            "$mainMod Control Shift, H, workspace, e-1"
+            "$mainMod Control Shift, L, workspace, e+1"
+          ]
+        );
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+      bindel = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
+      bindl = [
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPause, exec, playerctl play-pause"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+      ];
+      bindr = [];
+    };
+    extraConfig = ''
+      bind = $mainMod, Space, submap, resize
+      submap = resize
+      binde = , L, resizeactive, 10 0
+      binde = , H, resizeactive, -10 0
+      binde = , K, resizeactive, 0 -10
+      binde = , J, resizeactive, 0 10
+      binde = $mainMod, Space, submap, reset
+      submap = reset
+    '';
+  };
+}
